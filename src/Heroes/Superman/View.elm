@@ -1,6 +1,5 @@
 module Heroes.Superman.View (root, modal) where
 
-import Utils exposing (..)
 import Viscose
 import Signal exposing (..)
 import Html exposing (..)

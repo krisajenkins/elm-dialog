@@ -14,17 +14,7 @@ app =
   StartApp.start
     { init = ( initialModel, initialEffects )
     , view = View.root
-    , update =
-        (\action oldModel ->
-          let
-            newModel =
-              State.update action oldModel
-
-            newEffects =
-              State.effects action ( oldModel, newModel )
-          in
-            ( newModel, newEffects )
-        )
+    , update = State.update
     , inputs = []
     }
 

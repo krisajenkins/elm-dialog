@@ -1,7 +1,6 @@
 module Heroes.State (..) where
 
-import Utils exposing (..)
-import Effects exposing (..)
+import Response exposing (..)
 import Heroes.Types exposing (..)
 import Heroes.Batman.State as Batman
 import Heroes.Superman.State as Superman
@@ -17,39 +16,21 @@ initialModel =
   }
 
 
-update : Action -> Model -> Model
+update : Action -> Model -> Response Model Action
 update action model =
   case action of
     SetView view ->
       { model | view = view }
+        |> withNone
 
     BatmanAction subaction ->
-      { model | batman = Batman.update subaction model.batman }
+      Batman.update subaction model.batman
+        |> mapBoth (\x -> { model | batman = x }) BatmanAction
 
     SupermanAction subaction ->
-      { model | superman = Superman.update subaction model.superman }
+      Superman.update subaction model.superman
+        |> mapBoth (\x -> { model | superman = x }) SupermanAction
 
     WonderWomanAction subaction ->
-      { model | wonderWoman = WonderWoman.update subaction model.wonderWoman }
-
-
-effects : Action -> ( Model, Model ) -> Effects Action
-effects action state =
-  case action of
-    SetView _ ->
-      none
-
-    BatmanAction subaction ->
-      both .batman state
-        |> Batman.effects subaction
-        |> Effects.map BatmanAction
-
-    SupermanAction subaction ->
-      both .superman state
-        |> Superman.effects subaction
-        |> Effects.map SupermanAction
-
-    WonderWomanAction subaction ->
-      both .wonderWoman state
-        |> WonderWoman.effects subaction
-        |> Effects.map WonderWomanAction
+      WonderWoman.update subaction model.wonderWoman
+        |> mapBoth (\x -> { model | wonderWoman = x }) WonderWomanAction

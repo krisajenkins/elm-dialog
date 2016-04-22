@@ -1,7 +1,6 @@
 module Villains.State (..) where
 
-import Utils exposing (..)
-import Effects exposing (..)
+import Response exposing (..)
 import Villains.Types exposing (..)
 import Villains.Joker.State as Joker
 import Villains.Penguin.State as Penguin
@@ -15,31 +14,17 @@ initialModel =
   }
 
 
-update : Action -> Model -> Model
+update : Action -> Model -> Response Model Action
 update action model =
   case action of
     SetView view ->
       { model | view = view }
+        |> withNone
 
     JokerAction subaction ->
-      { model | joker = Joker.update subaction model.joker }
+      Joker.update subaction model.joker
+        |> mapBoth (\x -> { model | joker = x }) JokerAction
 
     PenguinAction subaction ->
-      { model | penguin = Penguin.update subaction model.penguin }
-
-
-effects : Action -> ( Model, Model ) -> Effects Action
-effects action state =
-  case action of
-    SetView _ ->
-      none
-
-    JokerAction subaction ->
-      both .joker state
-        |> Joker.effects subaction
-        |> Effects.map JokerAction
-
-    PenguinAction subaction ->
-      both .penguin state
-        |> Penguin.effects subaction
-        |> Effects.map PenguinAction
+      Penguin.update subaction model.penguin
+        |> mapBoth (\x -> { model | penguin = x }) PenguinAction

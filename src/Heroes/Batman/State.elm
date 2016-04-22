@@ -1,7 +1,7 @@
 module Heroes.Batman.State (..) where
 
+import Response exposing (..)
 import Heroes.Batman.Types exposing (..)
-import Effects exposing (..)
 
 
 initialModel : Model
@@ -11,7 +11,7 @@ initialModel =
   }
 
 
-update : Action -> Model -> Model
+update : Action -> Model -> Response Model Action
 update action model =
   case action of
     Kapow ->
@@ -19,11 +19,8 @@ update action model =
         | kapows = model.kapows + 2
         , showModal = True
       }
+        |> withNone
 
     Finished ->
       { model | showModal = False }
-
-
-effects : Action -> ( Model, Model ) -> Effects Action
-effects action state =
-  none
+        |> withNone

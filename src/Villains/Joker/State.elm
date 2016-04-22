@@ -1,7 +1,7 @@
 module Villains.Joker.State (..) where
 
+import Response exposing (..)
 import Villains.Joker.Types exposing (..)
-import Effects exposing (..)
 
 
 initialModel : Model
@@ -9,13 +9,9 @@ initialModel =
   { shots = 0 }
 
 
-update : Action -> Model -> Model
+update : Action -> Model -> Response Model Action
 update action model =
   case action of
     Shoot ->
       { model | shots = model.shots + 1 }
-
-
-effects : Action -> ( Model, Model ) -> Effects Action
-effects action state =
-  none
+        |> withNone

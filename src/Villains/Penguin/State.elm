@@ -1,7 +1,7 @@
 module Villains.Penguin.State (..) where
 
+import Response exposing (..)
 import Villains.Penguin.Types exposing (..)
-import Effects exposing (..)
 
 
 initialModel : Model
@@ -11,7 +11,7 @@ initialModel =
   }
 
 
-update : Action -> Model -> Model
+update : Action -> Model -> Response Model Action
 update action model =
   case action of
     Wark ->
@@ -19,11 +19,8 @@ update action model =
         | warks = model.warks + 3
         , quiet = False
       }
+        |> withNone
 
     Close ->
       { model | quiet = True }
-
-
-effects : Action -> ( Model, Model ) -> Effects Action
-effects action state =
-  none
+        |> withNone
