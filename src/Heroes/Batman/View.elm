@@ -12,7 +12,7 @@ root address model =
   div
     []
     [ h2 [] [ text "Batman" ]
-    , text (toString model)
+    , debuggingView model
     , actionButton address ( Kapow, "Kapow!" )
     ]
 

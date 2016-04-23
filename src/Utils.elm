@@ -18,3 +18,13 @@ actionButton address ( action, label ) =
     , onClick address action
     ]
     [ text label ]
+
+
+debuggingView : a -> Html
+debuggingView data =
+  div
+    [ class "alert alert-info" ]
+    [ code
+        []
+        [ text (toString data) ]
+    ]

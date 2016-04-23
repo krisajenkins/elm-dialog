@@ -1,5 +1,6 @@
 module Heroes.Superman.View (root, modal) where
 
+import Utils exposing (..)
 import Viscose
 import Signal exposing (..)
 import Html exposing (..)
@@ -11,7 +12,7 @@ root address model =
   div
     []
     [ h2 [] [ text "Superman" ]
-    , text (toString model)
+    , debuggingView model
     ]
 
 
