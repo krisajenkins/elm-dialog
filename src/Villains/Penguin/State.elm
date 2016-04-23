@@ -7,7 +7,8 @@ import Villains.Penguin.Types exposing (..)
 initialModel : Model
 initialModel =
   { warks = 0
-  , quiet = True
+  , health = 100
+  , state = Quiet
   }
 
 
@@ -17,10 +18,17 @@ update action model =
     Wark ->
       { model
         | warks = model.warks + 3
-        , quiet = False
+        , state = Warking
+      }
+        |> withNone
+
+    TakeDamage ->
+      { model
+        | health = model.health - 2
+        , state = Hurt
       }
         |> withNone
 
     Close ->
-      { model | quiet = True }
+      { model | state = Quiet }
         |> withNone

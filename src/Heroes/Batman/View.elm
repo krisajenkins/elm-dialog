@@ -7,13 +7,13 @@ import Html exposing (..)
 import Heroes.Batman.Types exposing (..)
 
 
-root : Address Action -> Model -> Html
-root address model =
+root : Address Action -> Message -> Model -> Html
+root address attackMessage model =
   div
     []
     [ h2 [] [ text "Batman" ]
     , debuggingView model
-    , actionButton address ( Kapow, "Kapow!" )
+    , attackButton attackMessage "Kapow!"
     ]
 
 

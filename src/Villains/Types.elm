@@ -19,4 +19,5 @@ type View
 type Action
   = JokerAction Joker.Action
   | PenguinAction Penguin.Action
+  | TakeDamage
   | SetView View

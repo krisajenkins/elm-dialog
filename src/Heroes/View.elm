@@ -11,8 +11,8 @@ import Heroes.Superman.View as Superman
 import Heroes.WonderWoman.View as WonderWoman
 
 
-root : Address Action -> Model -> Html
-root address model =
+root : Address Action -> Message -> Model -> Html
+root address attackMessage model =
   div
     []
     [ h1 [] [ text "Heroes" ]
@@ -20,7 +20,10 @@ root address model =
         [ class "well" ]
         [ case model.view of
             BatmanView ->
-              Batman.root (forwardTo address BatmanAction) model.batman
+              Batman.root
+                (forwardTo address BatmanAction)
+                attackMessage
+                model.batman
 
             SupermanView ->
               Superman.root (forwardTo address SupermanAction) model.superman

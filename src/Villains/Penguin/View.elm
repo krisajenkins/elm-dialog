@@ -19,12 +19,22 @@ root address model =
 
 modal : Address Action -> Model -> Maybe Viscose.Config
 modal address model =
-  if model.quiet then
-    Nothing
-  else
-    Just
-      { closeMessage = message address Close
-      , header = Just (h1 [] [ text "Wark!" ])
-      , body = Just (text "The Penguin laughs his weird laugh")
-      , footer = Just (actionButton address ( Close, "OK" ))
-      }
+  case model.state of
+    Quiet ->
+      Nothing
+
+    Hurt ->
+      Just
+        { closeMessage = message address Close
+        , header = Just (h1 [] [ text "Penguin says, \"Ouch!\"" ])
+        , body = Just (text "The penguin tries to dodge, which goes badly because penguins lack grace on land.")
+        , footer = Just (actionButton address ( Close, "Take the pain" ))
+        }
+
+    Warking ->
+      Just
+        { closeMessage = message address Close
+        , header = Just (h1 [] [ text "Penguin says, \"Wark!\"" ])
+        , body = Just (text "The Penguin laughs his weird laugh")
+        , footer = Just (actionButton address ( Close, "Calm down" ))
+        }

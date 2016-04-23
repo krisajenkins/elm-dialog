@@ -17,6 +17,9 @@ root address model =
 
     villainsAddress =
       forwardTo address VillainsAction
+
+    attackMessage =
+      message address HeroAttack
   in
     div
       [ class "container-fluid" ]
@@ -24,7 +27,7 @@ root address model =
           [ class "row" ]
           [ div
               [ class "col-md-6" ]
-              [ Heroes.View.root heroesAddress model.heroes ]
+              [ Heroes.View.root heroesAddress attackMessage model.heroes ]
           , div
               [ class "col-md-6" ]
               [ Villains.View.root villainsAddress model.villains ]

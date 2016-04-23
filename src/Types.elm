@@ -7,6 +7,7 @@ import Villains.Types as Villains
 type Action
   = HeroesAction Heroes.Action
   | VillainsAction Villains.Action
+  | HeroAttack
 
 
 type alias Model =

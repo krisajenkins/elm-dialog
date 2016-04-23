@@ -20,6 +20,15 @@ actionButton address ( action, label ) =
     [ text label ]
 
 
+attackButton : Message -> String -> Html
+attackButton attackMessage label =
+  button
+    [ class "btn btn-success"
+    , on "click" targetValue (always attackMessage)
+    ]
+    [ text label ]
+
+
 debuggingView : a -> Html
 debuggingView data =
   div

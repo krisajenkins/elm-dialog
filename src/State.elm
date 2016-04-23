@@ -4,6 +4,7 @@ import Response exposing (..)
 import Types exposing (..)
 import Effects exposing (..)
 import Heroes.State
+import Villains.Types
 import Villains.State
 
 
@@ -28,4 +29,8 @@ update action model =
 
     VillainsAction subaction ->
       Villains.State.update subaction model.villains
+        |> mapBoth (\x -> { model | villains = x }) VillainsAction
+
+    HeroAttack ->
+      Villains.State.update Villains.Types.TakeDamage model.villains
         |> mapBoth (\x -> { model | villains = x }) VillainsAction
