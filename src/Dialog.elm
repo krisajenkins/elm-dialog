@@ -17,13 +17,14 @@ import Signal exposing (..)
 {-| Renders a modal dialog whenever you supply a `Config`.
 
 To use this, include this view in your *top-level* view function,
-right at the top of the DOM tree, like:
+right at the top of the DOM tree, like so:
 
     view : Address Action -> Model -> Html
     view address model =
       div
         []
-        [ ...your regular view code....
+        [ ...
+        , ...your regular view code....
         , ...
         , Dialog.view
             (if model.shouldShowDialog then
@@ -42,6 +43,10 @@ It's then up to you to replace `model.shouldShowDialog` with whatever
 logic should cause the dialog to be displayed, and to handle the
 `AcknowledgeDialogBox` with whatever logic should occur when the user
 closes the dialog.
+
+See the `examples/` directory for working examples of how this works
+for apps large and small.
+
 -}
 view : Maybe Config -> Html
 view maybeConfig =
@@ -121,7 +126,8 @@ backdrop config =
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
-and `footer` are all optional `Html` blocks. Use only the ones you want.
+and `footer` are all optional `Html` blocks. Use only the ones you
+want and set the others to `Nothing`.
 
 The `closeMessage` is a mandatory message we will send when the user
 clicks to dismiss the modal.
