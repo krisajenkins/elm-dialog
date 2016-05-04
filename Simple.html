@@ -10858,8 +10858,21 @@ Elm.Utils.make = function (_elm) {
       var _p1 = _p0;
       return A2($Html.button,_U.list([$Html$Attributes.$class("btn btn-info"),A2($Html$Events.onClick,address,_p1._0)]),_U.list([$Html.text(_p1._1)]));
    });
-   var both = F2(function (f,_p2) {    var _p3 = _p2;return {ctor: "_Tuple2",_0: f(_p3._0),_1: f(_p3._1)};});
-   return _elm.Utils.values = {_op: _op,both: both,actionButton: actionButton,attackButton: attackButton,debuggingView: debuggingView,bootstrap: bootstrap};
+   var viewTab = F4(function (address,viewAction,currentView,_p2) {
+      var _p3 = _p2;
+      var _p4 = _p3._0;
+      return A2($Html.li,
+      _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "active",_1: _U.eq(currentView,_p4)}]))]),
+      _U.list([A2($Html.a,_U.list([A2($Html$Events.onClick,address,viewAction(_p4))]),_U.list([$Html.text(_p3._1)]))]));
+   });
+   var both = F2(function (f,_p5) {    var _p6 = _p5;return {ctor: "_Tuple2",_0: f(_p6._0),_1: f(_p6._1)};});
+   return _elm.Utils.values = {_op: _op
+                              ,both: both
+                              ,viewTab: viewTab
+                              ,actionButton: actionButton
+                              ,attackButton: attackButton
+                              ,debuggingView: debuggingView
+                              ,bootstrap: bootstrap};
 };Elm.Simple = Elm.Simple || {};
 Elm.Simple.App = Elm.Simple.App || {};
 Elm.Simple.App.make = function (_elm) {

@@ -10666,136 +10666,6 @@ Elm.StartApp.make = function (_elm) {
    var App = F3(function (a,b,c) {    return {html: a,model: b,tasks: c};});
    var Config = F4(function (a,b,c,d) {    return {init: a,update: b,view: c,inputs: d};});
    return _elm.StartApp.values = {_op: _op,start: start,Config: Config,App: App};
-};Elm.Exts = Elm.Exts || {};
-Elm.Exts.Html = Elm.Exts.Html || {};
-Elm.Exts.Html.Bootstrap = Elm.Exts.Html.Bootstrap || {};
-Elm.Exts.Html.Bootstrap.make = function (_elm) {
-   "use strict";
-   _elm.Exts = _elm.Exts || {};
-   _elm.Exts.Html = _elm.Exts.Html || {};
-   _elm.Exts.Html.Bootstrap = _elm.Exts.Html.Bootstrap || {};
-   if (_elm.Exts.Html.Bootstrap.values) return _elm.Exts.Html.Bootstrap.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm),
-   $Debug = Elm.Debug.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var _op = {};
-   var Left = {ctor: "Left"};
-   var Bottom = {ctor: "Bottom"};
-   var Right = {ctor: "Right"};
-   var Top = {ctor: "Top"};
-   var video = F2(function (ratio,url) {
-      var ratioClass = function () {
-         var _p0 = ratio;
-         if (_p0.ctor === "SixteenByNine") {
-               return "embed-responsive-16by9";
-            } else {
-               return "embed-responsive-4by3";
-            }
-      }();
-      return A2($Html.div,
-      _U.list([]),
-      _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("About")]))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("embed-responsive")]),
-              _U.list([A2($Html.iframe,_U.list([$Html$Attributes.$class("embed-responsive-item"),$Html$Attributes.src(url)]),_U.list([]))]))]));
-   });
-   var FourByThree = {ctor: "FourByThree"};
-   var SixteenByNine = {ctor: "SixteenByNine"};
-   var empty = A2($Html.span,_U.list([]),_U.list([]));
-   var popover = F5(function (direction,isShown,styles,title,body) {
-      return A2($Html.div,
-      _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "popover fade",_1: true}
-                                                  ,{ctor: "_Tuple2",_0: "in",_1: isShown}
-                                                  ,{ctor: "_Tuple2",_0: "top",_1: _U.eq(direction,Top)}
-                                                  ,{ctor: "_Tuple2",_0: "right",_1: _U.eq(direction,Right)}
-                                                  ,{ctor: "_Tuple2",_0: "bottom",_1: _U.eq(direction,Bottom)}
-                                                  ,{ctor: "_Tuple2",_0: "left",_1: _U.eq(direction,Left)}]))
-              ,$Html$Attributes.style(A2($Basics._op["++"],styles,_U.list([{ctor: "_Tuple2",_0: "display",_1: "block"}])))]),
-      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("arrow")]),_U.list([]))
-              ,function () {
-                 var _p1 = title;
-                 if (_p1.ctor === "Just") {
-                       return A2($Html.h3,_U.list([$Html$Attributes.$class("popover-title")]),_U.list([$Html.text(_p1._0)]));
-                    } else {
-                       return empty;
-                    }
-              }()
-              ,A2($Html.div,_U.list([$Html$Attributes.$class("popover-content")]),body)]));
-   });
-   var row = $Html.div(_U.list([$Html$Attributes.$class("row")]));
-   var twoColumns = F2(function (left,right) {
-      return row(_U.list([A2($Html.div,_U.list([$Html$Attributes.$class("col-xs-6")]),left)
-                         ,A2($Html.div,_U.list([$Html$Attributes.$class("col-xs-6")]),right)]));
-   });
-   var containerFluid = $Html.div(_U.list([$Html$Attributes.$class("container-fluid")]));
-   var container = $Html.div(_U.list([$Html$Attributes.$class("container")]));
-   return _elm.Exts.Html.Bootstrap.values = {_op: _op
-                                            ,container: container
-                                            ,containerFluid: containerFluid
-                                            ,row: row
-                                            ,empty: empty
-                                            ,twoColumns: twoColumns
-                                            ,video: video
-                                            ,popover: popover
-                                            ,SixteenByNine: SixteenByNine
-                                            ,FourByThree: FourByThree
-                                            ,Top: Top
-                                            ,Right: Right
-                                            ,Bottom: Bottom
-                                            ,Left: Left};
-};Elm.Exts = Elm.Exts || {};
-Elm.Exts.Maybe = Elm.Exts.Maybe || {};
-Elm.Exts.Maybe.make = function (_elm) {
-   "use strict";
-   _elm.Exts = _elm.Exts || {};
-   _elm.Exts.Maybe = _elm.Exts.Maybe || {};
-   if (_elm.Exts.Maybe.values) return _elm.Exts.Maybe.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm),
-   $Debug = Elm.Debug.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var _op = {};
-   var catMaybes = function (xs) {
-      catMaybes: while (true) {
-         var _p0 = xs;
-         if (_p0.ctor === "[]") {
-               return _U.list([]);
-            } else {
-               if (_p0._0.ctor === "Nothing") {
-                     var _v1 = _p0._1;
-                     xs = _v1;
-                     continue catMaybes;
-                  } else {
-                     return A2($List._op["::"],_p0._0._0,catMaybes(_p0._1));
-                  }
-            }
-      }
-   };
-   var mappend = F2(function (a,b) {
-      var _p1 = {ctor: "_Tuple2",_0: a,_1: b};
-      if (_p1._0.ctor === "Nothing") {
-            return $Maybe.Nothing;
-         } else {
-            if (_p1._1.ctor === "Nothing") {
-                  return $Maybe.Nothing;
-               } else {
-                  return $Maybe.Just({ctor: "_Tuple2",_0: _p1._0._0,_1: _p1._1._0});
-               }
-         }
-   });
-   var maybe = F2(function ($default,f) {    return function (_p2) {    return A2($Maybe.withDefault,$default,A2($Maybe.map,f,_p2));};});
-   var isJust = function (x) {    var _p3 = x;if (_p3.ctor === "Just") {    return true;} else {    return false;}};
-   var isNothing = function (_p4) {    return $Basics.not(isJust(_p4));};
-   return _elm.Exts.Maybe.values = {_op: _op,isJust: isJust,isNothing: isNothing,maybe: maybe,mappend: mappend,catMaybes: catMaybes};
 };Elm.Advanced = Elm.Advanced || {};
 Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
 Elm.Advanced.Heroes.Batman = Elm.Advanced.Heroes.Batman || {};
@@ -11307,6 +11177,136 @@ Elm.Advanced.State.make = function (_elm) {
    var initialEffects = $Effects.none;
    var initialModel = {heroes: $Advanced$Heroes$State.initialModel,villains: $Advanced$Villains$State.initialModel};
    return _elm.Advanced.State.values = {_op: _op,initialModel: initialModel,initialEffects: initialEffects,update: update};
+};Elm.Exts = Elm.Exts || {};
+Elm.Exts.Html = Elm.Exts.Html || {};
+Elm.Exts.Html.Bootstrap = Elm.Exts.Html.Bootstrap || {};
+Elm.Exts.Html.Bootstrap.make = function (_elm) {
+   "use strict";
+   _elm.Exts = _elm.Exts || {};
+   _elm.Exts.Html = _elm.Exts.Html || {};
+   _elm.Exts.Html.Bootstrap = _elm.Exts.Html.Bootstrap || {};
+   if (_elm.Exts.Html.Bootstrap.values) return _elm.Exts.Html.Bootstrap.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var Left = {ctor: "Left"};
+   var Bottom = {ctor: "Bottom"};
+   var Right = {ctor: "Right"};
+   var Top = {ctor: "Top"};
+   var video = F2(function (ratio,url) {
+      var ratioClass = function () {
+         var _p0 = ratio;
+         if (_p0.ctor === "SixteenByNine") {
+               return "embed-responsive-16by9";
+            } else {
+               return "embed-responsive-4by3";
+            }
+      }();
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("About")]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("embed-responsive")]),
+              _U.list([A2($Html.iframe,_U.list([$Html$Attributes.$class("embed-responsive-item"),$Html$Attributes.src(url)]),_U.list([]))]))]));
+   });
+   var FourByThree = {ctor: "FourByThree"};
+   var SixteenByNine = {ctor: "SixteenByNine"};
+   var empty = A2($Html.span,_U.list([]),_U.list([]));
+   var popover = F5(function (direction,isShown,styles,title,body) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "popover fade",_1: true}
+                                                  ,{ctor: "_Tuple2",_0: "in",_1: isShown}
+                                                  ,{ctor: "_Tuple2",_0: "top",_1: _U.eq(direction,Top)}
+                                                  ,{ctor: "_Tuple2",_0: "right",_1: _U.eq(direction,Right)}
+                                                  ,{ctor: "_Tuple2",_0: "bottom",_1: _U.eq(direction,Bottom)}
+                                                  ,{ctor: "_Tuple2",_0: "left",_1: _U.eq(direction,Left)}]))
+              ,$Html$Attributes.style(A2($Basics._op["++"],styles,_U.list([{ctor: "_Tuple2",_0: "display",_1: "block"}])))]),
+      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("arrow")]),_U.list([]))
+              ,function () {
+                 var _p1 = title;
+                 if (_p1.ctor === "Just") {
+                       return A2($Html.h3,_U.list([$Html$Attributes.$class("popover-title")]),_U.list([$Html.text(_p1._0)]));
+                    } else {
+                       return empty;
+                    }
+              }()
+              ,A2($Html.div,_U.list([$Html$Attributes.$class("popover-content")]),body)]));
+   });
+   var row = $Html.div(_U.list([$Html$Attributes.$class("row")]));
+   var twoColumns = F2(function (left,right) {
+      return row(_U.list([A2($Html.div,_U.list([$Html$Attributes.$class("col-xs-6")]),left)
+                         ,A2($Html.div,_U.list([$Html$Attributes.$class("col-xs-6")]),right)]));
+   });
+   var containerFluid = $Html.div(_U.list([$Html$Attributes.$class("container-fluid")]));
+   var container = $Html.div(_U.list([$Html$Attributes.$class("container")]));
+   return _elm.Exts.Html.Bootstrap.values = {_op: _op
+                                            ,container: container
+                                            ,containerFluid: containerFluid
+                                            ,row: row
+                                            ,empty: empty
+                                            ,twoColumns: twoColumns
+                                            ,video: video
+                                            ,popover: popover
+                                            ,SixteenByNine: SixteenByNine
+                                            ,FourByThree: FourByThree
+                                            ,Top: Top
+                                            ,Right: Right
+                                            ,Bottom: Bottom
+                                            ,Left: Left};
+};Elm.Exts = Elm.Exts || {};
+Elm.Exts.Maybe = Elm.Exts.Maybe || {};
+Elm.Exts.Maybe.make = function (_elm) {
+   "use strict";
+   _elm.Exts = _elm.Exts || {};
+   _elm.Exts.Maybe = _elm.Exts.Maybe || {};
+   if (_elm.Exts.Maybe.values) return _elm.Exts.Maybe.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var catMaybes = function (xs) {
+      catMaybes: while (true) {
+         var _p0 = xs;
+         if (_p0.ctor === "[]") {
+               return _U.list([]);
+            } else {
+               if (_p0._0.ctor === "Nothing") {
+                     var _v1 = _p0._1;
+                     xs = _v1;
+                     continue catMaybes;
+                  } else {
+                     return A2($List._op["::"],_p0._0._0,catMaybes(_p0._1));
+                  }
+            }
+      }
+   };
+   var mappend = F2(function (a,b) {
+      var _p1 = {ctor: "_Tuple2",_0: a,_1: b};
+      if (_p1._0.ctor === "Nothing") {
+            return $Maybe.Nothing;
+         } else {
+            if (_p1._1.ctor === "Nothing") {
+                  return $Maybe.Nothing;
+               } else {
+                  return $Maybe.Just({ctor: "_Tuple2",_0: _p1._0._0,_1: _p1._1._0});
+               }
+         }
+   });
+   var maybe = F2(function ($default,f) {    return function (_p2) {    return A2($Maybe.withDefault,$default,A2($Maybe.map,f,_p2));};});
+   var isJust = function (x) {    var _p3 = x;if (_p3.ctor === "Just") {    return true;} else {    return false;}};
+   var isNothing = function (_p4) {    return $Basics.not(isJust(_p4));};
+   return _elm.Exts.Maybe.values = {_op: _op,isJust: isJust,isNothing: isNothing,maybe: maybe,mappend: mappend,catMaybes: catMaybes};
 };Elm.Dialog = Elm.Dialog || {};
 Elm.Dialog.make = function (_elm) {
    "use strict";
@@ -11401,8 +11401,21 @@ Elm.Utils.make = function (_elm) {
       var _p1 = _p0;
       return A2($Html.button,_U.list([$Html$Attributes.$class("btn btn-info"),A2($Html$Events.onClick,address,_p1._0)]),_U.list([$Html.text(_p1._1)]));
    });
-   var both = F2(function (f,_p2) {    var _p3 = _p2;return {ctor: "_Tuple2",_0: f(_p3._0),_1: f(_p3._1)};});
-   return _elm.Utils.values = {_op: _op,both: both,actionButton: actionButton,attackButton: attackButton,debuggingView: debuggingView,bootstrap: bootstrap};
+   var viewTab = F4(function (address,viewAction,currentView,_p2) {
+      var _p3 = _p2;
+      var _p4 = _p3._0;
+      return A2($Html.li,
+      _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "active",_1: _U.eq(currentView,_p4)}]))]),
+      _U.list([A2($Html.a,_U.list([A2($Html$Events.onClick,address,viewAction(_p4))]),_U.list([$Html.text(_p3._1)]))]));
+   });
+   var both = F2(function (f,_p5) {    var _p6 = _p5;return {ctor: "_Tuple2",_0: f(_p6._0),_1: f(_p6._1)};});
+   return _elm.Utils.values = {_op: _op
+                              ,both: both
+                              ,viewTab: viewTab
+                              ,actionButton: actionButton
+                              ,attackButton: attackButton
+                              ,debuggingView: debuggingView
+                              ,bootstrap: bootstrap};
 };Elm.Advanced = Elm.Advanced || {};
 Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
 Elm.Advanced.Heroes.Batman = Elm.Advanced.Heroes.Batman || {};
@@ -11534,16 +11547,14 @@ Elm.Advanced.Heroes.View.make = function (_elm) {
       return A2($Html.div,
       _U.list([]),
       _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Heroes")]))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("btn-group")]),
+              ,A2($Html.ul,
+              _U.list([$Html$Attributes.$class("nav nav-tabs")]),
               A2($List.map,
-              $Utils.actionButton(address),
-              _U.list([{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SetView($Advanced$Heroes$Types.BatmanView),_1: "Batman"}
-                      ,{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SetView($Advanced$Heroes$Types.SupermanView),_1: "Superman"}
-                      ,{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SetView($Advanced$Heroes$Types.WonderWomanView),_1: "Wonder Woman"}])))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("well")]),
-              _U.list([function () {
+              A3($Utils.viewTab,address,$Advanced$Heroes$Types.SetView,model.view),
+              _U.list([{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.BatmanView,_1: "Batman"}
+                      ,{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SupermanView,_1: "Superman"}
+                      ,{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.WonderWomanView,_1: "Wonder Woman"}])))
+              ,function () {
                  var _p1 = model.view;
                  switch (_p1.ctor)
                  {case "BatmanView": return A3($Advanced$Heroes$Batman$View.root,
@@ -11556,7 +11567,7 @@ Elm.Advanced.Heroes.View.make = function (_elm) {
                     default: return A2($Advanced$Heroes$WonderWoman$View.root,
                       A2($Signal.forwardTo,address,$Advanced$Heroes$Types.WonderWomanAction),
                       model.wonderWoman);}
-              }()]))]));
+              }()]));
    });
    return _elm.Advanced.Heroes.View.values = {_op: _op,root: root,dialog: dialog};
 };Elm.Advanced = Elm.Advanced || {};
@@ -11671,22 +11682,20 @@ Elm.Advanced.Villains.View.make = function (_elm) {
       return A2($Html.div,
       _U.list([]),
       _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Villains")]))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("btn-group")]),
+              ,A2($Html.ul,
+              _U.list([$Html$Attributes.$class("nav nav-tabs")]),
               A2($List.map,
-              $Utils.actionButton(address),
-              _U.list([{ctor: "_Tuple2",_0: $Advanced$Villains$Types.SetView($Advanced$Villains$Types.JokerView),_1: "Joker"}
-                      ,{ctor: "_Tuple2",_0: $Advanced$Villains$Types.SetView($Advanced$Villains$Types.PenguinView),_1: "Penguin"}])))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("well")]),
-              _U.list([function () {
+              A3($Utils.viewTab,address,$Advanced$Villains$Types.SetView,model.view),
+              _U.list([{ctor: "_Tuple2",_0: $Advanced$Villains$Types.JokerView,_1: "Joker"}
+                      ,{ctor: "_Tuple2",_0: $Advanced$Villains$Types.PenguinView,_1: "Penguin"}])))
+              ,function () {
                  var _p1 = model.view;
                  if (_p1.ctor === "JokerView") {
                        return A2($Advanced$Villains$Joker$View.root,A2($Signal.forwardTo,address,$Advanced$Villains$Types.JokerAction),model.joker);
                     } else {
                        return A2($Advanced$Villains$Penguin$View.root,A2($Signal.forwardTo,address,$Advanced$Villains$Types.PenguinAction),model.penguin);
                     }
-              }()]))]));
+              }()]));
    });
    return _elm.Advanced.Villains.View.values = {_op: _op,root: root,dialog: dialog};
 };Elm.Advanced = Elm.Advanced || {};
@@ -11723,7 +11732,7 @@ Elm.Advanced.View.make = function (_elm) {
                    _U.list([$Html.text("Each character in this demo is its own Elm component, with its own types, and its own update and view functions. None of them are aware of the others.")]))
                    ,A2($Html.li,
                    _U.list([]),
-                   _U.list([$Html.text("Click on any of the character buttons to switch views - this shows each sub-component acting independently.")]))
+                   _U.list([$Html.text("Click on any of the character tabs to switch views - this shows each sub-component acting independently.")]))
                    ,A2($Html.li,
                    _U.list([]),
                    _U.list([$Html.text("Select Penguin and click his action button, \'Wark!\' This shows a sub-component triggering the dialog.")]))
@@ -11740,6 +11749,7 @@ Elm.Advanced.View.make = function (_elm) {
               ,A2($Html.div,
               _U.list([$Html$Attributes.$class("container-fluid")]),
               _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Advanced Demo")]))
+                      ,instructions
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("row")]),
                       _U.list([A2($Html.div,
@@ -11748,7 +11758,6 @@ Elm.Advanced.View.make = function (_elm) {
                               ,A2($Html.div,
                               _U.list([$Html$Attributes.$class("col-md-6")]),
                               _U.list([A2($Advanced$Villains$View.root,villainsAddress,model.villains)]))]))
-                      ,instructions
                       ,$Dialog.view($Maybe.oneOf(_U.list([A2($Advanced$Heroes$View.dialog,heroesAddress,model.heroes)
                                                          ,A2($Advanced$Villains$View.dialog,villainsAddress,model.villains)])))]))]));
    });
