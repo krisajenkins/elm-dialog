@@ -10,7 +10,7 @@ See the `examples/` directory for two fully-worked examples, a simple
 one
 [(live demo)](http://krisajenkins.github.io/elm-dialog/Simple.html)
 and a more advanced one
-[(live demo)](http://krisajenkins.github.io/elm-dialog/Complex.html).
+[(live demo)](http://krisajenkins.github.io/elm-dialog/Advanced.html).
 
 ## Building
 
