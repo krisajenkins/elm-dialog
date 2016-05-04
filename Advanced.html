@@ -1,5 +1,6 @@
-var Elm = Elm || { Native: {} };
-Elm.Native.Basics = {};
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Advanced.App</title><style>html,head,body { padding:0; margin:0; }
+body { font-family: calibri, helvetica, arial, sans-serif; }</style><script type="text/javascript">var Elm = Elm || { Native: {} };Elm.Native.Basics = {};
 Elm.Native.Basics.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
 	localRuntime.Native.Basics = localRuntime.Native.Basics || {};
@@ -135,7 +136,6 @@ Elm.Native.Basics.make = function(localRuntime) {
 		isInfinite: isInfinite
 	};
 };
-
 Elm.Native.Port = {};
 
 Elm.Native.Port.make = function(localRuntime) {
@@ -267,7 +267,6 @@ Elm.Native.Port.make = function(localRuntime) {
 		outboundSignal: outboundSignal
 	};
 };
-
 if (!Elm.fullscreen) {
 	(function() {
 		'use strict';
@@ -904,7 +903,6 @@ if (!Elm.fullscreen) {
 			: fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 	}
 }
-
 Elm.Native = Elm.Native || {};
 Elm.Native.Utils = {};
 Elm.Native.Utils.make = function(localRuntime) {
@@ -1435,7 +1433,6 @@ Elm.Native.Utils.make = function(localRuntime) {
 		toString: toString
 	};
 };
-
 Elm.Basics = Elm.Basics || {};
 Elm.Basics.make = function (_elm) {
    "use strict";
@@ -1550,8 +1547,7 @@ Elm.Basics.make = function (_elm) {
                                ,LT: LT
                                ,EQ: EQ
                                ,GT: GT};
-};
-Elm.Maybe = Elm.Maybe || {};
+};Elm.Maybe = Elm.Maybe || {};
 Elm.Maybe.make = function (_elm) {
    "use strict";
    _elm.Maybe = _elm.Maybe || {};
@@ -1632,8 +1628,7 @@ Elm.Maybe.make = function (_elm) {
                               ,oneOf: oneOf
                               ,Just: Just
                               ,Nothing: Nothing};
-};
-Elm.Native.List = {};
+};Elm.Native.List = {};
 Elm.Native.List.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
 	localRuntime.Native.List = localRuntime.Native.List || {};
@@ -1797,7 +1792,6 @@ Elm.Native.List.make = function(localRuntime) {
 	};
 	return localRuntime.Native.List.values = Elm.Native.List.values;
 };
-
 Elm.List = Elm.List || {};
 Elm.List.make = function (_elm) {
    "use strict";
@@ -1971,8 +1965,7 @@ Elm.List.make = function (_elm) {
                              ,sort: sort
                              ,sortBy: sortBy
                              ,sortWith: sortWith};
-};
-Elm.Native.Transform2D = {};
+};Elm.Native.Transform2D = {};
 Elm.Native.Transform2D.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
 	localRuntime.Native.Transform2D = localRuntime.Native.Transform2D || {};
@@ -2082,7 +2075,6 @@ Elm.Native.Transform2D.make = function(localRuntime) {
 		*/
 	};
 };
-
 Elm.Transform2D = Elm.Transform2D || {};
 Elm.Transform2D.make = function (_elm) {
    "use strict";
@@ -2109,7 +2101,6 @@ Elm.Transform2D.make = function (_elm) {
                                     ,scaleX: scaleX
                                     ,scaleY: scaleY};
 };
-
 // setup
 Elm.Native = Elm.Native || {};
 Elm.Native.Graphics = Elm.Native.Graphics || {};
@@ -2773,7 +2764,6 @@ Elm.Native.Graphics.Collage.make = function(localRuntime) {
 		collage: F3(collage)
 	};
 };
-
 Elm.Native.Color = {};
 Elm.Native.Color.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
@@ -2813,7 +2803,6 @@ Elm.Native.Color.make = function(localRuntime) {
 		toCss: toCss
 	};
 };
-
 Elm.Color = Elm.Color || {};
 Elm.Color.make = function (_elm) {
    "use strict";
@@ -2977,7 +2966,6 @@ Elm.Color.make = function (_elm) {
                               ,gray: gray
                               ,darkGray: darkGray};
 };
-
 // setup
 Elm.Native = Elm.Native || {};
 Elm.Native.Graphics = Elm.Native.Graphics || {};
@@ -3713,7 +3701,6 @@ Elm.Native.Graphics.Element.make = function(localRuntime) {
 		markdown: markdown
 	};
 };
-
 Elm.Native.Text = {};
 Elm.Native.Text.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
@@ -4001,7 +3988,6 @@ Elm.Native.Text.make = function(localRuntime) {
 		renderHtml: renderHtml
 	};
 };
-
 Elm.Text = Elm.Text || {};
 Elm.Text.make = function (_elm) {
    "use strict";
@@ -4053,8 +4039,7 @@ Elm.Text.make = function (_elm) {
                              ,Under: Under
                              ,Over: Over
                              ,Through: Through};
-};
-Elm.Graphics = Elm.Graphics || {};
+};Elm.Graphics = Elm.Graphics || {};
 Elm.Graphics.Element = Elm.Graphics.Element || {};
 Elm.Graphics.Element.make = function (_elm) {
    "use strict";
@@ -4251,8 +4236,7 @@ Elm.Graphics.Element.make = function (_elm) {
                                          ,topRightAt: topRightAt
                                          ,bottomLeftAt: bottomLeftAt
                                          ,bottomRightAt: bottomRightAt};
-};
-Elm.Graphics = Elm.Graphics || {};
+};Elm.Graphics = Elm.Graphics || {};
 Elm.Graphics.Collage = Elm.Graphics.Collage || {};
 Elm.Graphics.Collage.make = function (_elm) {
    "use strict";
@@ -4383,8 +4367,7 @@ Elm.Graphics.Collage.make = function (_elm) {
                                          ,Smooth: Smooth
                                          ,Sharp: Sharp
                                          ,Clipped: Clipped};
-};
-Elm.Native.Debug = {};
+};Elm.Native.Debug = {};
 Elm.Native.Debug.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
 	localRuntime.Native.Debug = localRuntime.Native.Debug || {};
@@ -4450,7 +4433,6 @@ Elm.Native.Debug.make = function(localRuntime) {
 		watchSummary: F3(watchSummary)
 	};
 };
-
 Elm.Debug = Elm.Debug || {};
 Elm.Debug.make = function (_elm) {
    "use strict";
@@ -4464,8 +4446,7 @@ Elm.Debug.make = function (_elm) {
    var crash = $Native$Debug.crash;
    var log = $Native$Debug.log;
    return _elm.Debug.values = {_op: _op,log: log,crash: crash,watch: watch,watchSummary: watchSummary,trace: trace};
-};
-Elm.Result = Elm.Result || {};
+};Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
    "use strict";
    _elm.Result = _elm.Result || {};
@@ -4565,8 +4546,7 @@ Elm.Result.make = function (_elm) {
                                ,formatError: formatError
                                ,Ok: Ok
                                ,Err: Err};
-};
-Elm.Native.Signal = {};
+};Elm.Native.Signal = {};
 
 Elm.Native.Signal.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
@@ -5036,7 +5016,6 @@ Elm.Native.Signal.make = function(localRuntime) {
 		delay: F2(delay)
 	};
 };
-
 Elm.Native.Task = {};
 
 Elm.Native.Task.make = function(localRuntime) {
@@ -5262,7 +5241,6 @@ Elm.Native.Task.make = function(localRuntime) {
 		sleep: sleep
 	};
 };
-
 Elm.Task = Elm.Task || {};
 Elm.Task.make = function (_elm) {
    "use strict";
@@ -5354,8 +5332,7 @@ Elm.Task.make = function (_elm) {
                              ,fromResult: fromResult
                              ,spawn: spawn
                              ,sleep: sleep};
-};
-Elm.Signal = Elm.Signal || {};
+};Elm.Signal = Elm.Signal || {};
 Elm.Signal.make = function (_elm) {
    "use strict";
    _elm.Signal = _elm.Signal || {};
@@ -5420,8 +5397,7 @@ Elm.Signal.make = function (_elm) {
                                ,message: message
                                ,forwardTo: forwardTo
                                ,Mailbox: Mailbox};
-};
-Elm.Native.Array = {};
+};Elm.Native.Array = {};
 Elm.Native.Array.make = function(localRuntime) {
 
 	localRuntime.Native = localRuntime.Native || {};
@@ -6401,7 +6377,6 @@ Elm.Native.Array.make = function(localRuntime) {
 
 	return localRuntime.Native.Array.values = Elm.Native.Array.values;
 };
-
 Elm.Array = Elm.Array || {};
 Elm.Array.make = function (_elm) {
    "use strict";
@@ -6461,8 +6436,7 @@ Elm.Array.make = function (_elm) {
                               ,filter: filter
                               ,foldl: foldl
                               ,foldr: foldr};
-};
-Elm.Native.Char = {};
+};Elm.Native.Char = {};
 Elm.Native.Char.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
 	localRuntime.Native.Char = localRuntime.Native.Char || {};
@@ -6482,7 +6456,6 @@ Elm.Native.Char.make = function(localRuntime) {
 		toLocaleLower: function(c) { return Utils.chr(c.toLocaleLowerCase()); }
 	};
 };
-
 Elm.Char = Elm.Char || {};
 Elm.Char.make = function (_elm) {
    "use strict";
@@ -6516,8 +6489,7 @@ Elm.Char.make = function (_elm) {
                              ,toLocaleLower: toLocaleLower
                              ,toCode: toCode
                              ,fromCode: fromCode};
-};
-Elm.Native.String = {};
+};Elm.Native.String = {};
 
 Elm.Native.String.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
@@ -6858,7 +6830,6 @@ Elm.Native.String.make = function(localRuntime) {
 		fromList: fromList
 	};
 };
-
 Elm.String = Elm.String || {};
 Elm.String.make = function (_elm) {
    "use strict";
@@ -6949,8 +6920,7 @@ Elm.String.make = function (_elm) {
                                ,foldr: foldr
                                ,any: any
                                ,all: all};
-};
-Elm.Dict = Elm.Dict || {};
+};Elm.Dict = Elm.Dict || {};
 Elm.Dict.make = function (_elm) {
    "use strict";
    _elm.Dict = _elm.Dict || {};
@@ -7510,8 +7480,7 @@ Elm.Dict.make = function (_elm) {
                              ,values: values
                              ,toList: toList
                              ,fromList: fromList};
-};
-Elm.Native.Json = {};
+};Elm.Native.Json = {};
 
 Elm.Native.Json.make = function(localRuntime) {
 	localRuntime.Native = localRuntime.Native || {};
@@ -8006,7 +7975,6 @@ Elm.Native.Json.make = function(localRuntime) {
 
 	};
 };
-
 Elm.Json = Elm.Json || {};
 Elm.Json.Encode = Elm.Json.Encode || {};
 Elm.Json.Encode.make = function (_elm) {
@@ -8036,8 +8004,7 @@ Elm.Json.Encode.make = function (_elm) {
                                     ,list: list
                                     ,array: array
                                     ,object: object};
-};
-Elm.Json = Elm.Json || {};
+};Elm.Json = Elm.Json || {};
 Elm.Json.Decode = Elm.Json.Decode || {};
 Elm.Json.Decode.make = function (_elm) {
    "use strict";
@@ -8128,8 +8095,7 @@ Elm.Json.Decode.make = function (_elm) {
                                     ,andThen: andThen
                                     ,value: value
                                     ,customDecoder: customDecoder};
-};
-Elm.Native.Time = {};
+};Elm.Native.Time = {};
 
 Elm.Native.Time.make = function(localRuntime)
 {
@@ -8238,7 +8204,6 @@ Elm.Native.Time.make = function(localRuntime)
 		read: read
 	};
 };
-
 Elm.Time = Elm.Time || {};
 Elm.Time.make = function (_elm) {
    "use strict";
@@ -8284,8 +8249,7 @@ Elm.Time.make = function (_elm) {
                              ,timestamp: timestamp
                              ,delay: delay
                              ,since: since};
-};
-Elm.Native.Effects = {};
+};Elm.Native.Effects = {};
 Elm.Native.Effects.make = function(localRuntime) {
 
 	localRuntime.Native = localRuntime.Native || {};
@@ -8425,7 +8389,6 @@ Elm.Native.Effects.make = function(localRuntime) {
 	};
 
 };
-
 Elm.Effects = Elm.Effects || {};
 Elm.Effects.make = function (_elm) {
    "use strict";
@@ -8481,8 +8444,7 @@ Elm.Effects.make = function (_elm) {
          default: return Batch(A2($List.map,map(func),_p7._0));}
    });
    return _elm.Effects.values = {_op: _op,none: none,task: task,tick: tick,map: map,batch: batch,toTask: toTask};
-};
-Elm.Response = Elm.Response || {};
+};Elm.Response = Elm.Response || {};
 Elm.Response.make = function (_elm) {
    "use strict";
    _elm.Response = _elm.Response || {};
@@ -8514,8 +8476,7 @@ Elm.Response.make = function (_elm) {
                                  ,mapModel: mapModel
                                  ,mapEffects: mapEffects
                                  ,mapBoth: mapBoth};
-};
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+};(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
 (function (global){
@@ -10109,7 +10070,6 @@ Elm.Native.VirtualDom.make = function(elm)
 };
 
 },{"virtual-dom/vdom/create-element":6,"virtual-dom/vdom/patch":9,"virtual-dom/vnode/is-vhook":13,"virtual-dom/vnode/vnode":18,"virtual-dom/vnode/vtext":20,"virtual-dom/vtree/diff":22}]},{},[23]);
-
 Elm.VirtualDom = Elm.VirtualDom || {};
 Elm.VirtualDom.make = function (_elm) {
    "use strict";
@@ -10157,8 +10117,7 @@ Elm.VirtualDom.make = function (_elm) {
                                    ,lazy2: lazy2
                                    ,lazy3: lazy3
                                    ,Options: Options};
-};
-Elm.Html = Elm.Html || {};
+};Elm.Html = Elm.Html || {};
 Elm.Html.make = function (_elm) {
    "use strict";
    _elm.Html = _elm.Html || {};
@@ -10380,8 +10339,7 @@ Elm.Html.make = function (_elm) {
                              ,summary: summary
                              ,menuitem: menuitem
                              ,menu: menu};
-};
-Elm.Html = Elm.Html || {};
+};Elm.Html = Elm.Html || {};
 Elm.Html.Attributes = Elm.Html.Attributes || {};
 Elm.Html.Attributes.make = function (_elm) {
    "use strict";
@@ -10605,8 +10563,7 @@ Elm.Html.Attributes.make = function (_elm) {
                                         ,manifest: manifest
                                         ,property: property
                                         ,attribute: attribute};
-};
-Elm.Html = Elm.Html || {};
+};Elm.Html = Elm.Html || {};
 Elm.Html.Events = Elm.Html.Events || {};
 Elm.Html.Events.make = function (_elm) {
    "use strict";
@@ -10671,8 +10628,7 @@ Elm.Html.Events.make = function (_elm) {
                                     ,targetChecked: targetChecked
                                     ,keyCode: keyCode
                                     ,Options: Options};
-};
-Elm.StartApp = Elm.StartApp || {};
+};Elm.StartApp = Elm.StartApp || {};
 Elm.StartApp.make = function (_elm) {
    "use strict";
    _elm.StartApp = _elm.StartApp || {};
@@ -10710,8 +10666,7 @@ Elm.StartApp.make = function (_elm) {
    var App = F3(function (a,b,c) {    return {html: a,model: b,tasks: c};});
    var Config = F4(function (a,b,c,d) {    return {init: a,update: b,view: c,inputs: d};});
    return _elm.StartApp.values = {_op: _op,start: start,Config: Config,App: App};
-};
-Elm.Exts = Elm.Exts || {};
+};Elm.Exts = Elm.Exts || {};
 Elm.Exts.Html = Elm.Exts.Html || {};
 Elm.Exts.Html.Bootstrap = Elm.Exts.Html.Bootstrap || {};
 Elm.Exts.Html.Bootstrap.make = function (_elm) {
@@ -10794,8 +10749,7 @@ Elm.Exts.Html.Bootstrap.make = function (_elm) {
                                             ,Right: Right
                                             ,Bottom: Bottom
                                             ,Left: Left};
-};
-Elm.Exts = Elm.Exts || {};
+};Elm.Exts = Elm.Exts || {};
 Elm.Exts.Maybe = Elm.Exts.Maybe || {};
 Elm.Exts.Maybe.make = function (_elm) {
    "use strict";
@@ -10842,16 +10796,17 @@ Elm.Exts.Maybe.make = function (_elm) {
    var isJust = function (x) {    var _p3 = x;if (_p3.ctor === "Just") {    return true;} else {    return false;}};
    var isNothing = function (_p4) {    return $Basics.not(isJust(_p4));};
    return _elm.Exts.Maybe.values = {_op: _op,isJust: isJust,isNothing: isNothing,maybe: maybe,mappend: mappend,catMaybes: catMaybes};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Batman = Elm.Heroes.Batman || {};
-Elm.Heroes.Batman.Types = Elm.Heroes.Batman.Types || {};
-Elm.Heroes.Batman.Types.make = function (_elm) {
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Batman = Elm.Advanced.Heroes.Batman || {};
+Elm.Advanced.Heroes.Batman.Types = Elm.Advanced.Heroes.Batman.Types || {};
+Elm.Advanced.Heroes.Batman.Types.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Batman = _elm.Heroes.Batman || {};
-   _elm.Heroes.Batman.Types = _elm.Heroes.Batman.Types || {};
-   if (_elm.Heroes.Batman.Types.values) return _elm.Heroes.Batman.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Batman = _elm.Advanced.Heroes.Batman || {};
+   _elm.Advanced.Heroes.Batman.Types = _elm.Advanced.Heroes.Batman.Types || {};
+   if (_elm.Advanced.Heroes.Batman.Types.values) return _elm.Advanced.Heroes.Batman.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10862,18 +10817,19 @@ Elm.Heroes.Batman.Types.make = function (_elm) {
    var _op = {};
    var Finished = {ctor: "Finished"};
    var Kapow = {ctor: "Kapow"};
-   var Model = F2(function (a,b) {    return {kapows: a,showModal: b};});
-   return _elm.Heroes.Batman.Types.values = {_op: _op,Model: Model,Kapow: Kapow,Finished: Finished};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Superman = Elm.Heroes.Superman || {};
-Elm.Heroes.Superman.Types = Elm.Heroes.Superman.Types || {};
-Elm.Heroes.Superman.Types.make = function (_elm) {
+   var Model = F2(function (a,b) {    return {kapows: a,showDialog: b};});
+   return _elm.Advanced.Heroes.Batman.Types.values = {_op: _op,Model: Model,Kapow: Kapow,Finished: Finished};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Superman = Elm.Advanced.Heroes.Superman || {};
+Elm.Advanced.Heroes.Superman.Types = Elm.Advanced.Heroes.Superman.Types || {};
+Elm.Advanced.Heroes.Superman.Types.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Superman = _elm.Heroes.Superman || {};
-   _elm.Heroes.Superman.Types = _elm.Heroes.Superman.Types || {};
-   if (_elm.Heroes.Superman.Types.values) return _elm.Heroes.Superman.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Superman = _elm.Advanced.Heroes.Superman || {};
+   _elm.Advanced.Heroes.Superman.Types = _elm.Advanced.Heroes.Superman.Types || {};
+   if (_elm.Advanced.Heroes.Superman.Types.values) return _elm.Advanced.Heroes.Superman.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10884,17 +10840,18 @@ Elm.Heroes.Superman.Types.make = function (_elm) {
    var _op = {};
    var Punch = {ctor: "Punch"};
    var Model = function (a) {    return {punches: a};};
-   return _elm.Heroes.Superman.Types.values = {_op: _op,Model: Model,Punch: Punch};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.WonderWoman = Elm.Heroes.WonderWoman || {};
-Elm.Heroes.WonderWoman.Types = Elm.Heroes.WonderWoman.Types || {};
-Elm.Heroes.WonderWoman.Types.make = function (_elm) {
+   return _elm.Advanced.Heroes.Superman.Types.values = {_op: _op,Model: Model,Punch: Punch};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.WonderWoman = Elm.Advanced.Heroes.WonderWoman || {};
+Elm.Advanced.Heroes.WonderWoman.Types = Elm.Advanced.Heroes.WonderWoman.Types || {};
+Elm.Advanced.Heroes.WonderWoman.Types.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.WonderWoman = _elm.Heroes.WonderWoman || {};
-   _elm.Heroes.WonderWoman.Types = _elm.Heroes.WonderWoman.Types || {};
-   if (_elm.Heroes.WonderWoman.Types.values) return _elm.Heroes.WonderWoman.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.WonderWoman = _elm.Advanced.Heroes.WonderWoman || {};
+   _elm.Advanced.Heroes.WonderWoman.Types = _elm.Advanced.Heroes.WonderWoman.Types || {};
+   if (_elm.Advanced.Heroes.WonderWoman.Types.values) return _elm.Advanced.Heroes.WonderWoman.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10905,21 +10862,22 @@ Elm.Heroes.WonderWoman.Types.make = function (_elm) {
    var _op = {};
    var Swipe = {ctor: "Swipe"};
    var Model = function (a) {    return {swordSwipes: a};};
-   return _elm.Heroes.WonderWoman.Types.values = {_op: _op,Model: Model,Swipe: Swipe};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Types = Elm.Heroes.Types || {};
-Elm.Heroes.Types.make = function (_elm) {
+   return _elm.Advanced.Heroes.WonderWoman.Types.values = {_op: _op,Model: Model,Swipe: Swipe};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Types = Elm.Advanced.Heroes.Types || {};
+Elm.Advanced.Heroes.Types.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Types = _elm.Heroes.Types || {};
-   if (_elm.Heroes.Types.values) return _elm.Heroes.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Types = _elm.Advanced.Heroes.Types || {};
+   if (_elm.Advanced.Heroes.Types.values) return _elm.Advanced.Heroes.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Batman$Types = Elm.Advanced.Heroes.Batman.Types.make(_elm),
+   $Advanced$Heroes$Superman$Types = Elm.Advanced.Heroes.Superman.Types.make(_elm),
+   $Advanced$Heroes$WonderWoman$Types = Elm.Advanced.Heroes.WonderWoman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Batman$Types = Elm.Heroes.Batman.Types.make(_elm),
-   $Heroes$Superman$Types = Elm.Heroes.Superman.Types.make(_elm),
-   $Heroes$WonderWoman$Types = Elm.Heroes.WonderWoman.Types.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
@@ -10933,25 +10891,26 @@ Elm.Heroes.Types.make = function (_elm) {
    var SupermanView = {ctor: "SupermanView"};
    var BatmanView = {ctor: "BatmanView"};
    var Model = F4(function (a,b,c,d) {    return {batman: a,superman: b,wonderWoman: c,view: d};});
-   return _elm.Heroes.Types.values = {_op: _op
-                                     ,Model: Model
-                                     ,BatmanView: BatmanView
-                                     ,SupermanView: SupermanView
-                                     ,WonderWomanView: WonderWomanView
-                                     ,BatmanAction: BatmanAction
-                                     ,SupermanAction: SupermanAction
-                                     ,WonderWomanAction: WonderWomanAction
-                                     ,SetView: SetView};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Joker = Elm.Villains.Joker || {};
-Elm.Villains.Joker.Types = Elm.Villains.Joker.Types || {};
-Elm.Villains.Joker.Types.make = function (_elm) {
+   return _elm.Advanced.Heroes.Types.values = {_op: _op
+                                              ,Model: Model
+                                              ,BatmanView: BatmanView
+                                              ,SupermanView: SupermanView
+                                              ,WonderWomanView: WonderWomanView
+                                              ,BatmanAction: BatmanAction
+                                              ,SupermanAction: SupermanAction
+                                              ,WonderWomanAction: WonderWomanAction
+                                              ,SetView: SetView};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Joker = Elm.Advanced.Villains.Joker || {};
+Elm.Advanced.Villains.Joker.Types = Elm.Advanced.Villains.Joker.Types || {};
+Elm.Advanced.Villains.Joker.Types.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Joker = _elm.Villains.Joker || {};
-   _elm.Villains.Joker.Types = _elm.Villains.Joker.Types || {};
-   if (_elm.Villains.Joker.Types.values) return _elm.Villains.Joker.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Joker = _elm.Advanced.Villains.Joker || {};
+   _elm.Advanced.Villains.Joker.Types = _elm.Advanced.Villains.Joker.Types || {};
+   if (_elm.Advanced.Villains.Joker.Types.values) return _elm.Advanced.Villains.Joker.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10960,19 +10919,21 @@ Elm.Villains.Joker.Types.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var TakeDamage = {ctor: "TakeDamage"};
    var Shoot = {ctor: "Shoot"};
-   var Model = function (a) {    return {shots: a};};
-   return _elm.Villains.Joker.Types.values = {_op: _op,Model: Model,Shoot: Shoot};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Penguin = Elm.Villains.Penguin || {};
-Elm.Villains.Penguin.Types = Elm.Villains.Penguin.Types || {};
-Elm.Villains.Penguin.Types.make = function (_elm) {
+   var Model = F2(function (a,b) {    return {shots: a,health: b};});
+   return _elm.Advanced.Villains.Joker.Types.values = {_op: _op,Model: Model,Shoot: Shoot,TakeDamage: TakeDamage};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Penguin = Elm.Advanced.Villains.Penguin || {};
+Elm.Advanced.Villains.Penguin.Types = Elm.Advanced.Villains.Penguin.Types || {};
+Elm.Advanced.Villains.Penguin.Types.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Penguin = _elm.Villains.Penguin || {};
-   _elm.Villains.Penguin.Types = _elm.Villains.Penguin.Types || {};
-   if (_elm.Villains.Penguin.Types.values) return _elm.Villains.Penguin.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Penguin = _elm.Advanced.Villains.Penguin || {};
+   _elm.Advanced.Villains.Penguin.Types = _elm.Advanced.Villains.Penguin.Types || {};
+   if (_elm.Advanced.Villains.Penguin.Types.values) return _elm.Advanced.Villains.Penguin.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10981,75 +10942,92 @@ Elm.Villains.Penguin.Types.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var TakeDamage = {ctor: "TakeDamage"};
    var Close = {ctor: "Close"};
    var Wark = {ctor: "Wark"};
-   var Model = F2(function (a,b) {    return {warks: a,quiet: b};});
-   return _elm.Villains.Penguin.Types.values = {_op: _op,Model: Model,Wark: Wark,Close: Close};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Types = Elm.Villains.Types || {};
-Elm.Villains.Types.make = function (_elm) {
+   var Model = F3(function (a,b,c) {    return {warks: a,health: b,state: c};});
+   var Hurt = {ctor: "Hurt"};
+   var Warking = {ctor: "Warking"};
+   var Quiet = {ctor: "Quiet"};
+   return _elm.Advanced.Villains.Penguin.Types.values = {_op: _op
+                                                        ,Quiet: Quiet
+                                                        ,Warking: Warking
+                                                        ,Hurt: Hurt
+                                                        ,Model: Model
+                                                        ,Wark: Wark
+                                                        ,Close: Close
+                                                        ,TakeDamage: TakeDamage};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Types = Elm.Advanced.Villains.Types || {};
+Elm.Advanced.Villains.Types.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Types = _elm.Villains.Types || {};
-   if (_elm.Villains.Types.values) return _elm.Villains.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Types = _elm.Advanced.Villains.Types || {};
+   if (_elm.Advanced.Villains.Types.values) return _elm.Advanced.Villains.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Joker$Types = Elm.Advanced.Villains.Joker.Types.make(_elm),
+   $Advanced$Villains$Penguin$Types = Elm.Advanced.Villains.Penguin.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Villains$Joker$Types = Elm.Villains.Joker.Types.make(_elm),
-   $Villains$Penguin$Types = Elm.Villains.Penguin.Types.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
    var _op = {};
    var SetView = function (a) {    return {ctor: "SetView",_0: a};};
+   var TakeDamage = {ctor: "TakeDamage"};
    var PenguinAction = function (a) {    return {ctor: "PenguinAction",_0: a};};
    var JokerAction = function (a) {    return {ctor: "JokerAction",_0: a};};
    var PenguinView = {ctor: "PenguinView"};
    var JokerView = {ctor: "JokerView"};
    var Model = F3(function (a,b,c) {    return {joker: a,penguin: b,view: c};});
-   return _elm.Villains.Types.values = {_op: _op
-                                       ,Model: Model
-                                       ,JokerView: JokerView
-                                       ,PenguinView: PenguinView
-                                       ,JokerAction: JokerAction
-                                       ,PenguinAction: PenguinAction
-                                       ,SetView: SetView};
-};
-Elm.Types = Elm.Types || {};
-Elm.Types.make = function (_elm) {
+   return _elm.Advanced.Villains.Types.values = {_op: _op
+                                                ,Model: Model
+                                                ,JokerView: JokerView
+                                                ,PenguinView: PenguinView
+                                                ,JokerAction: JokerAction
+                                                ,PenguinAction: PenguinAction
+                                                ,TakeDamage: TakeDamage
+                                                ,SetView: SetView};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Types = Elm.Advanced.Types || {};
+Elm.Advanced.Types.make = function (_elm) {
    "use strict";
-   _elm.Types = _elm.Types || {};
-   if (_elm.Types.values) return _elm.Types.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Types = _elm.Advanced.Types || {};
+   if (_elm.Advanced.Types.values) return _elm.Advanced.Types.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Types = Elm.Advanced.Heroes.Types.make(_elm),
+   $Advanced$Villains$Types = Elm.Advanced.Villains.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Types = Elm.Heroes.Types.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Villains$Types = Elm.Villains.Types.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
    var _op = {};
    var Model = F2(function (a,b) {    return {heroes: a,villains: b};});
+   var HeroAttack = {ctor: "HeroAttack"};
    var VillainsAction = function (a) {    return {ctor: "VillainsAction",_0: a};};
    var HeroesAction = function (a) {    return {ctor: "HeroesAction",_0: a};};
-   return _elm.Types.values = {_op: _op,HeroesAction: HeroesAction,VillainsAction: VillainsAction,Model: Model};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Batman = Elm.Heroes.Batman || {};
-Elm.Heroes.Batman.State = Elm.Heroes.Batman.State || {};
-Elm.Heroes.Batman.State.make = function (_elm) {
+   return _elm.Advanced.Types.values = {_op: _op,HeroesAction: HeroesAction,VillainsAction: VillainsAction,HeroAttack: HeroAttack,Model: Model};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Batman = Elm.Advanced.Heroes.Batman || {};
+Elm.Advanced.Heroes.Batman.State = Elm.Advanced.Heroes.Batman.State || {};
+Elm.Advanced.Heroes.Batman.State.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Batman = _elm.Heroes.Batman || {};
-   _elm.Heroes.Batman.State = _elm.Heroes.Batman.State || {};
-   if (_elm.Heroes.Batman.State.values) return _elm.Heroes.Batman.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Batman = _elm.Advanced.Heroes.Batman || {};
+   _elm.Advanced.Heroes.Batman.State = _elm.Advanced.Heroes.Batman.State || {};
+   if (_elm.Advanced.Heroes.Batman.State.values) return _elm.Advanced.Heroes.Batman.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Batman$Types = Elm.Advanced.Heroes.Batman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Batman$Types = Elm.Heroes.Batman.Types.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
@@ -11059,27 +11037,28 @@ Elm.Heroes.Batman.State.make = function (_elm) {
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "Kapow") {
-            return $Response.withNone(_U.update(model,{kapows: model.kapows + 2,showModal: true}));
+            return $Response.withNone(_U.update(model,{kapows: model.kapows + 2,showDialog: true}));
          } else {
-            return $Response.withNone(_U.update(model,{showModal: false}));
+            return $Response.withNone(_U.update(model,{showDialog: false}));
          }
    });
-   var initialModel = {kapows: 1000,showModal: false};
-   return _elm.Heroes.Batman.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Superman = Elm.Heroes.Superman || {};
-Elm.Heroes.Superman.State = Elm.Heroes.Superman.State || {};
-Elm.Heroes.Superman.State.make = function (_elm) {
+   var initialModel = {kapows: 1000,showDialog: false};
+   return _elm.Advanced.Heroes.Batman.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Superman = Elm.Advanced.Heroes.Superman || {};
+Elm.Advanced.Heroes.Superman.State = Elm.Advanced.Heroes.Superman.State || {};
+Elm.Advanced.Heroes.Superman.State.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Superman = _elm.Heroes.Superman || {};
-   _elm.Heroes.Superman.State = _elm.Heroes.Superman.State || {};
-   if (_elm.Heroes.Superman.State.values) return _elm.Heroes.Superman.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Superman = _elm.Advanced.Heroes.Superman || {};
+   _elm.Advanced.Heroes.Superman.State = _elm.Advanced.Heroes.Superman.State || {};
+   if (_elm.Advanced.Heroes.Superman.State.values) return _elm.Advanced.Heroes.Superman.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Superman$Types = Elm.Advanced.Heroes.Superman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Superman$Types = Elm.Heroes.Superman.Types.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
@@ -11088,21 +11067,22 @@ Elm.Heroes.Superman.State.make = function (_elm) {
    var _op = {};
    var update = F2(function (action,model) {    var _p0 = action;return $Response.withNone(_U.update(model,{punches: model.punches + 1}));});
    var initialModel = {punches: 100};
-   return _elm.Heroes.Superman.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.WonderWoman = Elm.Heroes.WonderWoman || {};
-Elm.Heroes.WonderWoman.State = Elm.Heroes.WonderWoman.State || {};
-Elm.Heroes.WonderWoman.State.make = function (_elm) {
+   return _elm.Advanced.Heroes.Superman.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.WonderWoman = Elm.Advanced.Heroes.WonderWoman || {};
+Elm.Advanced.Heroes.WonderWoman.State = Elm.Advanced.Heroes.WonderWoman.State || {};
+Elm.Advanced.Heroes.WonderWoman.State.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.WonderWoman = _elm.Heroes.WonderWoman || {};
-   _elm.Heroes.WonderWoman.State = _elm.Heroes.WonderWoman.State || {};
-   if (_elm.Heroes.WonderWoman.State.values) return _elm.Heroes.WonderWoman.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.WonderWoman = _elm.Advanced.Heroes.WonderWoman || {};
+   _elm.Advanced.Heroes.WonderWoman.State = _elm.Advanced.Heroes.WonderWoman.State || {};
+   if (_elm.Advanced.Heroes.WonderWoman.State.values) return _elm.Advanced.Heroes.WonderWoman.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$WonderWoman$Types = Elm.Advanced.Heroes.WonderWoman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$WonderWoman$Types = Elm.Heroes.WonderWoman.Types.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
@@ -11111,22 +11091,23 @@ Elm.Heroes.WonderWoman.State.make = function (_elm) {
    var _op = {};
    var update = F2(function (action,model) {    var _p0 = action;return $Response.withNone(_U.update(model,{swordSwipes: model.swordSwipes + 1}));});
    var initialModel = {swordSwipes: 5999};
-   return _elm.Heroes.WonderWoman.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.State = Elm.Heroes.State || {};
-Elm.Heroes.State.make = function (_elm) {
+   return _elm.Advanced.Heroes.WonderWoman.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.State = Elm.Advanced.Heroes.State || {};
+Elm.Advanced.Heroes.State.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.State = _elm.Heroes.State || {};
-   if (_elm.Heroes.State.values) return _elm.Heroes.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.State = _elm.Advanced.Heroes.State || {};
+   if (_elm.Advanced.Heroes.State.values) return _elm.Advanced.Heroes.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Batman$State = Elm.Advanced.Heroes.Batman.State.make(_elm),
+   $Advanced$Heroes$Superman$State = Elm.Advanced.Heroes.Superman.State.make(_elm),
+   $Advanced$Heroes$Types = Elm.Advanced.Heroes.Types.make(_elm),
+   $Advanced$Heroes$WonderWoman$State = Elm.Advanced.Heroes.WonderWoman.State.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Batman$State = Elm.Heroes.Batman.State.make(_elm),
-   $Heroes$Superman$State = Elm.Heroes.Superman.State.make(_elm),
-   $Heroes$Types = Elm.Heroes.Types.make(_elm),
-   $Heroes$WonderWoman$State = Elm.Heroes.WonderWoman.State.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
@@ -11141,164 +11122,196 @@ Elm.Heroes.State.make = function (_elm) {
            function (x) {
               return _U.update(model,{batman: x});
            },
-           $Heroes$Types.BatmanAction,
-           A2($Heroes$Batman$State.update,_p0._0,model.batman));
+           $Advanced$Heroes$Types.BatmanAction,
+           A2($Advanced$Heroes$Batman$State.update,_p0._0,model.batman));
          case "SupermanAction": return A3($Response.mapBoth,
            function (x) {
               return _U.update(model,{superman: x});
            },
-           $Heroes$Types.SupermanAction,
-           A2($Heroes$Superman$State.update,_p0._0,model.superman));
+           $Advanced$Heroes$Types.SupermanAction,
+           A2($Advanced$Heroes$Superman$State.update,_p0._0,model.superman));
          default: return A3($Response.mapBoth,
            function (x) {
               return _U.update(model,{wonderWoman: x});
            },
-           $Heroes$Types.WonderWomanAction,
-           A2($Heroes$WonderWoman$State.update,_p0._0,model.wonderWoman));}
+           $Advanced$Heroes$Types.WonderWomanAction,
+           A2($Advanced$Heroes$WonderWoman$State.update,_p0._0,model.wonderWoman));}
    });
-   var initialModel = {batman: $Heroes$Batman$State.initialModel
-                      ,superman: $Heroes$Superman$State.initialModel
-                      ,wonderWoman: $Heroes$WonderWoman$State.initialModel
-                      ,view: $Heroes$Types.BatmanView};
-   return _elm.Heroes.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Joker = Elm.Villains.Joker || {};
-Elm.Villains.Joker.State = Elm.Villains.Joker.State || {};
-Elm.Villains.Joker.State.make = function (_elm) {
+   var initialModel = {batman: $Advanced$Heroes$Batman$State.initialModel
+                      ,superman: $Advanced$Heroes$Superman$State.initialModel
+                      ,wonderWoman: $Advanced$Heroes$WonderWoman$State.initialModel
+                      ,view: $Advanced$Heroes$Types.BatmanView};
+   return _elm.Advanced.Heroes.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Joker = Elm.Advanced.Villains.Joker || {};
+Elm.Advanced.Villains.Joker.State = Elm.Advanced.Villains.Joker.State || {};
+Elm.Advanced.Villains.Joker.State.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Joker = _elm.Villains.Joker || {};
-   _elm.Villains.Joker.State = _elm.Villains.Joker.State || {};
-   if (_elm.Villains.Joker.State.values) return _elm.Villains.Joker.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Joker = _elm.Advanced.Villains.Joker || {};
+   _elm.Advanced.Villains.Joker.State = _elm.Advanced.Villains.Joker.State || {};
+   if (_elm.Advanced.Villains.Joker.State.values) return _elm.Advanced.Villains.Joker.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Joker$Types = Elm.Advanced.Villains.Joker.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Villains$Joker$Types = Elm.Villains.Joker.Types.make(_elm);
-   var _op = {};
-   var update = F2(function (action,model) {    var _p0 = action;return $Response.withNone(_U.update(model,{shots: model.shots + 1}));});
-   var initialModel = {shots: 0};
-   return _elm.Villains.Joker.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Penguin = Elm.Villains.Penguin || {};
-Elm.Villains.Penguin.State = Elm.Villains.Penguin.State || {};
-Elm.Villains.Penguin.State.make = function (_elm) {
-   "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Penguin = _elm.Villains.Penguin || {};
-   _elm.Villains.Penguin.State = _elm.Villains.Penguin.State || {};
-   if (_elm.Villains.Penguin.State.values) return _elm.Villains.Penguin.State.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm),
-   $Debug = Elm.Debug.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Response = Elm.Response.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Villains$Penguin$Types = Elm.Villains.Penguin.Types.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
    var _op = {};
    var update = F2(function (action,model) {
       var _p0 = action;
-      if (_p0.ctor === "Wark") {
-            return $Response.withNone(_U.update(model,{warks: model.warks + 3,quiet: false}));
+      if (_p0.ctor === "Shoot") {
+            return $Response.withNone(_U.update(model,{shots: model.shots + 1}));
          } else {
-            return $Response.withNone(_U.update(model,{quiet: true}));
+            return $Response.withNone(_U.update(model,{health: model.health - 1}));
          }
    });
-   var initialModel = {warks: 0,quiet: true};
-   return _elm.Villains.Penguin.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.State = Elm.Villains.State || {};
-Elm.Villains.State.make = function (_elm) {
+   var initialModel = {shots: 0,health: 50};
+   return _elm.Advanced.Villains.Joker.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Penguin = Elm.Advanced.Villains.Penguin || {};
+Elm.Advanced.Villains.Penguin.State = Elm.Advanced.Villains.Penguin.State || {};
+Elm.Advanced.Villains.Penguin.State.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.State = _elm.Villains.State || {};
-   if (_elm.Villains.State.values) return _elm.Villains.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Penguin = _elm.Advanced.Villains.Penguin || {};
+   _elm.Advanced.Villains.Penguin.State = _elm.Advanced.Villains.Penguin.State || {};
+   if (_elm.Advanced.Villains.Penguin.State.values) return _elm.Advanced.Villains.Penguin.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Penguin$Types = Elm.Advanced.Villains.Penguin.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Villains$Joker$State = Elm.Villains.Joker.State.make(_elm),
-   $Villains$Penguin$State = Elm.Villains.Penguin.State.make(_elm),
-   $Villains$Types = Elm.Villains.Types.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
    var _op = {};
    var update = F2(function (action,model) {
       var _p0 = action;
       switch (_p0.ctor)
-      {case "SetView": return $Response.withNone(_U.update(model,{view: _p0._0}));
-         case "JokerAction": return A3($Response.mapBoth,
-           function (x) {
-              return _U.update(model,{joker: x});
-           },
-           $Villains$Types.JokerAction,
-           A2($Villains$Joker$State.update,_p0._0,model.joker));
-         default: return A3($Response.mapBoth,
-           function (x) {
-              return _U.update(model,{penguin: x});
-           },
-           $Villains$Types.PenguinAction,
-           A2($Villains$Penguin$State.update,_p0._0,model.penguin));}
+      {case "Wark": return $Response.withNone(_U.update(model,{warks: model.warks + 3,state: $Advanced$Villains$Penguin$Types.Warking}));
+         case "TakeDamage": return $Response.withNone(_U.update(model,{health: model.health - 2,state: $Advanced$Villains$Penguin$Types.Hurt}));
+         default: return $Response.withNone(_U.update(model,{state: $Advanced$Villains$Penguin$Types.Quiet}));}
    });
-   var initialModel = {joker: $Villains$Joker$State.initialModel,penguin: $Villains$Penguin$State.initialModel,view: $Villains$Types.JokerView};
-   return _elm.Villains.State.values = {_op: _op,initialModel: initialModel,update: update};
-};
-Elm.State = Elm.State || {};
-Elm.State.make = function (_elm) {
+   var initialModel = {warks: 0,health: 100,state: $Advanced$Villains$Penguin$Types.Quiet};
+   return _elm.Advanced.Villains.Penguin.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.State = Elm.Advanced.Villains.State || {};
+Elm.Advanced.Villains.State.make = function (_elm) {
    "use strict";
-   _elm.State = _elm.State || {};
-   if (_elm.State.values) return _elm.State.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.State = _elm.Advanced.Villains.State || {};
+   if (_elm.Advanced.Villains.State.values) return _elm.Advanced.Villains.State.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Joker$State = Elm.Advanced.Villains.Joker.State.make(_elm),
+   $Advanced$Villains$Joker$Types = Elm.Advanced.Villains.Joker.Types.make(_elm),
+   $Advanced$Villains$Penguin$State = Elm.Advanced.Villains.Penguin.State.make(_elm),
+   $Advanced$Villains$Penguin$Types = Elm.Advanced.Villains.Penguin.Types.make(_elm),
+   $Advanced$Villains$Types = Elm.Advanced.Villains.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Effects = Elm.Effects.make(_elm),
-   $Heroes$State = Elm.Heroes.State.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Response = Elm.Response.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Types = Elm.Types.make(_elm),
-   $Villains$State = Elm.Villains.State.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var update = F2(function (action,model) {
+      update: while (true) {
+         var _p0 = action;
+         switch (_p0.ctor)
+         {case "SetView": return $Response.withNone(_U.update(model,{view: _p0._0}));
+            case "JokerAction": return A3($Response.mapBoth,
+              function (x) {
+                 return _U.update(model,{joker: x});
+              },
+              $Advanced$Villains$Types.JokerAction,
+              A2($Advanced$Villains$Joker$State.update,_p0._0,model.joker));
+            case "PenguinAction": return A3($Response.mapBoth,
+              function (x) {
+                 return _U.update(model,{penguin: x});
+              },
+              $Advanced$Villains$Types.PenguinAction,
+              A2($Advanced$Villains$Penguin$State.update,_p0._0,model.penguin));
+            default: var _p1 = model.view;
+              if (_p1.ctor === "JokerView") {
+                    var _v2 = $Advanced$Villains$Types.JokerAction($Advanced$Villains$Joker$Types.TakeDamage),_v3 = model;
+                    action = _v2;
+                    model = _v3;
+                    continue update;
+                 } else {
+                    var _v4 = $Advanced$Villains$Types.PenguinAction($Advanced$Villains$Penguin$Types.TakeDamage),_v5 = model;
+                    action = _v4;
+                    model = _v5;
+                    continue update;
+                 }}
+      }
+   });
+   var initialModel = {joker: $Advanced$Villains$Joker$State.initialModel
+                      ,penguin: $Advanced$Villains$Penguin$State.initialModel
+                      ,view: $Advanced$Villains$Types.PenguinView};
+   return _elm.Advanced.Villains.State.values = {_op: _op,initialModel: initialModel,update: update};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.State = Elm.Advanced.State || {};
+Elm.Advanced.State.make = function (_elm) {
+   "use strict";
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.State = _elm.Advanced.State || {};
+   if (_elm.Advanced.State.values) return _elm.Advanced.State.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$State = Elm.Advanced.Heroes.State.make(_elm),
+   $Advanced$Types = Elm.Advanced.Types.make(_elm),
+   $Advanced$Villains$State = Elm.Advanced.Villains.State.make(_elm),
+   $Advanced$Villains$Types = Elm.Advanced.Villains.Types.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Response = Elm.Response.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
    var _op = {};
    var update = F2(function (action,model) {
       var _p0 = action;
-      if (_p0.ctor === "HeroesAction") {
-            return A3($Response.mapBoth,
-            function (x) {
-               return _U.update(model,{heroes: x});
-            },
-            $Types.HeroesAction,
-            A2($Heroes$State.update,_p0._0,model.heroes));
-         } else {
-            return A3($Response.mapBoth,
-            function (x) {
-               return _U.update(model,{villains: x});
-            },
-            $Types.VillainsAction,
-            A2($Villains$State.update,_p0._0,model.villains));
-         }
+      switch (_p0.ctor)
+      {case "HeroesAction": return A3($Response.mapBoth,
+           function (x) {
+              return _U.update(model,{heroes: x});
+           },
+           $Advanced$Types.HeroesAction,
+           A2($Advanced$Heroes$State.update,_p0._0,model.heroes));
+         case "VillainsAction": return A3($Response.mapBoth,
+           function (x) {
+              return _U.update(model,{villains: x});
+           },
+           $Advanced$Types.VillainsAction,
+           A2($Advanced$Villains$State.update,_p0._0,model.villains));
+         default: return A3($Response.mapBoth,
+           function (x) {
+              return _U.update(model,{villains: x});
+           },
+           $Advanced$Types.VillainsAction,
+           A2($Advanced$Villains$State.update,$Advanced$Villains$Types.TakeDamage,model.villains));}
    });
    var initialEffects = $Effects.none;
-   var initialModel = {heroes: $Heroes$State.initialModel,villains: $Villains$State.initialModel};
-   return _elm.State.values = {_op: _op,initialModel: initialModel,initialEffects: initialEffects,update: update};
-};
-Elm.Viscose = Elm.Viscose || {};
-Elm.Viscose.make = function (_elm) {
+   var initialModel = {heroes: $Advanced$Heroes$State.initialModel,villains: $Advanced$Villains$State.initialModel};
+   return _elm.Advanced.State.values = {_op: _op,initialModel: initialModel,initialEffects: initialEffects,update: update};
+};Elm.Dialog = Elm.Dialog || {};
+Elm.Dialog.make = function (_elm) {
    "use strict";
-   _elm.Viscose = _elm.Viscose || {};
-   if (_elm.Viscose.values) return _elm.Viscose.values;
+   _elm.Dialog = _elm.Dialog || {};
+   if (_elm.Dialog.values) return _elm.Dialog.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -11312,6 +11325,7 @@ Elm.Viscose.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var Config = F4(function (a,b,c,d) {    return {closeMessage: a,header: b,body: c,footer: d};});
    var backdrop = function (config) {
       return A2($Html.div,
       _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "modal-backdrop in",_1: $Exts$Maybe.isJust(config)}]))]),
@@ -11327,12 +11341,12 @@ Elm.Viscose.make = function (_elm) {
               _U.list([$Html.text("x")]))
               ,header]));
    });
-   var root = function (maybeConfig) {
+   var view = function (maybeConfig) {
       var displayed = $Exts$Maybe.isJust(maybeConfig);
       return A2($Html.div,
       _U.list([]),
       _U.list([A2($Html.div,
-              _U.list([$Html$Attributes.key("modal")
+              _U.list([$Html$Attributes.key("dialog")
                       ,$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "modal",_1: true},{ctor: "_Tuple2",_0: "in",_1: displayed}]))
                       ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: displayed ? "block" : "none"}]))]),
               _U.list([A2($Html.div,
@@ -11352,10 +11366,8 @@ Elm.Viscose.make = function (_elm) {
               }())]))]))
               ,backdrop(maybeConfig)]));
    };
-   var Config = F4(function (a,b,c,d) {    return {closeMessage: a,header: b,body: c,footer: d};});
-   return _elm.Viscose.values = {_op: _op,root: root,Config: Config};
-};
-Elm.Utils = Elm.Utils || {};
+   return _elm.Dialog.values = {_op: _op,view: view,Config: Config};
+};Elm.Utils = Elm.Utils || {};
 Elm.Utils.make = function (_elm) {
    "use strict";
    _elm.Utils = _elm.Utils || {};
@@ -11371,248 +11383,288 @@ Elm.Utils.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var bootstrap = A3($Html.node,
+   "link",
+   _U.list([$Html$Attributes.href("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"),$Html$Attributes.rel("stylesheet")]),
+   _U.list([]));
+   var debuggingView = function (data) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("alert alert-info")]),
+      _U.list([A2($Html.code,_U.list([]),_U.list([$Html.text($Basics.toString(data))]))]));
+   };
+   var attackButton = F2(function (attackMessage,label) {
+      return A2($Html.button,
+      _U.list([$Html$Attributes.$class("btn btn-success"),A3($Html$Events.on,"click",$Html$Events.targetValue,$Basics.always(attackMessage))]),
+      _U.list([$Html.text(label)]));
+   });
    var actionButton = F2(function (address,_p0) {
       var _p1 = _p0;
       return A2($Html.button,_U.list([$Html$Attributes.$class("btn btn-info"),A2($Html$Events.onClick,address,_p1._0)]),_U.list([$Html.text(_p1._1)]));
    });
    var both = F2(function (f,_p2) {    var _p3 = _p2;return {ctor: "_Tuple2",_0: f(_p3._0),_1: f(_p3._1)};});
-   return _elm.Utils.values = {_op: _op,both: both,actionButton: actionButton};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Batman = Elm.Heroes.Batman || {};
-Elm.Heroes.Batman.View = Elm.Heroes.Batman.View || {};
-Elm.Heroes.Batman.View.make = function (_elm) {
+   return _elm.Utils.values = {_op: _op,both: both,actionButton: actionButton,attackButton: attackButton,debuggingView: debuggingView,bootstrap: bootstrap};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Batman = Elm.Advanced.Heroes.Batman || {};
+Elm.Advanced.Heroes.Batman.View = Elm.Advanced.Heroes.Batman.View || {};
+Elm.Advanced.Heroes.Batman.View.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Batman = _elm.Heroes.Batman || {};
-   _elm.Heroes.Batman.View = _elm.Heroes.Batman.View || {};
-   if (_elm.Heroes.Batman.View.values) return _elm.Heroes.Batman.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Batman = _elm.Advanced.Heroes.Batman || {};
+   _elm.Advanced.Heroes.Batman.View = _elm.Advanced.Heroes.Batman.View || {};
+   if (_elm.Advanced.Heroes.Batman.View.values) return _elm.Advanced.Heroes.Batman.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Batman$Types = Elm.Advanced.Heroes.Batman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Batman$Types = Elm.Heroes.Batman.Types.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Utils = Elm.Utils.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {
-      return model.showModal ? $Maybe.Just({closeMessage: A2($Signal.message,address,$Heroes$Batman$Types.Finished)
-                                           ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Kapow!")])))
-                                           ,body: $Maybe.Just($Html.text("Batman swipes at you!"))
-                                           ,footer: $Maybe.Just(A2($Utils.actionButton,
-                                           address,
-                                           {ctor: "_Tuple2",_0: $Heroes$Batman$Types.Finished,_1: "OK"}))}) : $Maybe.Nothing;
+   var dialog = F2(function (address,model) {
+      return model.showDialog ? $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Heroes$Batman$Types.Finished)
+                                            ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Kapow!")])))
+                                            ,body: $Maybe.Just($Html.text("Batman swipes at you!"))
+                                            ,footer: $Maybe.Just(A2($Utils.actionButton,
+                                            address,
+                                            {ctor: "_Tuple2",_0: $Advanced$Heroes$Batman$Types.Finished,_1: "OK"}))}) : $Maybe.Nothing;
    });
-   var root = F2(function (address,model) {
+   var root = F3(function (address,attackMessage,model) {
       return A2($Html.div,
       _U.list([]),
-      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Batman")]))
-              ,$Html.text($Basics.toString(model))
-              ,A2($Utils.actionButton,address,{ctor: "_Tuple2",_0: $Heroes$Batman$Types.Kapow,_1: "Kapow!"})]));
+      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Batman")])),$Utils.debuggingView(model),A2($Utils.attackButton,attackMessage,"Kapow!")]));
    });
-   return _elm.Heroes.Batman.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.Superman = Elm.Heroes.Superman || {};
-Elm.Heroes.Superman.View = Elm.Heroes.Superman.View || {};
-Elm.Heroes.Superman.View.make = function (_elm) {
+   return _elm.Advanced.Heroes.Batman.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.Superman = Elm.Advanced.Heroes.Superman || {};
+Elm.Advanced.Heroes.Superman.View = Elm.Advanced.Heroes.Superman.View || {};
+Elm.Advanced.Heroes.Superman.View.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.Superman = _elm.Heroes.Superman || {};
-   _elm.Heroes.Superman.View = _elm.Heroes.Superman.View || {};
-   if (_elm.Heroes.Superman.View.values) return _elm.Heroes.Superman.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.Superman = _elm.Advanced.Heroes.Superman || {};
+   _elm.Advanced.Heroes.Superman.View = _elm.Advanced.Heroes.Superman.View || {};
+   if (_elm.Advanced.Heroes.Superman.View.values) return _elm.Advanced.Heroes.Superman.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Superman$Types = Elm.Advanced.Heroes.Superman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Superman$Types = Elm.Heroes.Superman.Types.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {    return $Maybe.Nothing;});
+   var dialog = F2(function (address,model) {    return $Maybe.Nothing;});
    var root = F2(function (address,model) {
-      return A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Superman")])),$Html.text($Basics.toString(model))]));
+      return A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Superman")])),$Utils.debuggingView(model)]));
    });
-   return _elm.Heroes.Superman.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.WonderWoman = Elm.Heroes.WonderWoman || {};
-Elm.Heroes.WonderWoman.View = Elm.Heroes.WonderWoman.View || {};
-Elm.Heroes.WonderWoman.View.make = function (_elm) {
+   return _elm.Advanced.Heroes.Superman.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.WonderWoman = Elm.Advanced.Heroes.WonderWoman || {};
+Elm.Advanced.Heroes.WonderWoman.View = Elm.Advanced.Heroes.WonderWoman.View || {};
+Elm.Advanced.Heroes.WonderWoman.View.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.WonderWoman = _elm.Heroes.WonderWoman || {};
-   _elm.Heroes.WonderWoman.View = _elm.Heroes.WonderWoman.View || {};
-   if (_elm.Heroes.WonderWoman.View.values) return _elm.Heroes.WonderWoman.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.WonderWoman = _elm.Advanced.Heroes.WonderWoman || {};
+   _elm.Advanced.Heroes.WonderWoman.View = _elm.Advanced.Heroes.WonderWoman.View || {};
+   if (_elm.Advanced.Heroes.WonderWoman.View.values) return _elm.Advanced.Heroes.WonderWoman.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$WonderWoman$Types = Elm.Advanced.Heroes.WonderWoman.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$WonderWoman$Types = Elm.Heroes.WonderWoman.Types.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {    return $Maybe.Nothing;});
+   var dialog = F2(function (address,model) {    return $Maybe.Nothing;});
    var root = F2(function (address,model) {
-      return A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("WonderWoman")])),$Html.text($Basics.toString(model))]));
+      return A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("WonderWoman")])),$Utils.debuggingView(model)]));
    });
-   return _elm.Heroes.WonderWoman.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.Heroes = Elm.Heroes || {};
-Elm.Heroes.View = Elm.Heroes.View || {};
-Elm.Heroes.View.make = function (_elm) {
+   return _elm.Advanced.Heroes.WonderWoman.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Heroes = Elm.Advanced.Heroes || {};
+Elm.Advanced.Heroes.View = Elm.Advanced.Heroes.View || {};
+Elm.Advanced.Heroes.View.make = function (_elm) {
    "use strict";
-   _elm.Heroes = _elm.Heroes || {};
-   _elm.Heroes.View = _elm.Heroes.View || {};
-   if (_elm.Heroes.View.values) return _elm.Heroes.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Heroes = _elm.Advanced.Heroes || {};
+   _elm.Advanced.Heroes.View = _elm.Advanced.Heroes.View || {};
+   if (_elm.Advanced.Heroes.View.values) return _elm.Advanced.Heroes.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$Batman$View = Elm.Advanced.Heroes.Batman.View.make(_elm),
+   $Advanced$Heroes$Superman$View = Elm.Advanced.Heroes.Superman.View.make(_elm),
+   $Advanced$Heroes$Types = Elm.Advanced.Heroes.Types.make(_elm),
+   $Advanced$Heroes$WonderWoman$View = Elm.Advanced.Heroes.WonderWoman.View.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$Batman$View = Elm.Heroes.Batman.View.make(_elm),
-   $Heroes$Superman$View = Elm.Heroes.Superman.View.make(_elm),
-   $Heroes$Types = Elm.Heroes.Types.make(_elm),
-   $Heroes$WonderWoman$View = Elm.Heroes.WonderWoman.View.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Utils = Elm.Utils.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {
+   var dialog = F2(function (address,model) {
       var _p0 = model.view;
       switch (_p0.ctor)
-      {case "BatmanView": return A2($Heroes$Batman$View.modal,A2($Signal.forwardTo,address,$Heroes$Types.BatmanAction),model.batman);
-         case "SupermanView": return A2($Heroes$Superman$View.modal,A2($Signal.forwardTo,address,$Heroes$Types.SupermanAction),model.superman);
-         default: return A2($Heroes$WonderWoman$View.modal,A2($Signal.forwardTo,address,$Heroes$Types.WonderWomanAction),model.wonderWoman);}
+      {case "BatmanView": return A2($Advanced$Heroes$Batman$View.dialog,A2($Signal.forwardTo,address,$Advanced$Heroes$Types.BatmanAction),model.batman);
+         case "SupermanView": return A2($Advanced$Heroes$Superman$View.dialog,
+           A2($Signal.forwardTo,address,$Advanced$Heroes$Types.SupermanAction),
+           model.superman);
+         default: return A2($Advanced$Heroes$WonderWoman$View.dialog,A2($Signal.forwardTo,address,$Advanced$Heroes$Types.WonderWomanAction),model.wonderWoman);}
    });
-   var root = F2(function (address,model) {
+   var root = F3(function (address,attackMessage,model) {
       return A2($Html.div,
       _U.list([]),
       _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Heroes")]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("btn-group")]),
+              A2($List.map,
+              $Utils.actionButton(address),
+              _U.list([{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SetView($Advanced$Heroes$Types.BatmanView),_1: "Batman"}
+                      ,{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SetView($Advanced$Heroes$Types.SupermanView),_1: "Superman"}
+                      ,{ctor: "_Tuple2",_0: $Advanced$Heroes$Types.SetView($Advanced$Heroes$Types.WonderWomanView),_1: "Wonder Woman"}])))
               ,A2($Html.div,
               _U.list([$Html$Attributes.$class("well")]),
               _U.list([function () {
                  var _p1 = model.view;
                  switch (_p1.ctor)
-                 {case "BatmanView": return A2($Heroes$Batman$View.root,A2($Signal.forwardTo,address,$Heroes$Types.BatmanAction),model.batman);
-                    case "SupermanView": return A2($Heroes$Superman$View.root,A2($Signal.forwardTo,address,$Heroes$Types.SupermanAction),model.superman);
-                    default: return A2($Heroes$WonderWoman$View.root,A2($Signal.forwardTo,address,$Heroes$Types.WonderWomanAction),model.wonderWoman);}
-              }()]))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("btn-group")]),
-              A2($List.map,
-              $Utils.actionButton(address),
-              _U.list([{ctor: "_Tuple2",_0: $Heroes$Types.SetView($Heroes$Types.BatmanView),_1: "Batman"}
-                      ,{ctor: "_Tuple2",_0: $Heroes$Types.SetView($Heroes$Types.SupermanView),_1: "Superman"}
-                      ,{ctor: "_Tuple2",_0: $Heroes$Types.SetView($Heroes$Types.WonderWomanView),_1: "WonderWoman"}])))]));
+                 {case "BatmanView": return A3($Advanced$Heroes$Batman$View.root,
+                      A2($Signal.forwardTo,address,$Advanced$Heroes$Types.BatmanAction),
+                      attackMessage,
+                      model.batman);
+                    case "SupermanView": return A2($Advanced$Heroes$Superman$View.root,
+                      A2($Signal.forwardTo,address,$Advanced$Heroes$Types.SupermanAction),
+                      model.superman);
+                    default: return A2($Advanced$Heroes$WonderWoman$View.root,
+                      A2($Signal.forwardTo,address,$Advanced$Heroes$Types.WonderWomanAction),
+                      model.wonderWoman);}
+              }()]))]));
    });
-   return _elm.Heroes.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Joker = Elm.Villains.Joker || {};
-Elm.Villains.Joker.View = Elm.Villains.Joker.View || {};
-Elm.Villains.Joker.View.make = function (_elm) {
+   return _elm.Advanced.Heroes.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Joker = Elm.Advanced.Villains.Joker || {};
+Elm.Advanced.Villains.Joker.View = Elm.Advanced.Villains.Joker.View || {};
+Elm.Advanced.Villains.Joker.View.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Joker = _elm.Villains.Joker || {};
-   _elm.Villains.Joker.View = _elm.Villains.Joker.View || {};
-   if (_elm.Villains.Joker.View.values) return _elm.Villains.Joker.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Joker = _elm.Advanced.Villains.Joker || {};
+   _elm.Advanced.Villains.Joker.View = _elm.Advanced.Villains.Joker.View || {};
+   if (_elm.Advanced.Villains.Joker.View.values) return _elm.Advanced.Villains.Joker.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Joker$Types = Elm.Advanced.Villains.Joker.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Villains$Joker$Types = Elm.Villains.Joker.Types.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {    return $Maybe.Nothing;});
+   var dialog = F2(function (address,model) {    return $Maybe.Nothing;});
    var root = F2(function (address,model) {
-      return A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Joker")])),$Html.text($Basics.toString(model))]));
+      return A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Joker")])),$Utils.debuggingView(model)]));
    });
-   return _elm.Villains.Joker.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.Penguin = Elm.Villains.Penguin || {};
-Elm.Villains.Penguin.View = Elm.Villains.Penguin.View || {};
-Elm.Villains.Penguin.View.make = function (_elm) {
+   return _elm.Advanced.Villains.Joker.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.Penguin = Elm.Advanced.Villains.Penguin || {};
+Elm.Advanced.Villains.Penguin.View = Elm.Advanced.Villains.Penguin.View || {};
+Elm.Advanced.Villains.Penguin.View.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.Penguin = _elm.Villains.Penguin || {};
-   _elm.Villains.Penguin.View = _elm.Villains.Penguin.View || {};
-   if (_elm.Villains.Penguin.View.values) return _elm.Villains.Penguin.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.Penguin = _elm.Advanced.Villains.Penguin || {};
+   _elm.Advanced.Villains.Penguin.View = _elm.Advanced.Villains.Penguin.View || {};
+   if (_elm.Advanced.Villains.Penguin.View.values) return _elm.Advanced.Villains.Penguin.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Penguin$Types = Elm.Advanced.Villains.Penguin.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Utils = Elm.Utils.make(_elm),
-   $Villains$Penguin$Types = Elm.Villains.Penguin.Types.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {
-      return model.quiet ? $Maybe.Nothing : $Maybe.Just({closeMessage: A2($Signal.message,address,$Villains$Penguin$Types.Close)
-                                                        ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Wark!")])))
-                                                        ,body: $Maybe.Just($Html.text("The Penguin laughs his weird laugh"))
-                                                        ,footer: $Maybe.Just(A2($Utils.actionButton,
-                                                        address,
-                                                        {ctor: "_Tuple2",_0: $Villains$Penguin$Types.Close,_1: "OK"}))});
+   var dialog = F2(function (address,model) {
+      var _p0 = model.state;
+      switch (_p0.ctor)
+      {case "Quiet": return $Maybe.Nothing;
+         case "Hurt": return $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Villains$Penguin$Types.Close)
+                                         ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Penguin says, \"Ouch!\"")])))
+                                         ,body: $Maybe.Just($Html.text("The penguin tries to dodge, which goes badly because penguins lack grace on land."))
+                                         ,footer: $Maybe.Just(A2($Utils.actionButton,
+                                         address,
+                                         {ctor: "_Tuple2",_0: $Advanced$Villains$Penguin$Types.Close,_1: "Take the pain"}))});
+         default: return $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Villains$Penguin$Types.Close)
+                                     ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Penguin says, \"Wark!\"")])))
+                                     ,body: $Maybe.Just($Html.text("The Penguin laughs his weird laugh"))
+                                     ,footer: $Maybe.Just(A2($Utils.actionButton,
+                                     address,
+                                     {ctor: "_Tuple2",_0: $Advanced$Villains$Penguin$Types.Close,_1: "Calm down"}))});}
    });
    var root = F2(function (address,model) {
       return A2($Html.div,
       _U.list([]),
       _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Penguin")]))
-              ,$Html.text($Basics.toString(model))
-              ,A2($Utils.actionButton,address,{ctor: "_Tuple2",_0: $Villains$Penguin$Types.Wark,_1: "Wark!"})]));
+              ,$Utils.debuggingView(model)
+              ,A2($Utils.actionButton,address,{ctor: "_Tuple2",_0: $Advanced$Villains$Penguin$Types.Wark,_1: "Wark!"})]));
    });
-   return _elm.Villains.Penguin.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.Villains = Elm.Villains || {};
-Elm.Villains.View = Elm.Villains.View || {};
-Elm.Villains.View.make = function (_elm) {
+   return _elm.Advanced.Villains.Penguin.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.Villains = Elm.Advanced.Villains || {};
+Elm.Advanced.Villains.View = Elm.Advanced.Villains.View || {};
+Elm.Advanced.Villains.View.make = function (_elm) {
    "use strict";
-   _elm.Villains = _elm.Villains || {};
-   _elm.Villains.View = _elm.Villains.View || {};
-   if (_elm.Villains.View.values) return _elm.Villains.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.Villains = _elm.Advanced.Villains || {};
+   _elm.Advanced.Villains.View = _elm.Advanced.Villains.View || {};
+   if (_elm.Advanced.Villains.View.values) return _elm.Advanced.Villains.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Villains$Joker$View = Elm.Advanced.Villains.Joker.View.make(_elm),
+   $Advanced$Villains$Penguin$View = Elm.Advanced.Villains.Penguin.View.make(_elm),
+   $Advanced$Villains$Types = Elm.Advanced.Villains.Types.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Utils = Elm.Utils.make(_elm),
-   $Villains$Joker$View = Elm.Villains.Joker.View.make(_elm),
-   $Villains$Penguin$View = Elm.Villains.Penguin.View.make(_elm),
-   $Villains$Types = Elm.Villains.Types.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var modal = F2(function (address,model) {
+   var dialog = F2(function (address,model) {
       var _p0 = model.view;
       if (_p0.ctor === "JokerView") {
-            return A2($Villains$Joker$View.modal,A2($Signal.forwardTo,address,$Villains$Types.JokerAction),model.joker);
+            return A2($Advanced$Villains$Joker$View.dialog,A2($Signal.forwardTo,address,$Advanced$Villains$Types.JokerAction),model.joker);
          } else {
-            return A2($Villains$Penguin$View.modal,A2($Signal.forwardTo,address,$Villains$Types.PenguinAction),model.penguin);
+            return A2($Advanced$Villains$Penguin$View.dialog,A2($Signal.forwardTo,address,$Advanced$Villains$Types.PenguinAction),model.penguin);
          }
    });
    var root = F2(function (address,model) {
@@ -11620,63 +11672,98 @@ Elm.Villains.View.make = function (_elm) {
       _U.list([]),
       _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Villains")]))
               ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("btn-group")]),
+              A2($List.map,
+              $Utils.actionButton(address),
+              _U.list([{ctor: "_Tuple2",_0: $Advanced$Villains$Types.SetView($Advanced$Villains$Types.JokerView),_1: "Joker"}
+                      ,{ctor: "_Tuple2",_0: $Advanced$Villains$Types.SetView($Advanced$Villains$Types.PenguinView),_1: "Penguin"}])))
+              ,A2($Html.div,
               _U.list([$Html$Attributes.$class("well")]),
               _U.list([function () {
                  var _p1 = model.view;
                  if (_p1.ctor === "JokerView") {
-                       return A2($Villains$Joker$View.root,A2($Signal.forwardTo,address,$Villains$Types.JokerAction),model.joker);
+                       return A2($Advanced$Villains$Joker$View.root,A2($Signal.forwardTo,address,$Advanced$Villains$Types.JokerAction),model.joker);
                     } else {
-                       return A2($Villains$Penguin$View.root,A2($Signal.forwardTo,address,$Villains$Types.PenguinAction),model.penguin);
+                       return A2($Advanced$Villains$Penguin$View.root,A2($Signal.forwardTo,address,$Advanced$Villains$Types.PenguinAction),model.penguin);
                     }
-              }()]))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("btn-group")]),
-              A2($List.map,
-              $Utils.actionButton(address),
-              _U.list([{ctor: "_Tuple2",_0: $Villains$Types.SetView($Villains$Types.JokerView),_1: "Joker"}
-                      ,{ctor: "_Tuple2",_0: $Villains$Types.SetView($Villains$Types.PenguinView),_1: "Penguin"}])))]));
+              }()]))]));
    });
-   return _elm.Villains.View.values = {_op: _op,root: root,modal: modal};
-};
-Elm.View = Elm.View || {};
-Elm.View.make = function (_elm) {
+   return _elm.Advanced.Villains.View.values = {_op: _op,root: root,dialog: dialog};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.View = Elm.Advanced.View || {};
+Elm.Advanced.View.make = function (_elm) {
    "use strict";
-   _elm.View = _elm.View || {};
-   if (_elm.View.values) return _elm.View.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.View = _elm.Advanced.View || {};
+   if (_elm.Advanced.View.values) return _elm.Advanced.View.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$Heroes$View = Elm.Advanced.Heroes.View.make(_elm),
+   $Advanced$Types = Elm.Advanced.Types.make(_elm),
+   $Advanced$Villains$View = Elm.Advanced.Villains.View.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Heroes$View = Elm.Heroes.View.make(_elm),
+   $Dialog = Elm.Dialog.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Types = Elm.Types.make(_elm),
-   $Villains$View = Elm.Villains.View.make(_elm),
-   $Viscose = Elm.Viscose.make(_elm);
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
+   var instructions = A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Instructions")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("well")]),
+           _U.list([A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Each character in this demo is its own Elm component, with its own types, and its own update and view functions. None of them are aware of the others.")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Click on any of the character buttons to switch views - this shows each sub-component acting independently.")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Select Penguin and click his action button, \'Wark!\' This shows a sub-component triggering the dialog.")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Select Batman and click his action button, \'Kapow!\' This shows a sub-component triggering another sub-component\'s dialog.")]))]))]))]));
    var root = F2(function (address,model) {
-      var villainsAddress = A2($Signal.forwardTo,address,$Types.VillainsAction);
-      var heroesAddress = A2($Signal.forwardTo,address,$Types.HeroesAction);
+      var attackMessage = A2($Signal.message,address,$Advanced$Types.HeroAttack);
+      var villainsAddress = A2($Signal.forwardTo,address,$Advanced$Types.VillainsAction);
+      var heroesAddress = A2($Signal.forwardTo,address,$Advanced$Types.HeroesAction);
       return A2($Html.div,
-      _U.list([$Html$Attributes.$class("container-fluid")]),
-      _U.list([A2($Html.div,
-              _U.list([$Html$Attributes.$class("row")]),
-              _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("col-md-6")]),_U.list([A2($Heroes$View.root,heroesAddress,model.heroes)]))
-                      ,A2($Html.div,_U.list([$Html$Attributes.$class("col-md-6")]),_U.list([A2($Villains$View.root,villainsAddress,model.villains)]))]))
-              ,$Viscose.root($Maybe.oneOf(_U.list([A2($Heroes$View.modal,heroesAddress,model.heroes)
-                                                  ,A2($Villains$View.modal,villainsAddress,model.villains)])))]));
+      _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin",_1: "15px"}]))]),
+      _U.list([$Utils.bootstrap
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("container-fluid")]),
+              _U.list([A2($Html.h1,_U.list([]),_U.list([$Html.text("Advanced Demo")]))
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.$class("row")]),
+                      _U.list([A2($Html.div,
+                              _U.list([$Html$Attributes.$class("col-md-6")]),
+                              _U.list([A3($Advanced$Heroes$View.root,heroesAddress,attackMessage,model.heroes)]))
+                              ,A2($Html.div,
+                              _U.list([$Html$Attributes.$class("col-md-6")]),
+                              _U.list([A2($Advanced$Villains$View.root,villainsAddress,model.villains)]))]))
+                      ,instructions
+                      ,$Dialog.view($Maybe.oneOf(_U.list([A2($Advanced$Heroes$View.dialog,heroesAddress,model.heroes)
+                                                         ,A2($Advanced$Villains$View.dialog,villainsAddress,model.villains)])))]))]));
    });
-   return _elm.View.values = {_op: _op,root: root};
-};
-Elm.App = Elm.App || {};
-Elm.App.make = function (_elm) {
+   return _elm.Advanced.View.values = {_op: _op,root: root};
+};Elm.Advanced = Elm.Advanced || {};
+Elm.Advanced.App = Elm.Advanced.App || {};
+Elm.Advanced.App.make = function (_elm) {
    "use strict";
-   _elm.App = _elm.App || {};
-   if (_elm.App.values) return _elm.App.values;
+   _elm.Advanced = _elm.Advanced || {};
+   _elm.Advanced.App = _elm.Advanced.App || {};
+   if (_elm.Advanced.App.values) return _elm.Advanced.App.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $Advanced$State = Elm.Advanced.State.make(_elm),
+   $Advanced$Types = Elm.Advanced.Types.make(_elm),
+   $Advanced$View = Elm.Advanced.View.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
@@ -11686,16 +11773,13 @@ Elm.App.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp = Elm.StartApp.make(_elm),
-   $State = Elm.State.make(_elm),
-   $Task = Elm.Task.make(_elm),
-   $Types = Elm.Types.make(_elm),
-   $View = Elm.View.make(_elm);
+   $Task = Elm.Task.make(_elm);
    var _op = {};
-   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: $State.initialModel,_1: $State.initialEffects}
-                             ,view: $View.root
-                             ,update: $State.update
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: $Advanced$State.initialModel,_1: $Advanced$State.initialEffects}
+                             ,view: $Advanced$View.root
+                             ,update: $Advanced$State.update
                              ,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
-   return _elm.App.values = {_op: _op,main: main};
-};
+   return _elm.Advanced.App.values = {_op: _op,main: main};
+};</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Advanced.App)</script></body></html>
