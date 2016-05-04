@@ -1,10 +1,10 @@
 module Heroes.Batman.View (root, modal) where
 
-import Utils exposing (..)
-import Viscose
-import Signal exposing (..)
-import Html exposing (..)
+import Dialog
 import Heroes.Batman.Types exposing (..)
+import Html exposing (..)
+import Signal exposing (..)
+import Utils exposing (..)
 
 
 root : Address Action -> Message -> Model -> Html
@@ -17,7 +17,7 @@ root address attackMessage model =
     ]
 
 
-modal : Address Action -> Model -> Maybe Viscose.Config
+modal : Address Action -> Model -> Maybe Dialog.Config
 modal address model =
   if model.showModal then
     Just

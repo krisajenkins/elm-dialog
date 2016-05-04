@@ -1,7 +1,7 @@
 module Villains.Penguin.View (root, modal) where
 
 import Utils exposing (..)
-import Viscose
+import Dialog
 import Signal exposing (..)
 import Html exposing (..)
 import Villains.Penguin.Types exposing (..)
@@ -17,7 +17,7 @@ root address model =
     ]
 
 
-modal : Address Action -> Model -> Maybe Viscose.Config
+modal : Address Action -> Model -> Maybe Dialog.Config
 modal address model =
   case model.state of
     Quiet ->

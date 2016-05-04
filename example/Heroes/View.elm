@@ -1,6 +1,6 @@
 module Heroes.View (root, modal) where
 
-import Viscose
+import Dialog
 import Utils exposing (..)
 import Signal exposing (..)
 import Html exposing (..)
@@ -43,7 +43,7 @@ root address attackMessage model =
     ]
 
 
-modal : Address Action -> Model -> Maybe Viscose.Config
+modal : Address Action -> Model -> Maybe Dialog.Config
 modal address model =
   case model.view of
     BatmanView ->

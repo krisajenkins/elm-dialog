@@ -1,4 +1,4 @@
-module Viscose (root, Config) where
+module Dialog (root, Config) where
 
 import Exts.Html.Bootstrap exposing (..)
 import Exts.Maybe exposing (maybe, isJust)

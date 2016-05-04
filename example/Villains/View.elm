@@ -1,6 +1,6 @@
 module Villains.View (root, modal) where
 
-import Viscose
+import Dialog
 import Signal exposing (..)
 import Utils exposing (..)
 import Html exposing (..)
@@ -35,7 +35,7 @@ root address model =
     ]
 
 
-modal : Address Action -> Model -> Maybe Viscose.Config
+modal : Address Action -> Model -> Maybe Dialog.Config
 modal address model =
   case model.view of
     JokerView ->
