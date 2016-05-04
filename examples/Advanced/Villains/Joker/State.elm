@@ -8,6 +8,7 @@ initialModel : Model
 initialModel =
   { shots = 0
   , health = 50
+  , state = Laughing
   }
 
 
@@ -19,5 +20,12 @@ update action model =
         |> withNone
 
     TakeDamage ->
-      { model | health = model.health - 1 }
+      { model
+        | health = model.health - 1
+        , state = Screaming
+      }
+        |> withNone
+
+    Close ->
+      { model | state = Laughing }
         |> withNone
