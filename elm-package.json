@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "A dialog/modal widget for Elm.",
-    "repository": "https://github.com/krisajenkins/elm-dialog",
+    "repository": "https://github.com/krisajenkins/elm-dialog.git",
     "license": "BSD3",
     "source-directories": [
         "src",
