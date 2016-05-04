@@ -2,6 +2,14 @@
 
 Elm modal dialog boxes that fits in neatly with the Elm architecture.
 
+## Aims
+
+* ✓ Fit in neatly with the Elm architecture.
+* ✓ Dialogs should have all the power of regular views.
+* ✓ Dialogs should work equally well with sub-components and sub-sub-...-components.
+* Dialogs should not rely on external CSS. (Not yet. Still relies on Bootstrap.)
+* Dialogs should be optionally animated. (Not yet. It's straightforward but not documented/demo'd.)
+
 ## Usage
 
 [See the Elm package for full usage docs](http://package.elm-lang.org/packages/krisajenkins/elm-dialog/latest/Dialog).
