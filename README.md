@@ -6,7 +6,11 @@ Elm modal dialog boxes that fits in neatly with the Elm architecture.
 
 [See the Elm package for full docs](package.elm-lang.org/packages/krisajenkins/elm-dialog/latest).
 
-Also, see the `examples/` directory for two fully-worked examples.
+See the `examples/` directory for two fully-worked examples, a simple
+one
+[(live demo)](http://krisajenkins.github.io/elm-dialog/Simple.html)
+and a more advanced one
+[(live demo)](http://krisajenkins.github.io/elm-dialog/Complex.html).
 
 ## Building
 
