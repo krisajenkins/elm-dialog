@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
-    "summary": "helpful summary of your project, less than 80 characters",
-    "repository": "https://github.com/user/project.git",
+    "summary": "A dialog/modal widget for Elm.",
+    "repository": "https://github.com/krisajenkins/elm-dialog",
     "license": "BSD3",
     "source-directories": [
         "src",
@@ -20,7 +20,7 @@
         "evancz/elm-html": "4.0.2 <= v < 5.0.0",
         "evancz/start-app": "2.0.2 <= v < 3.0.0",
         "krisajenkins/elm-exts": "19.1.0 <= v < 20.0.0",
-        "laszlopandy/elm-console": "1.1.1 <= v < 2.0.0"
+        "laszlopandy/elm-console": "1.1.1 <= v < 1.1.1"
     },
     "elm-version": "0.16.0 <= v < 0.17.0"
 }
