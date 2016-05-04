@@ -4,7 +4,7 @@ Elm modal dialog boxes that fits in neatly with the Elm architecture.
 
 ## Usage
 
-[See the Elm package for full docs](package.elm-lang.org/packages/krisajenkins/elm-dialog/latest).
+[See the Elm package for full docs](http://package.elm-lang.org/packages/krisajenkins/elm-dialog/latest).
 
 See the `examples/` directory for two fully-worked examples:
 
