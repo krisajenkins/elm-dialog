@@ -19,9 +19,7 @@ make
 
 ## Credits
 
-Thanks to [Emilien Taque](https://github.com/etaque) for several good
-ideas, support, and the very gracious offer to let me take the `elm-dialog`
-moniker. :-D
+Thanks to [Emilien Taque](https://github.com/etaque) for ideas & support.
 
 ## License
 
