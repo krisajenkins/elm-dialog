@@ -17,9 +17,31 @@ import Signal exposing (..)
 {-| Renders a modal dialog whenever you supply a `Config`.
 
 To use this, include this view in your *top-level* view function,
-right at the top of the DOM tree. Then call it with `Nothing` whenever
-you want the modal to be hidden, and a `Just Dialog.Config` value when
-you want it shown.
+right at the top of the DOM tree, like:
+
+    view : Address Action -> Model -> Html
+    view address model =
+      div
+        []
+        [ ...your regular view code....
+        , ...
+        , Dialog.view
+            (if model.shouldShowDialog then
+              Just { closeMessage = Signal.message address AcknowledgeDialogBox
+                   , header = Just (text "Alert!"
+                   , body = Just (p [] [text "Let me tell you something important..."])
+                   , footer = Nothing
+                   }
+             else
+              Nothing
+            )
+        ]
+
+
+It's then up to you to replace `model.shouldShowDialog` with whatever
+logic should cause the dialog to be displayed, and to handle the
+`AcknowledgeDialogBox` with whatever logic should occur when the user
+closes the dialog.
 -}
 view : Maybe Config -> Html
 view maybeConfig =
@@ -94,13 +116,12 @@ wrapFooter footer =
 backdrop : Maybe Config -> Html
 backdrop config =
   div
-    [ classList [ ( "modal-backdrop in", isJust config ) ]
-    ]
+    [ classList [ ( "modal-backdrop in", isJust config ) ] ]
     []
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
-and `footer` are all optional. Use only the ones you want.
+and `footer` are all optional `Html` blocks. Use only the ones you want.
 
 The `closeMessage` is a mandatory message we will send when the user
 clicks to dismiss the modal.
