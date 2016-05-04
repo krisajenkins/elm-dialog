@@ -28,6 +28,7 @@ root address model =
       , div
           [ class "container-fluid" ]
           [ h1 [] [ text "Advanced Demo" ]
+          , instructions
           , div
               [ class "row" ]
               [ div
@@ -37,7 +38,6 @@ root address model =
                   [ class "col-md-6" ]
                   [ Advanced.Villains.View.root villainsAddress model.villains ]
               ]
-          , instructions
           , Maybe.oneOf
               [ (Advanced.Heroes.View.dialog heroesAddress model.heroes)
               , (Advanced.Villains.View.dialog villainsAddress model.villains)
