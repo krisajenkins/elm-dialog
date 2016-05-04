@@ -1,8 +1,8 @@
 module Advanced.View (root) where
 
-import Advanced.Heroes.View
+import Advanced.Heroes.View as Heroes
 import Advanced.Types exposing (..)
-import Advanced.Villains.View
+import Advanced.Villains.View as Villains
 import Dialog
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -33,14 +33,15 @@ root address model =
               [ class "row" ]
               [ div
                   [ class "col-md-6" ]
-                  [ Advanced.Heroes.View.root heroesAddress attackMessage model.heroes ]
+                  [ Heroes.root heroesAddress attackMessage model.heroes ]
               , div
                   [ class "col-md-6" ]
-                  [ Advanced.Villains.View.root villainsAddress model.villains ]
+                  [ Villains.root villainsAddress model.villains ]
               ]
+            -- What if both the heroes and villans want to show a dialog? How do we ensure we only show one at a time? Like this:
           , Maybe.oneOf
-              [ (Advanced.Heroes.View.dialog heroesAddress model.heroes)
-              , (Advanced.Villains.View.dialog villainsAddress model.villains)
+              [ (Heroes.dialog heroesAddress model.heroes)
+              , (Villains.dialog villainsAddress model.villains)
               ]
               |> Dialog.view
           ]
