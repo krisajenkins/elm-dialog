@@ -1,4 +1,9 @@
-module Dialog (root, Config) where
+module Dialog (view, Config) where
+
+{-| Elm Modal Dialogs.
+
+@docs view, Config
+-}
 
 import Exts.Html.Bootstrap exposing (..)
 import Exts.Maybe exposing (maybe, isJust)
@@ -9,16 +14,15 @@ import Html.Events exposing (..)
 import Signal exposing (..)
 
 
-type alias Config =
-  { closeMessage : Message
-  , header : Maybe Html
-  , body : Maybe Html
-  , footer : Maybe Html
-  }
+{-| Renders a modal dialog whenever you supply a `Config`.
 
-
-root : Maybe Config -> Html
-root maybeConfig =
+To use this, include this view in your *top-level* view function,
+right at the top of the DOM tree. Then call it with `Nothing` whenever
+you want the modal to be hidden, and a `Just Dialog.Config` value when
+you want it shown.
+-}
+view : Maybe Config -> Html
+view maybeConfig =
   let
     displayed =
       isJust maybeConfig
@@ -26,7 +30,7 @@ root maybeConfig =
     div
       []
       [ div
-          [ key "modal"
+          [ key "dialog"
           , classList
               [ ( "modal", True )
               , ( "in", displayed )
@@ -93,3 +97,17 @@ backdrop config =
     [ classList [ ( "modal-backdrop in", isJust config ) ]
     ]
     []
+
+
+{-| The configuration for the dialog you display. The `header`, `body`
+and `footer` are all optional. Use only the ones you want.
+
+The `closeMessage` is a mandatory message we will send when the user
+clicks to dismiss the modal.
+-}
+type alias Config =
+  { closeMessage : Message
+  , header : Maybe Html
+  , body : Maybe Html
+  , footer : Maybe Html
+  }

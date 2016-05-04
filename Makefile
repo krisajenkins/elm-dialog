@@ -1,10 +1,7 @@
-all: dist/index.html build/.tested
+all: dist/Simple.html dist/Advanced.html build/.tested
 
-dist/main.css: $(shell find styles -type f -name '*.less')
-	lessc styles/main.less $@
-
-dist/index.html: $(shell find src example -type f -name '*.elm' -o -name '*.js') dist
-	elm-make example/App.elm --yes --warn --output=$@
+dist/%.html: $(shell find src examples -type f -name '*.elm' -o -name '*.js') dist
+	elm-make examples/$*/App.elm --yes --warn --output=$@
 
 dist:
 	@mkdir $@
@@ -18,5 +15,5 @@ build/.tested: build/tests.js build
 build/tests.js: build/raw-test.js build
 	sh elm-stuff/packages/laszlopandy/elm-console/1.1.1/elm-io.sh $< $@
 
-build/raw-test.js: $(shell find src example test -type f -name '*.elm' -o -name '*.js') build
+build/raw-test.js: $(shell find src examples test -type f -name '*.elm' -o -name '*.js') build
 	elm-make test/Main.elm --yes --warn --output=$@

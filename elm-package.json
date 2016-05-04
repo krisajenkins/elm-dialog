@@ -5,10 +5,12 @@
     "license": "BSD3",
     "source-directories": [
         "src",
-        "example",
+        "examples",
         "test"
     ],
-    "exposed-modules": [],
+    "exposed-modules": [
+        "Dialog"
+    ],
     "dependencies": {
         "NoRedInk/elm-check": "3.0.0 <= v < 4.0.0",
         "deadfoxygrandpa/elm-test": "3.1.1 <= v < 4.0.0",
