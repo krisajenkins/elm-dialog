@@ -58,7 +58,7 @@ instructions =
         [ ul
             []
             [ li [] [ text "Each character in this demo is its own Elm component, with its own types, and its own update and view functions. None of them are aware of the others." ]
-            , li [] [ text "Click on any of the character buttons to switch views - this shows each sub-component acting independently." ]
+            , li [] [ text "Click on any of the character tabs to switch views - this shows each sub-component acting independently." ]
             , li [] [ text "Select Penguin and click his action button, 'Wark!' This shows a sub-component triggering the dialog." ]
             , li [] [ text "Select Batman and click his action button, 'Kapow!' This shows a sub-component triggering another sub-component's dialog." ]
             ]

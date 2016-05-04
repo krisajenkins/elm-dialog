@@ -11,6 +11,16 @@ both f ( x, y ) =
   ( f x, f y )
 
 
+viewTab : Address a -> (b -> a) -> b -> ( b, String ) -> Html
+viewTab address viewAction currentView ( view, title ) =
+  li
+    [ classList [ ( "active", currentView == view ) ] ]
+    [ a
+        [ onClick address (viewAction view) ]
+        [ text title ]
+    ]
+
+
 actionButton : Address a -> ( a, String ) -> Html
 actionButton address ( action, label ) =
   button
