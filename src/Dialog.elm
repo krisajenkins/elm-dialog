@@ -19,6 +19,12 @@ import Signal exposing (..)
 To use this, include this view in your *top-level* view function,
 right at the top of the DOM tree, like so:
 
+    type Action
+      = ...
+      | ...
+      | AcknowledgeDialog
+
+
     view : Address Action -> Model -> Html
     view address model =
       div
@@ -28,7 +34,7 @@ right at the top of the DOM tree, like so:
         , ...
         , Dialog.view
             (if model.shouldShowDialog then
-              Just { closeMessage = Signal.message address AcknowledgeDialogBox
+              Just { closeMessage = Signal.message address AcknowledgeDialog
                    , header = Just (text "Alert!"
                    , body = Just (p [] [text "Let me tell you something important..."])
                    , footer = Nothing
@@ -40,8 +46,8 @@ right at the top of the DOM tree, like so:
 
 
 It's then up to you to replace `model.shouldShowDialog` with whatever
-logic should cause the dialog to be displayed, and to handle the
-`AcknowledgeDialogBox` with whatever logic should occur when the user
+logic should cause the dialog to be displayed, and to handle an
+`AcknowledgeDialog` action with whatever logic should occur when the user
 closes the dialog.
 
 See the `examples/` directory for working examples of how this works
@@ -126,10 +132,12 @@ backdrop config =
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
-and `footer` are all optional `Html` blocks. Use only the ones you
-want and set the others to `Nothing`.
+and `footer` are all optional `Html` blocks. Those `Html` blocks can
+be as simple or as complex as any other view function.
 
-The `closeMessage` is a mandatory message we will send when the user
+Use only the ones you want and set the others to `Nothing`.
+
+The `closeMessage` is a mandatory `Signal.Message` we will send when the user
 clicks to dismiss the modal.
 -}
 type alias Config =
