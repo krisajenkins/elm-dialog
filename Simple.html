@@ -10790,13 +10790,15 @@ Elm.Dialog.make = function (_elm) {
    };
    var wrapFooter = function (footer) {    return A2($Html.div,_U.list([$Html$Attributes.$class("modal-footer")]),_U.list([footer]));};
    var wrapBody = function (body) {    return A2($Html.div,_U.list([$Html$Attributes.$class("modal-body")]),_U.list([body]));};
+   var closeButton = function (closeMessage) {
+      return A2($Html.button,
+      _U.list([$Html$Attributes.$class("close"),A3($Html$Events.on,"click",$Html$Events.targetValue,$Basics.always(closeMessage))]),
+      _U.list([$Html.text("x")]));
+   };
    var wrapHeader = F2(function (closeMessage,header) {
-      return A2($Html.div,
+      return _U.eq(closeMessage,$Maybe.Nothing) && _U.eq(header,$Maybe.Nothing) ? $Exts$Html$Bootstrap.empty : A2($Html.div,
       _U.list([$Html$Attributes.$class("modal-header")]),
-      _U.list([A2($Html.button,
-              _U.list([$Html$Attributes.$class("close"),A3($Html$Events.on,"click",$Html$Events.targetValue,$Basics.always(closeMessage))]),
-              _U.list([$Html.text("x")]))
-              ,header]));
+      _U.list([A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,closeButton,closeMessage),A2($Maybe.withDefault,$Exts$Html$Bootstrap.empty,header)]));
    });
    var view = function (maybeConfig) {
       var displayed = $Exts$Maybe.isJust(maybeConfig);
@@ -10816,7 +10818,7 @@ Elm.Dialog.make = function (_elm) {
                        return _U.list([$Exts$Html$Bootstrap.empty]);
                     } else {
                        var _p1 = _p0._0;
-                       return _U.list([A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,wrapHeader(_p1.closeMessage),_p1.header)
+                       return _U.list([A2(wrapHeader,_p1.closeMessage,_p1.header)
                                       ,A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,wrapBody,_p1.body)
                                       ,A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,wrapFooter,_p1.footer)]);
                     }
@@ -10908,7 +10910,7 @@ Elm.Simple.App.make = function (_elm) {
    var Model = F2(function (a,b) {    return {counter: a,showDialog: b};});
    var Acknowledge = {ctor: "Acknowledge"};
    var dialogConfig = F2(function (address,model) {
-      return {closeMessage: A2($Signal.message,address,Acknowledge)
+      return {closeMessage: $Maybe.Just(A2($Signal.message,address,Acknowledge))
              ,header: $Maybe.Just(A2($Html.h3,_U.list([]),_U.list([$Html.text("1 Up!")])))
              ,body: $Maybe.Just($Html.text(A2($Basics._op["++"],"The counter ticks up to ",A2($Basics._op["++"],$Basics.toString(model.counter),"."))))
              ,footer: $Maybe.Just(A2($Html.button,

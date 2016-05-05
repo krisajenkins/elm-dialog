@@ -11341,13 +11341,15 @@ Elm.Dialog.make = function (_elm) {
    };
    var wrapFooter = function (footer) {    return A2($Html.div,_U.list([$Html$Attributes.$class("modal-footer")]),_U.list([footer]));};
    var wrapBody = function (body) {    return A2($Html.div,_U.list([$Html$Attributes.$class("modal-body")]),_U.list([body]));};
+   var closeButton = function (closeMessage) {
+      return A2($Html.button,
+      _U.list([$Html$Attributes.$class("close"),A3($Html$Events.on,"click",$Html$Events.targetValue,$Basics.always(closeMessage))]),
+      _U.list([$Html.text("x")]));
+   };
    var wrapHeader = F2(function (closeMessage,header) {
-      return A2($Html.div,
+      return _U.eq(closeMessage,$Maybe.Nothing) && _U.eq(header,$Maybe.Nothing) ? $Exts$Html$Bootstrap.empty : A2($Html.div,
       _U.list([$Html$Attributes.$class("modal-header")]),
-      _U.list([A2($Html.button,
-              _U.list([$Html$Attributes.$class("close"),A3($Html$Events.on,"click",$Html$Events.targetValue,$Basics.always(closeMessage))]),
-              _U.list([$Html.text("x")]))
-              ,header]));
+      _U.list([A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,closeButton,closeMessage),A2($Maybe.withDefault,$Exts$Html$Bootstrap.empty,header)]));
    });
    var view = function (maybeConfig) {
       var displayed = $Exts$Maybe.isJust(maybeConfig);
@@ -11367,7 +11369,7 @@ Elm.Dialog.make = function (_elm) {
                        return _U.list([$Exts$Html$Bootstrap.empty]);
                     } else {
                        var _p1 = _p0._0;
-                       return _U.list([A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,wrapHeader(_p1.closeMessage),_p1.header)
+                       return _U.list([A2(wrapHeader,_p1.closeMessage,_p1.header)
                                       ,A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,wrapBody,_p1.body)
                                       ,A3($Exts$Maybe.maybe,$Exts$Html$Bootstrap.empty,wrapFooter,_p1.footer)]);
                     }
@@ -11448,7 +11450,7 @@ Elm.Advanced.Heroes.Batman.View.make = function (_elm) {
    $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var dialog = F2(function (address,model) {
-      return model.showDialog ? $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Heroes$Batman$Types.Finished)
+      return model.showDialog ? $Maybe.Just({closeMessage: $Maybe.Just(A2($Signal.message,address,$Advanced$Heroes$Batman$Types.Finished))
                                             ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Kapow!")])))
                                             ,body: $Maybe.Just($Html.text("Batman swipes at you!"))
                                             ,footer: $Maybe.Just(A2($Utils.actionButton,
@@ -11606,7 +11608,7 @@ Elm.Advanced.Villains.Joker.View.make = function (_elm) {
       if (_p0.ctor === "Laughing") {
             return $Maybe.Nothing;
          } else {
-            return $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Villains$Joker$Types.Close)
+            return $Maybe.Just({closeMessage: $Maybe.Just(A2($Signal.message,address,$Advanced$Villains$Joker$Types.Close))
                                ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Joker says, \"Argh!\"")])))
                                ,body: $Maybe.Just($Html.text("The Joker is no longer smiling."))
                                ,footer: $Maybe.Nothing});
@@ -11643,13 +11645,13 @@ Elm.Advanced.Villains.Penguin.View.make = function (_elm) {
       var _p0 = model.state;
       switch (_p0.ctor)
       {case "Quiet": return $Maybe.Nothing;
-         case "Hurt": return $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Villains$Penguin$Types.Close)
+         case "Hurt": return $Maybe.Just({closeMessage: $Maybe.Just(A2($Signal.message,address,$Advanced$Villains$Penguin$Types.Close))
                                          ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Penguin says, \"Ouch!\"")])))
                                          ,body: $Maybe.Just($Html.text("The penguin tries to dodge, which goes badly because penguins lack grace on land."))
                                          ,footer: $Maybe.Just(A2($Utils.actionButton,
                                          address,
                                          {ctor: "_Tuple2",_0: $Advanced$Villains$Penguin$Types.Close,_1: "Take the pain"}))});
-         default: return $Maybe.Just({closeMessage: A2($Signal.message,address,$Advanced$Villains$Penguin$Types.Close)
+         default: return $Maybe.Just({closeMessage: $Maybe.Just(A2($Signal.message,address,$Advanced$Villains$Penguin$Types.Close))
                                      ,header: $Maybe.Just(A2($Html.h1,_U.list([]),_U.list([$Html.text("Penguin says, \"Wark!\"")])))
                                      ,body: $Maybe.Just($Html.text("The Penguin laughs his weird laugh"))
                                      ,footer: $Maybe.Just(A2($Utils.actionButton,
