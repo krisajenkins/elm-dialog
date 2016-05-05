@@ -50,8 +50,8 @@ logic should cause the dialog to be displayed, and to handle an
 `AcknowledgeDialog` action with whatever logic should occur when the user
 closes the dialog.
 
-See the `examples/` directory for working examples of how this works
-for apps large and small.
+See the `examples/` directory for examples of how this works for apps
+large and small.
 
 -}
 view : Maybe Config -> Html
