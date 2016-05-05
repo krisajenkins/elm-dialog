@@ -10,6 +10,14 @@ Elm modal dialog boxes that fits in neatly with the Elm architecture.
 * Dialogs should not rely on external CSS. (Not yet. Still relies on Bootstrap.)
 * Dialogs should be optionally animated. (Not yet. It's straightforward but not documented/demo'd.)
 
+## Installation
+
+From your top-level directory - the one with `elm-package.json` in - call:
+
+```
+$ elm package install krisajenkins/elm-dialog
+```
+
 ## Usage
 
 [See the Elm package for full usage docs](http://package.elm-lang.org/packages/krisajenkins/elm-dialog/latest/Dialog).
@@ -24,6 +32,8 @@ See the `examples/` directory for two fully-worked examples:
 ```
 make
 ```
+
+...will run the whole build and test suite.
 
 ## Credits
 
