@@ -1,6 +1,10 @@
 module Simple.App (main) where
 
 {-| Fan favourite, it's the "click a button and increment a counter" demo!
+
+When the user clicks a button, the counter will increment and a dialog
+will pop up alerting them about the new value. When they click Ok, the
+dialog goes away.
 -}
 
 import Dialog
@@ -66,8 +70,14 @@ update action model =
 ------------------------------------------------------------
 -- View
 ------------------------------------------------------------
+--
 
 
+{-| This is our top-level view, the one that will go straight into the
+`<body>` tag. We wire in `Dialog.view` at the top level. Our model
+contains the information we need to decide whether to show the dialog
+or not.
+-}
 view : Address Action -> Model -> Html
 view address model =
   div
@@ -88,6 +98,8 @@ view address model =
     ]
 
 
+{-| A `Dialog.Config` is just a few piece of optional `Html`, plus "what do we do onClose?"
+-}
 dialogConfig : Address Action -> Model -> Dialog.Config
 dialogConfig address model =
   { closeMessage = Signal.message address Acknowledge
