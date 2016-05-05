@@ -24,7 +24,7 @@ dialog address model =
 
     Screaming ->
       Just
-        { closeMessage = message address Close
+        { closeMessage = Just (message address Close)
         , header = Just (h1 [] [ text "Joker says, \"Argh!\"" ])
         , body = Just (text "The Joker is no longer smiling.")
         , footer = Nothing

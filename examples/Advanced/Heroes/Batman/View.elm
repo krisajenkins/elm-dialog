@@ -21,7 +21,7 @@ dialog : Address Action -> Model -> Maybe Dialog.Config
 dialog address model =
   if model.showDialog then
     Just
-      { closeMessage = message address Finished
+      { closeMessage = Just (message address Finished)
       , header = Just (h1 [] [ text "Kapow!" ])
       , body = Just (text "Batman swipes at you!")
       , footer = Just (actionButton address ( Finished, "OK" ))

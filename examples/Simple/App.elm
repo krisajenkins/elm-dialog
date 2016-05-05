@@ -102,7 +102,7 @@ view address model =
 -}
 dialogConfig : Address Action -> Model -> Dialog.Config
 dialogConfig address model =
-  { closeMessage = Signal.message address Acknowledge
+  { closeMessage = Just (Signal.message address Acknowledge)
   , header = Just (h3 [] [ text "1 Up!" ])
   , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
   , footer =

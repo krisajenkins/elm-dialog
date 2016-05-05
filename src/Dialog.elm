@@ -34,7 +34,7 @@ right at the top of the DOM tree, like so:
         , ...
         , Dialog.view
             (if model.shouldShowDialog then
-              Just { closeMessage = Signal.message address AcknowledgeDialog
+              Just { closeMessage = Just (Signal.message address AcknowledgeDialog)
                    , header = Just (text "Alert!"
                    , body = Just (p [] [text "Let me tell you something important..."])
                    , footer = Nothing
@@ -86,7 +86,7 @@ view maybeConfig =
                       [ empty ]
 
                     Just config ->
-                      [ maybe empty (wrapHeader config.closeMessage) config.header
+                      [ wrapHeader config.closeMessage config.header
                       , maybe empty wrapBody config.body
                       , maybe empty wrapFooter config.footer
                       ]
@@ -97,17 +97,23 @@ view maybeConfig =
       ]
 
 
-wrapHeader : Message -> Html -> Html
+wrapHeader : Maybe Message -> Maybe Html -> Html
 wrapHeader closeMessage header =
-  div
-    [ class "modal-header" ]
-    [ button
-        [ class "close"
-        , on "click" targetValue (always closeMessage)
-        ]
-        [ text "x" ]
-    , header
-    ]
+  if closeMessage == Nothing && header == Nothing then
+    empty
+  else
+    div
+      [ class "modal-header" ]
+      [ maybe empty closeButton closeMessage
+      , Maybe.withDefault empty header
+      ]
+
+
+closeButton : Message -> Html
+closeButton closeMessage =
+  button
+    [ class "close", on "click" targetValue (always closeMessage) ]
+    [ text "x" ]
 
 
 wrapBody : Html -> Html
@@ -132,16 +138,16 @@ backdrop config =
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
-and `footer` are all optional `Html` blocks. Those `Html` blocks can
+and `footer` are all `Maybe Html` blocks. Those `Html` blocks can
 be as simple or as complex as any other view function.
 
 Use only the ones you want and set the others to `Nothing`.
 
-The `closeMessage` is a mandatory `Signal.Message` we will send when the user
-clicks to dismiss the modal.
+The `closeMessage` is an optional `Signal.Message` we will send when the user
+clicks the 'X' in the top right. If you don't want that X displayed, use `Nothing`.
 -}
 type alias Config =
-  { closeMessage : Message
+  { closeMessage : Maybe Message
   , header : Maybe Html
   , body : Maybe Html
   , footer : Maybe Html
