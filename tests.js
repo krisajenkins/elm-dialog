@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-<html><head><meta charset="UTF-8"><title>Advanced.App</title><style>html,head,body { padding:0; margin:0; }
-body { font-family: calibri, helvetica, arial, sans-serif; }</style><script type="text/javascript">
+
 (function() {
 'use strict';
 
@@ -136,6 +134,7 @@ function A9(fun, a, b, c, d, e, f, g, h, i)
     ? fun.func(a, b, c, d, e, f, g, h, i)
     : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Basics = function() {
@@ -276,7 +275,8 @@ return {
 	isInfinite: isInfinite
 };
 
-}();//import //
+}();
+//import //
 
 var _elm_lang$core$Native_Utils = function() {
 
@@ -692,7 +692,8 @@ return {
 	toString: toString
 };
 
-}();var _elm_lang$core$Basics$uncurry = F2(
+}();
+var _elm_lang$core$Basics$uncurry = F2(
 	function (f, _p0) {
 		var _p1 = _p0;
 		return A2(f, _p1._0, _p1._1);
@@ -816,6 +817,7 @@ var _elm_lang$core$Basics$LT = {ctor: 'LT'};
 var _elm_lang$core$Basics$Never = function (a) {
 	return {ctor: 'Never', _0: a};
 };
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Debug = function() {
@@ -845,8 +847,10 @@ return {
 	log: F2(log)
 };
 
-}();var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
+}();
+var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
 var _elm_lang$core$Debug$log = _elm_lang$core$Native_Debug.log;
+
 var _elm_lang$core$Maybe$withDefault = F2(
 	function ($default, maybe) {
 		var _p0 = maybe;
@@ -938,6 +942,7 @@ var _elm_lang$core$Maybe$map5 = F6(
 			return _elm_lang$core$Maybe$Nothing;
 		}
 	});
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_List = function() {
@@ -1090,7 +1095,8 @@ return {
 	sortWith: F2(sortWith)
 };
 
-}();var _elm_lang$core$List$sortWith = _elm_lang$core$Native_List.sortWith;
+}();
+var _elm_lang$core$List$sortWith = _elm_lang$core$Native_List.sortWith;
 var _elm_lang$core$List$sortBy = _elm_lang$core$Native_List.sortBy;
 var _elm_lang$core$List$sort = function (xs) {
 	return A2(_elm_lang$core$List$sortBy, _elm_lang$core$Basics$identity, xs);
@@ -1489,6 +1495,7 @@ var _elm_lang$core$List$repeat = F2(
 			n,
 			value);
 	});
+
 var _elm_lang$core$Result$toMaybe = function (result) {
 	var _p0 = result;
 	if (_p0.ctor === 'Ok') {
@@ -1630,6 +1637,7 @@ var _elm_lang$core$Result$fromMaybe = F2(
 			return _elm_lang$core$Result$Err(err);
 		}
 	});
+
 //import //
 
 var _elm_lang$core$Native_Platform = function() {
@@ -2205,7 +2213,8 @@ return {
 	map: F2(map)
 };
 
-}();//import Native.Utils //
+}();
+//import Native.Utils //
 
 var _elm_lang$core$Native_Scheduler = function() {
 
@@ -2482,13 +2491,15 @@ return {
 	rawSend: rawSend
 };
 
-}();var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
+}();
+var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
 var _elm_lang$core$Platform$sendToSelf = _elm_lang$core$Native_Platform.sendToSelf;
 var _elm_lang$core$Platform$sendToApp = _elm_lang$core$Native_Platform.sendToApp;
 var _elm_lang$core$Platform$Program = {ctor: 'Program'};
 var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
+
 var _elm_lang$core$Platform_Cmd$batch = _elm_lang$core$Native_Platform.batch;
 var _elm_lang$core$Platform_Cmd$none = _elm_lang$core$Platform_Cmd$batch(
 	_elm_lang$core$Native_List.fromArray(
@@ -2504,12 +2515,14 @@ _elm_lang$core$Platform_Cmd_ops['!'] = F2(
 	});
 var _elm_lang$core$Platform_Cmd$map = _elm_lang$core$Native_Platform.map;
 var _elm_lang$core$Platform_Cmd$Cmd = {ctor: 'Cmd'};
+
 var _elm_lang$core$Platform_Sub$batch = _elm_lang$core$Native_Platform.batch;
 var _elm_lang$core$Platform_Sub$none = _elm_lang$core$Platform_Sub$batch(
 	_elm_lang$core$Native_List.fromArray(
 		[]));
 var _elm_lang$core$Platform_Sub$map = _elm_lang$core$Native_Platform.map;
 var _elm_lang$core$Platform_Sub$Sub = {ctor: 'Sub'};
+
 //import Native.List //
 
 var _elm_lang$core$Native_Array = function() {
@@ -3476,7 +3489,8 @@ return {
 	fromJSArray: fromJSArray
 };
 
-}();var _elm_lang$core$Array$append = _elm_lang$core$Native_Array.append;
+}();
+var _elm_lang$core$Array$append = _elm_lang$core$Native_Array.append;
 var _elm_lang$core$Array$length = _elm_lang$core$Native_Array.length;
 var _elm_lang$core$Array$isEmpty = function (array) {
 	return _elm_lang$core$Native_Utils.eq(
@@ -3529,238 +3543,7 @@ var _elm_lang$core$Array$repeat = F2(
 			_elm_lang$core$Basics$always(e));
 	});
 var _elm_lang$core$Array$Array = {ctor: 'Array'};
-var _elm_lang$core$Task$onError = _elm_lang$core$Native_Scheduler.onError;
-var _elm_lang$core$Task$andThen = _elm_lang$core$Native_Scheduler.andThen;
-var _elm_lang$core$Task$spawnCmd = F2(
-	function (router, _p0) {
-		var _p1 = _p0;
-		return _elm_lang$core$Native_Scheduler.spawn(
-			A2(
-				_elm_lang$core$Task$andThen,
-				_p1._0,
-				_elm_lang$core$Platform$sendToApp(router)));
-	});
-var _elm_lang$core$Task$fail = _elm_lang$core$Native_Scheduler.fail;
-var _elm_lang$core$Task$mapError = F2(
-	function (f, task) {
-		return A2(
-			_elm_lang$core$Task$onError,
-			task,
-			function (err) {
-				return _elm_lang$core$Task$fail(
-					f(err));
-			});
-	});
-var _elm_lang$core$Task$succeed = _elm_lang$core$Native_Scheduler.succeed;
-var _elm_lang$core$Task$map = F2(
-	function (func, taskA) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			taskA,
-			function (a) {
-				return _elm_lang$core$Task$succeed(
-					func(a));
-			});
-	});
-var _elm_lang$core$Task$map2 = F3(
-	function (func, taskA, taskB) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			taskA,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					taskB,
-					function (b) {
-						return _elm_lang$core$Task$succeed(
-							A2(func, a, b));
-					});
-			});
-	});
-var _elm_lang$core$Task$map3 = F4(
-	function (func, taskA, taskB, taskC) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			taskA,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					taskB,
-					function (b) {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							taskC,
-							function (c) {
-								return _elm_lang$core$Task$succeed(
-									A3(func, a, b, c));
-							});
-					});
-			});
-	});
-var _elm_lang$core$Task$map4 = F5(
-	function (func, taskA, taskB, taskC, taskD) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			taskA,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					taskB,
-					function (b) {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							taskC,
-							function (c) {
-								return A2(
-									_elm_lang$core$Task$andThen,
-									taskD,
-									function (d) {
-										return _elm_lang$core$Task$succeed(
-											A4(func, a, b, c, d));
-									});
-							});
-					});
-			});
-	});
-var _elm_lang$core$Task$map5 = F6(
-	function (func, taskA, taskB, taskC, taskD, taskE) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			taskA,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					taskB,
-					function (b) {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							taskC,
-							function (c) {
-								return A2(
-									_elm_lang$core$Task$andThen,
-									taskD,
-									function (d) {
-										return A2(
-											_elm_lang$core$Task$andThen,
-											taskE,
-											function (e) {
-												return _elm_lang$core$Task$succeed(
-													A5(func, a, b, c, d, e));
-											});
-									});
-							});
-					});
-			});
-	});
-var _elm_lang$core$Task$andMap = F2(
-	function (taskFunc, taskValue) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			taskFunc,
-			function (func) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					taskValue,
-					function (value) {
-						return _elm_lang$core$Task$succeed(
-							func(value));
-					});
-			});
-	});
-var _elm_lang$core$Task$sequence = function (tasks) {
-	var _p2 = tasks;
-	if (_p2.ctor === '[]') {
-		return _elm_lang$core$Task$succeed(
-			_elm_lang$core$Native_List.fromArray(
-				[]));
-	} else {
-		return A3(
-			_elm_lang$core$Task$map2,
-			F2(
-				function (x, y) {
-					return A2(_elm_lang$core$List_ops['::'], x, y);
-				}),
-			_p2._0,
-			_elm_lang$core$Task$sequence(_p2._1));
-	}
-};
-var _elm_lang$core$Task$onEffects = F3(
-	function (router, commands, state) {
-		return A2(
-			_elm_lang$core$Task$map,
-			function (_p3) {
-				return {ctor: '_Tuple0'};
-			},
-			_elm_lang$core$Task$sequence(
-				A2(
-					_elm_lang$core$List$map,
-					_elm_lang$core$Task$spawnCmd(router),
-					commands)));
-	});
-var _elm_lang$core$Task$toMaybe = function (task) {
-	return A2(
-		_elm_lang$core$Task$onError,
-		A2(_elm_lang$core$Task$map, _elm_lang$core$Maybe$Just, task),
-		function (_p4) {
-			return _elm_lang$core$Task$succeed(_elm_lang$core$Maybe$Nothing);
-		});
-};
-var _elm_lang$core$Task$fromMaybe = F2(
-	function ($default, maybe) {
-		var _p5 = maybe;
-		if (_p5.ctor === 'Just') {
-			return _elm_lang$core$Task$succeed(_p5._0);
-		} else {
-			return _elm_lang$core$Task$fail($default);
-		}
-	});
-var _elm_lang$core$Task$toResult = function (task) {
-	return A2(
-		_elm_lang$core$Task$onError,
-		A2(_elm_lang$core$Task$map, _elm_lang$core$Result$Ok, task),
-		function (msg) {
-			return _elm_lang$core$Task$succeed(
-				_elm_lang$core$Result$Err(msg));
-		});
-};
-var _elm_lang$core$Task$fromResult = function (result) {
-	var _p6 = result;
-	if (_p6.ctor === 'Ok') {
-		return _elm_lang$core$Task$succeed(_p6._0);
-	} else {
-		return _elm_lang$core$Task$fail(_p6._0);
-	}
-};
-var _elm_lang$core$Task$init = _elm_lang$core$Task$succeed(
-	{ctor: '_Tuple0'});
-var _elm_lang$core$Task$onSelfMsg = F3(
-	function (_p9, _p8, _p7) {
-		return _elm_lang$core$Task$succeed(
-			{ctor: '_Tuple0'});
-	});
-var _elm_lang$core$Task$command = _elm_lang$core$Native_Platform.leaf('Task');
-var _elm_lang$core$Task$T = function (a) {
-	return {ctor: 'T', _0: a};
-};
-var _elm_lang$core$Task$perform = F3(
-	function (onFail, onSuccess, task) {
-		return _elm_lang$core$Task$command(
-			_elm_lang$core$Task$T(
-				A2(
-					_elm_lang$core$Task$onError,
-					A2(_elm_lang$core$Task$map, onSuccess, task),
-					function (x) {
-						return _elm_lang$core$Task$succeed(
-							onFail(x));
-					})));
-	});
-var _elm_lang$core$Task$cmdMap = F2(
-	function (tagger, _p10) {
-		var _p11 = _p10;
-		return _elm_lang$core$Task$T(
-			A2(_elm_lang$core$Task$map, tagger, _p11._0));
-	});
-_elm_lang$core$Native_Platform.effectManagers['Task'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Task$init, onEffects: _elm_lang$core$Task$onEffects, onSelfMsg: _elm_lang$core$Task$onSelfMsg, tag: 'cmd', cmdMap: _elm_lang$core$Task$cmdMap};
+
 //import Maybe, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_String = function() {
@@ -4087,7 +3870,8 @@ return {
 	fromList: fromList
 };
 
-}();//import Native.Utils //
+}();
+//import Native.Utils //
 
 var _elm_lang$core$Native_Char = function() {
 
@@ -4100,7 +3884,8 @@ return {
 	toLocaleLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleLowerCase()); }
 };
 
-}();var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
+}();
+var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
 var _elm_lang$core$Char$toCode = _elm_lang$core$Native_Char.toCode;
 var _elm_lang$core$Char$toLocaleLower = _elm_lang$core$Native_Char.toLocaleLower;
 var _elm_lang$core$Char$toLocaleUpper = _elm_lang$core$Native_Char.toLocaleUpper;
@@ -4142,6 +3927,7 @@ var _elm_lang$core$Char$isHexDigit = function ($char) {
 		_elm_lang$core$Native_Utils.chr('F'),
 		$char));
 };
+
 var _elm_lang$core$String$fromList = _elm_lang$core$Native_String.fromList;
 var _elm_lang$core$String$toList = _elm_lang$core$Native_String.toList;
 var _elm_lang$core$String$toFloat = _elm_lang$core$Native_String.toFloat;
@@ -4185,6 +3971,7 @@ var _elm_lang$core$String$fromChar = function ($char) {
 	return A2(_elm_lang$core$String$cons, $char, '');
 };
 var _elm_lang$core$String$isEmpty = _elm_lang$core$Native_String.isEmpty;
+
 var _elm_lang$core$Dict$foldr = F3(
 	function (f, acc, t) {
 		foldr:
@@ -5061,6 +4848,463 @@ var _elm_lang$core$Dict$diff = F2(
 			t1,
 			t2);
 	});
+
+var _elm_community$elm_test$ElmTest_Assertion$AlwaysFail = function (a) {
+	return {ctor: 'AlwaysFail', _0: a};
+};
+var _elm_community$elm_test$ElmTest_Assertion$AlwaysPass = {ctor: 'AlwaysPass'};
+var _elm_community$elm_test$ElmTest_Assertion$AssertNotEqual = F3(
+	function (a, b, c) {
+		return {ctor: 'AssertNotEqual', _0: a, _1: b, _2: c};
+	});
+var _elm_community$elm_test$ElmTest_Assertion$assertNotEqual = F2(
+	function (a, b) {
+		return A3(
+			_elm_community$elm_test$ElmTest_Assertion$AssertNotEqual,
+			function (_p0) {
+				return !_elm_lang$core$Native_Utils.eq(a, b);
+			},
+			_elm_lang$core$Basics$toString(a),
+			_elm_lang$core$Basics$toString(b));
+	});
+var _elm_community$elm_test$ElmTest_Assertion$AssertEqual = F3(
+	function (a, b, c) {
+		return {ctor: 'AssertEqual', _0: a, _1: b, _2: c};
+	});
+var _elm_community$elm_test$ElmTest_Assertion$assertEqual = F2(
+	function (a, b) {
+		return A3(
+			_elm_community$elm_test$ElmTest_Assertion$AssertEqual,
+			function (_p1) {
+				return _elm_lang$core$Native_Utils.eq(a, b);
+			},
+			_elm_lang$core$Basics$toString(a),
+			_elm_lang$core$Basics$toString(b));
+	});
+var _elm_community$elm_test$ElmTest_Assertion$assertionList = F2(
+	function (xs, ys) {
+		return A3(_elm_lang$core$List$map2, _elm_community$elm_test$ElmTest_Assertion$assertEqual, xs, ys);
+	});
+var _elm_community$elm_test$ElmTest_Assertion$AssertFalse = function (a) {
+	return {ctor: 'AssertFalse', _0: a};
+};
+var _elm_community$elm_test$ElmTest_Assertion$AssertTrue = function (a) {
+	return {ctor: 'AssertTrue', _0: a};
+};
+var _elm_community$elm_test$ElmTest_Assertion$assertT = _elm_community$elm_test$ElmTest_Assertion$AssertTrue;
+var _elm_community$elm_test$ElmTest_Assertion$assert = function (b) {
+	return _elm_community$elm_test$ElmTest_Assertion$AssertTrue(
+		function (_p2) {
+			return b;
+		});
+};
+
+var _elm_community$elm_test$ElmTest_Test$numberOfSuites = function (test) {
+	var _p0 = test;
+	if (_p0.ctor === 'TestCase') {
+		return 0;
+	} else {
+		return 1 + function (_p1) {
+			return _elm_lang$core$List$sum(
+				A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Test$numberOfSuites, _p1));
+		}(_p0._1);
+	}
+};
+var _elm_community$elm_test$ElmTest_Test$numberOfTests = function (test) {
+	var _p2 = test;
+	if (_p2.ctor === 'TestCase') {
+		return 1;
+	} else {
+		return function (_p3) {
+			return _elm_lang$core$List$sum(
+				A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Test$numberOfTests, _p3));
+		}(_p2._1);
+	}
+};
+var _elm_community$elm_test$ElmTest_Test$nameOf = function (test) {
+	var _p4 = test;
+	if (_p4.ctor === 'TestCase') {
+		return _p4._0;
+	} else {
+		return _p4._0;
+	}
+};
+var _elm_community$elm_test$ElmTest_Test$Suite = F2(
+	function (a, b) {
+		return {ctor: 'Suite', _0: a, _1: b};
+	});
+var _elm_community$elm_test$ElmTest_Test$suite = _elm_community$elm_test$ElmTest_Test$Suite;
+var _elm_community$elm_test$ElmTest_Test$TestCase = F2(
+	function (a, b) {
+		return {ctor: 'TestCase', _0: a, _1: b};
+	});
+var _elm_community$elm_test$ElmTest_Test$test = F2(
+	function (name, a) {
+		return A2(_elm_community$elm_test$ElmTest_Test$TestCase, name, a);
+	});
+var _elm_community$elm_test$ElmTest_Test$defaultTest = function (a) {
+	var name = function () {
+		var _p5 = a;
+		switch (_p5.ctor) {
+			case 'AssertTrue':
+				return 'True';
+			case 'AssertFalse':
+				return 'False';
+			case 'AssertEqual':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_p5._1,
+					A2(_elm_lang$core$Basics_ops['++'], ' == ', _p5._2));
+			case 'AssertNotEqual':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					_p5._1,
+					A2(_elm_lang$core$Basics_ops['++'], ' /= ', _p5._2));
+			case 'AlwaysPass':
+				return 'Always passes';
+			default:
+				return 'Always fails';
+		}
+	}();
+	return A2(_elm_community$elm_test$ElmTest_Test$test, name, a);
+};
+var _elm_community$elm_test$ElmTest_Test$equals = F2(
+	function (a, b) {
+		return _elm_community$elm_test$ElmTest_Test$defaultTest(
+			A2(_elm_community$elm_test$ElmTest_Assertion$assertEqual, a, b));
+	});
+
+var _elm_community$elm_test$ElmTest_Run$failedSuites = function (result) {
+	var _p0 = result;
+	if (_p0.ctor === 'Report') {
+		var _p2 = _p0._1;
+		var failed = (_elm_lang$core$Native_Utils.cmp(
+			_elm_lang$core$List$length(_p2.failures),
+			0) > 0) ? 1 : 0;
+		return failed + function (_p1) {
+			return _elm_lang$core$List$sum(
+				A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Run$failedSuites, _p1));
+		}(_p2.results);
+	} else {
+		return 0;
+	}
+};
+var _elm_community$elm_test$ElmTest_Run$passedSuites = function (result) {
+	var _p3 = result;
+	if (_p3.ctor === 'Report') {
+		var _p5 = _p3._1;
+		var passed = _elm_lang$core$Native_Utils.eq(
+			_elm_lang$core$List$length(_p5.failures),
+			0) ? 1 : 0;
+		return passed + function (_p4) {
+			return _elm_lang$core$List$sum(
+				A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Run$passedSuites, _p4));
+		}(_p5.results);
+	} else {
+		return 0;
+	}
+};
+var _elm_community$elm_test$ElmTest_Run$failedTests = function (result) {
+	var _p6 = result;
+	switch (_p6.ctor) {
+		case 'Pass':
+			return 0;
+		case 'Fail':
+			return 1;
+		default:
+			return function (_p7) {
+				return _elm_lang$core$List$sum(
+					A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Run$failedTests, _p7));
+			}(_p6._1.results);
+	}
+};
+var _elm_community$elm_test$ElmTest_Run$passedTests = function (result) {
+	var _p8 = result;
+	switch (_p8.ctor) {
+		case 'Pass':
+			return 1;
+		case 'Fail':
+			return 0;
+		default:
+			return function (_p9) {
+				return _elm_lang$core$List$sum(
+					A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Run$passedTests, _p9));
+			}(_p8._1.results);
+	}
+};
+var _elm_community$elm_test$ElmTest_Run$pass = function (m) {
+	var _p10 = m;
+	switch (_p10.ctor) {
+		case 'Pass':
+			return true;
+		case 'Fail':
+			return false;
+		default:
+			return (_elm_lang$core$Native_Utils.cmp(
+				_elm_lang$core$List$length(
+					function (_) {
+						return _.failures;
+					}(_p10._1)),
+				0) > 0) ? false : true;
+	}
+};
+var _elm_community$elm_test$ElmTest_Run$fail = function (_p11) {
+	return _elm_lang$core$Basics$not(
+		_elm_community$elm_test$ElmTest_Run$pass(_p11));
+};
+var _elm_community$elm_test$ElmTest_Run$Summary = F3(
+	function (a, b, c) {
+		return {results: a, passes: b, failures: c};
+	});
+var _elm_community$elm_test$ElmTest_Run$Report = F2(
+	function (a, b) {
+		return {ctor: 'Report', _0: a, _1: b};
+	});
+var _elm_community$elm_test$ElmTest_Run$Fail = F2(
+	function (a, b) {
+		return {ctor: 'Fail', _0: a, _1: b};
+	});
+var _elm_community$elm_test$ElmTest_Run$Pass = function (a) {
+	return {ctor: 'Pass', _0: a};
+};
+var _elm_community$elm_test$ElmTest_Run$run = function (test) {
+	var _p12 = test;
+	if (_p12.ctor === 'TestCase') {
+		var _p14 = _p12._0;
+		var runAssertion = F2(
+			function (t, m) {
+				return t(
+					{ctor: '_Tuple0'}) ? _elm_community$elm_test$ElmTest_Run$Pass(_p14) : A2(_elm_community$elm_test$ElmTest_Run$Fail, _p14, m);
+			});
+		var _p13 = _p12._1;
+		switch (_p13.ctor) {
+			case 'AssertEqual':
+				return A2(
+					runAssertion,
+					_p13._0,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'Expected: ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_p13._1,
+							A2(_elm_lang$core$Basics_ops['++'], '; got: ', _p13._2))));
+			case 'AssertNotEqual':
+				return A2(
+					runAssertion,
+					_p13._0,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_p13._1,
+						A2(_elm_lang$core$Basics_ops['++'], ' equals ', _p13._2)));
+			case 'AssertTrue':
+				return A2(runAssertion, _p13._0, 'not True');
+			case 'AssertFalse':
+				return A2(runAssertion, _p13._0, 'not False');
+			case 'AlwaysPass':
+				return A2(
+					runAssertion,
+					_elm_lang$core$Basics$always(true),
+					'');
+			default:
+				return A2(
+					runAssertion,
+					_elm_lang$core$Basics$always(false),
+					_p13._0);
+		}
+	} else {
+		var results = A2(_elm_lang$core$List$map, _elm_community$elm_test$ElmTest_Run$run, _p12._1);
+		var _p15 = A2(_elm_lang$core$List$partition, _elm_community$elm_test$ElmTest_Run$pass, results);
+		var passes = _p15._0;
+		var fails = _p15._1;
+		return A2(
+			_elm_community$elm_test$ElmTest_Run$Report,
+			_p12._0,
+			{results: results, passes: passes, failures: fails});
+	}
+};
+
+var _elm_community$elm_test$ElmTest_Runner_String$replicate = F2(
+	function (n, c) {
+		var go = function (n) {
+			return (_elm_lang$core$Native_Utils.cmp(n, 0) < 1) ? _elm_lang$core$Native_List.fromArray(
+				[]) : A2(
+				_elm_lang$core$List_ops['::'],
+				c,
+				go(n - 1));
+		};
+		return function (_p0) {
+			return _elm_lang$core$String$fromList(
+				go(_p0));
+		}(n);
+	});
+var _elm_community$elm_test$ElmTest_Runner_String$vcat = function (_p1) {
+	return _elm_lang$core$String$concat(
+		A2(_elm_lang$core$List$intersperse, '\n', _p1));
+};
+var _elm_community$elm_test$ElmTest_Runner_String$indent = function (n) {
+	var indents = A2(
+		_elm_community$elm_test$ElmTest_Runner_String$replicate,
+		n,
+		_elm_lang$core$Native_Utils.chr(' '));
+	return function (_p2) {
+		return _elm_community$elm_test$ElmTest_Runner_String$vcat(
+			A2(
+				_elm_lang$core$List$map,
+				_elm_lang$core$String$append(indents),
+				_elm_lang$core$String$lines(_p2)));
+	};
+};
+var _elm_community$elm_test$ElmTest_Runner_String$pretty = F2(
+	function (n, result) {
+		var passed = _elm_community$elm_test$ElmTest_Run$pass(result);
+		var _p3 = result;
+		switch (_p3.ctor) {
+			case 'Pass':
+				return _elm_lang$core$Native_List.fromArray(
+					[
+						{
+						ctor: '_Tuple2',
+						_0: A2(
+							_elm_community$elm_test$ElmTest_Runner_String$indent,
+							n,
+							A2(_elm_lang$core$Basics_ops['++'], _p3._0, ': passed.')),
+						_1: result
+					}
+					]);
+			case 'Fail':
+				return _elm_lang$core$Native_List.fromArray(
+					[
+						{
+						ctor: '_Tuple2',
+						_0: A2(
+							_elm_community$elm_test$ElmTest_Runner_String$indent,
+							n,
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_p3._0,
+								A2(_elm_lang$core$Basics_ops['++'], ': FAILED. ', _p3._1))),
+						_1: result
+					}
+					]);
+			default:
+				var allPassed = _elm_lang$core$Native_Utils.eq(
+					_elm_community$elm_test$ElmTest_Run$failedTests(result),
+					0);
+				var subResults = allPassed ? _elm_lang$core$Native_List.fromArray(
+					[]) : A2(
+					_elm_lang$core$List$concatMap,
+					_elm_community$elm_test$ElmTest_Runner_String$pretty(n + 2),
+					_p3._1.results);
+				var msg = A2(
+					_elm_lang$core$Basics_ops['++'],
+					'Test Suite: ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_p3._0,
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							': ',
+							passed ? 'all tests passed' : 'FAILED')));
+				return A2(
+					_elm_lang$core$List_ops['::'],
+					{
+						ctor: '_Tuple2',
+						_0: A2(_elm_community$elm_test$ElmTest_Runner_String$indent, n, msg),
+						_1: result
+					},
+					subResults);
+		}
+	});
+var _elm_community$elm_test$ElmTest_Runner_String$run = function (t) {
+	var tests = function () {
+		var _p4 = t;
+		if (_p4.ctor === 'TestCase') {
+			return _elm_lang$core$Native_List.fromArray(
+				[
+					A2(_elm_community$elm_test$ElmTest_Test$TestCase, _p4._0, _p4._1)
+				]);
+		} else {
+			return _p4._1;
+		}
+	}();
+	var result = _elm_community$elm_test$ElmTest_Run$run(t);
+	var passedTests$ = _elm_community$elm_test$ElmTest_Run$passedTests(result);
+	var passedSuites$ = _elm_community$elm_test$ElmTest_Run$passedSuites(result);
+	var failedTests$ = _elm_community$elm_test$ElmTest_Run$failedTests(result);
+	var allPassed = _elm_lang$core$Native_Utils.eq(failedTests$, 0) ? _elm_community$elm_test$ElmTest_Run$Pass('') : A2(_elm_community$elm_test$ElmTest_Run$Fail, '', '');
+	var failedSuites$ = _elm_community$elm_test$ElmTest_Run$failedSuites(result);
+	var summary = function (_p5) {
+		return _elm_community$elm_test$ElmTest_Runner_String$vcat(
+			A2(
+				_elm_lang$core$List$map,
+				_elm_community$elm_test$ElmTest_Runner_String$indent(2),
+				_p5));
+	}(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(
+					_elm_community$elm_test$ElmTest_Test$numberOfSuites(t)),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					' suites run, containing ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(
+							_elm_community$elm_test$ElmTest_Test$numberOfTests(t)),
+						' tests'))),
+				_elm_lang$core$Native_Utils.eq(failedTests$, 0) ? 'All tests passed' : A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(passedSuites$),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					' suites and ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(passedTests$),
+						' tests passed'))),
+				_elm_lang$core$Native_Utils.eq(failedTests$, 0) ? '' : A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(failedSuites$),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					' suites and ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(failedTests$),
+						' tests failed')))
+			]));
+	var results$ = function () {
+		var _p6 = allPassed;
+		if (_p6.ctor === 'Pass') {
+			return _elm_lang$core$Native_List.fromArray(
+				[
+					{ctor: '_Tuple2', _0: '', _1: allPassed}
+				]);
+		} else {
+			return A2(_elm_community$elm_test$ElmTest_Runner_String$pretty, 0, result);
+		}
+	}();
+	return A2(
+		_elm_lang$core$List_ops['::'],
+		{ctor: '_Tuple2', _0: summary, _1: allPassed},
+		results$);
+};
+var _elm_community$elm_test$ElmTest_Runner_String$runDisplay = function (t) {
+	var _p7 = _elm_community$elm_test$ElmTest_Runner_String$run(t);
+	if ((_p7.ctor === '::') && (_p7._0.ctor === '_Tuple2')) {
+		return _elm_community$elm_test$ElmTest_Runner_String$vcat(
+			A2(
+				_elm_lang$core$List_ops['::'],
+				A2(_elm_lang$core$Basics_ops['++'], _p7._0._0, '\n'),
+				A2(_elm_lang$core$List$map, _elm_lang$core$Basics$fst, _p7._1)));
+	} else {
+		return '';
+	}
+};
+
 //import Maybe, Native.Array, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_Json = function() {
@@ -5705,6 +5949,7 @@ return {
 };
 
 }();
+
 var _elm_lang$core$Json_Encode$list = _elm_lang$core$Native_Json.encodeList;
 var _elm_lang$core$Json_Encode$array = _elm_lang$core$Native_Json.encodeArray;
 var _elm_lang$core$Json_Encode$object = _elm_lang$core$Native_Json.encodeObject;
@@ -5715,6 +5960,7 @@ var _elm_lang$core$Json_Encode$int = _elm_lang$core$Native_Json.identity;
 var _elm_lang$core$Json_Encode$string = _elm_lang$core$Native_Json.identity;
 var _elm_lang$core$Json_Encode$encode = _elm_lang$core$Native_Json.encode;
 var _elm_lang$core$Json_Encode$Value = {ctor: 'Value'};
+
 var _elm_lang$core$Json_Decode$tuple8 = _elm_lang$core$Native_Json.decodeTuple8;
 var _elm_lang$core$Json_Decode$tuple7 = _elm_lang$core$Native_Json.decodeTuple7;
 var _elm_lang$core$Json_Decode$tuple6 = _elm_lang$core$Native_Json.decodeTuple6;
@@ -5775,6 +6021,7 @@ var _elm_lang$core$Json_Decode$dict = function (decoder) {
 		_elm_lang$core$Json_Decode$keyValuePairs(decoder));
 };
 var _elm_lang$core$Json_Decode$Decoder = {ctor: 'Decoder'};
+
 //import Native.Json //
 
 var _elm_lang$virtual_dom$Native_VirtualDom = function() {
@@ -6783,7 +7030,8 @@ return {
 	programWithFlags: programWithFlags
 };
 
-}();var _elm_lang$virtual_dom$VirtualDom$programWithFlags = _elm_lang$virtual_dom$Native_VirtualDom.programWithFlags;
+}();
+var _elm_lang$virtual_dom$VirtualDom$programWithFlags = _elm_lang$virtual_dom$Native_VirtualDom.programWithFlags;
 var _elm_lang$virtual_dom$VirtualDom$lazy3 = _elm_lang$virtual_dom$Native_VirtualDom.lazy3;
 var _elm_lang$virtual_dom$VirtualDom$lazy2 = _elm_lang$virtual_dom$Native_VirtualDom.lazy2;
 var _elm_lang$virtual_dom$VirtualDom$lazy = _elm_lang$virtual_dom$Native_VirtualDom.lazy;
@@ -6806,6 +7054,7 @@ var _elm_lang$virtual_dom$VirtualDom$Options = F2(
 	});
 var _elm_lang$virtual_dom$VirtualDom$Node = {ctor: 'Node'};
 var _elm_lang$virtual_dom$VirtualDom$Property = {ctor: 'Property'};
+
 var _elm_lang$html$Html$text = _elm_lang$virtual_dom$VirtualDom$text;
 var _elm_lang$html$Html$node = _elm_lang$virtual_dom$VirtualDom$node;
 var _elm_lang$html$Html$body = _elm_lang$html$Html$node('body');
@@ -6907,6 +7156,7 @@ var _elm_lang$html$Html$details = _elm_lang$html$Html$node('details');
 var _elm_lang$html$Html$summary = _elm_lang$html$Html$node('summary');
 var _elm_lang$html$Html$menuitem = _elm_lang$html$Html$node('menuitem');
 var _elm_lang$html$Html$menu = _elm_lang$html$Html$node('menu');
+
 var _elm_lang$html$Html_App$programWithFlags = _elm_lang$virtual_dom$VirtualDom$programWithFlags;
 var _elm_lang$html$Html_App$program = function (app) {
 	return _elm_lang$html$Html_App$programWithFlags(
@@ -6944,1783 +7194,141 @@ var _elm_lang$html$Html_App$beginnerProgram = function (_p1) {
 		});
 };
 var _elm_lang$html$Html_App$map = _elm_lang$virtual_dom$VirtualDom$map;
-var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
-var _elm_lang$html$Html_Attributes$contextmenu = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$attribute, 'contextmenu', value);
-};
-var _elm_lang$html$Html_Attributes$property = _elm_lang$virtual_dom$VirtualDom$property;
-var _elm_lang$html$Html_Attributes$stringProperty = F2(
-	function (name, string) {
-		return A2(
-			_elm_lang$html$Html_Attributes$property,
-			name,
-			_elm_lang$core$Json_Encode$string(string));
-	});
-var _elm_lang$html$Html_Attributes$class = function (name) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'className', name);
-};
-var _elm_lang$html$Html_Attributes$id = function (name) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'id', name);
-};
-var _elm_lang$html$Html_Attributes$title = function (name) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'title', name);
-};
-var _elm_lang$html$Html_Attributes$accesskey = function ($char) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'accessKey',
-		_elm_lang$core$String$fromChar($char));
-};
-var _elm_lang$html$Html_Attributes$dir = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'dir', value);
-};
-var _elm_lang$html$Html_Attributes$draggable = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'draggable', value);
-};
-var _elm_lang$html$Html_Attributes$dropzone = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'dropzone', value);
-};
-var _elm_lang$html$Html_Attributes$itemprop = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'itemprop', value);
-};
-var _elm_lang$html$Html_Attributes$lang = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'lang', value);
-};
-var _elm_lang$html$Html_Attributes$tabindex = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'tabIndex',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$charset = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'charset', value);
-};
-var _elm_lang$html$Html_Attributes$content = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'content', value);
-};
-var _elm_lang$html$Html_Attributes$httpEquiv = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'httpEquiv', value);
-};
-var _elm_lang$html$Html_Attributes$language = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'language', value);
-};
-var _elm_lang$html$Html_Attributes$src = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'src', value);
-};
-var _elm_lang$html$Html_Attributes$height = function (value) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'height',
-		_elm_lang$core$Basics$toString(value));
-};
-var _elm_lang$html$Html_Attributes$width = function (value) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'width',
-		_elm_lang$core$Basics$toString(value));
-};
-var _elm_lang$html$Html_Attributes$alt = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'alt', value);
-};
-var _elm_lang$html$Html_Attributes$preload = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'preload', value);
-};
-var _elm_lang$html$Html_Attributes$poster = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'poster', value);
-};
-var _elm_lang$html$Html_Attributes$kind = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'kind', value);
-};
-var _elm_lang$html$Html_Attributes$srclang = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'srclang', value);
-};
-var _elm_lang$html$Html_Attributes$sandbox = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'sandbox', value);
-};
-var _elm_lang$html$Html_Attributes$srcdoc = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'srcdoc', value);
-};
-var _elm_lang$html$Html_Attributes$type$ = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'type', value);
-};
-var _elm_lang$html$Html_Attributes$value = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'value', value);
-};
-var _elm_lang$html$Html_Attributes$defaultValue = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'defaultValue', value);
-};
-var _elm_lang$html$Html_Attributes$placeholder = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'placeholder', value);
-};
-var _elm_lang$html$Html_Attributes$accept = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'accept', value);
-};
-var _elm_lang$html$Html_Attributes$acceptCharset = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'acceptCharset', value);
-};
-var _elm_lang$html$Html_Attributes$action = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'action', value);
-};
-var _elm_lang$html$Html_Attributes$autocomplete = function (bool) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'autocomplete',
-		bool ? 'on' : 'off');
-};
-var _elm_lang$html$Html_Attributes$autosave = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'autosave', value);
-};
-var _elm_lang$html$Html_Attributes$enctype = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'enctype', value);
-};
-var _elm_lang$html$Html_Attributes$formaction = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'formAction', value);
-};
-var _elm_lang$html$Html_Attributes$list = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'list', value);
-};
-var _elm_lang$html$Html_Attributes$minlength = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'minLength',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$maxlength = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'maxLength',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$method = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'method', value);
-};
-var _elm_lang$html$Html_Attributes$name = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'name', value);
-};
-var _elm_lang$html$Html_Attributes$pattern = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'pattern', value);
-};
-var _elm_lang$html$Html_Attributes$size = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'size',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$for = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'htmlFor', value);
-};
-var _elm_lang$html$Html_Attributes$form = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'form', value);
-};
-var _elm_lang$html$Html_Attributes$max = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'max', value);
-};
-var _elm_lang$html$Html_Attributes$min = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'min', value);
-};
-var _elm_lang$html$Html_Attributes$step = function (n) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'step', n);
-};
-var _elm_lang$html$Html_Attributes$cols = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'cols',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$rows = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'rows',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$wrap = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'wrap', value);
-};
-var _elm_lang$html$Html_Attributes$usemap = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'useMap', value);
-};
-var _elm_lang$html$Html_Attributes$shape = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'shape', value);
-};
-var _elm_lang$html$Html_Attributes$coords = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'coords', value);
-};
-var _elm_lang$html$Html_Attributes$challenge = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'challenge', value);
-};
-var _elm_lang$html$Html_Attributes$keytype = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'keytype', value);
-};
-var _elm_lang$html$Html_Attributes$align = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'align', value);
-};
-var _elm_lang$html$Html_Attributes$cite = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'cite', value);
-};
-var _elm_lang$html$Html_Attributes$href = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'href', value);
-};
-var _elm_lang$html$Html_Attributes$target = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'target', value);
-};
-var _elm_lang$html$Html_Attributes$downloadAs = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'download', value);
-};
-var _elm_lang$html$Html_Attributes$hreflang = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'hreflang', value);
-};
-var _elm_lang$html$Html_Attributes$media = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'media', value);
-};
-var _elm_lang$html$Html_Attributes$ping = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'ping', value);
-};
-var _elm_lang$html$Html_Attributes$rel = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'rel', value);
-};
-var _elm_lang$html$Html_Attributes$datetime = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'datetime', value);
-};
-var _elm_lang$html$Html_Attributes$pubdate = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'pubdate', value);
-};
-var _elm_lang$html$Html_Attributes$start = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'start',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$colspan = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'colSpan',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$headers = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'headers', value);
-};
-var _elm_lang$html$Html_Attributes$rowspan = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'rowSpan',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$scope = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'scope', value);
-};
-var _elm_lang$html$Html_Attributes$manifest = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'manifest', value);
-};
-var _elm_lang$html$Html_Attributes$boolProperty = F2(
-	function (name, bool) {
-		return A2(
-			_elm_lang$html$Html_Attributes$property,
-			name,
-			_elm_lang$core$Json_Encode$bool(bool));
-	});
-var _elm_lang$html$Html_Attributes$hidden = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'hidden', bool);
-};
-var _elm_lang$html$Html_Attributes$contenteditable = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'contentEditable', bool);
-};
-var _elm_lang$html$Html_Attributes$spellcheck = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'spellcheck', bool);
-};
-var _elm_lang$html$Html_Attributes$async = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'async', bool);
-};
-var _elm_lang$html$Html_Attributes$defer = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'defer', bool);
-};
-var _elm_lang$html$Html_Attributes$scoped = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'scoped', bool);
-};
-var _elm_lang$html$Html_Attributes$autoplay = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'autoplay', bool);
-};
-var _elm_lang$html$Html_Attributes$controls = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'controls', bool);
-};
-var _elm_lang$html$Html_Attributes$loop = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'loop', bool);
-};
-var _elm_lang$html$Html_Attributes$default = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'default', bool);
-};
-var _elm_lang$html$Html_Attributes$seamless = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'seamless', bool);
-};
-var _elm_lang$html$Html_Attributes$checked = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'checked', bool);
-};
-var _elm_lang$html$Html_Attributes$selected = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'selected', bool);
-};
-var _elm_lang$html$Html_Attributes$autofocus = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'autofocus', bool);
-};
-var _elm_lang$html$Html_Attributes$disabled = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'disabled', bool);
-};
-var _elm_lang$html$Html_Attributes$multiple = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'multiple', bool);
-};
-var _elm_lang$html$Html_Attributes$novalidate = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'noValidate', bool);
-};
-var _elm_lang$html$Html_Attributes$readonly = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'readOnly', bool);
-};
-var _elm_lang$html$Html_Attributes$required = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'required', bool);
-};
-var _elm_lang$html$Html_Attributes$ismap = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'isMap', value);
-};
-var _elm_lang$html$Html_Attributes$download = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'download', bool);
-};
-var _elm_lang$html$Html_Attributes$reversed = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'reversed', bool);
-};
-var _elm_lang$html$Html_Attributes$classList = function (list) {
-	return _elm_lang$html$Html_Attributes$class(
-		A2(
-			_elm_lang$core$String$join,
-			' ',
+
+var _elm_community$elm_test$ElmTest_Runner_Console$runDisplay = function (tests) {
+	var _p0 = _elm_community$elm_test$ElmTest_Runner_String$run(tests);
+	if ((_p0.ctor === '::') && (_p0._0.ctor === '_Tuple2')) {
+		var out = A2(
+			_elm_lang$core$Basics_ops['++'],
+			_p0._0._0,
 			A2(
-				_elm_lang$core$List$map,
-				_elm_lang$core$Basics$fst,
-				A2(_elm_lang$core$List$filter, _elm_lang$core$Basics$snd, list))));
-};
-var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
-var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode_ops[':='], 'keyCode', _elm_lang$core$Json_Decode$int);
-var _elm_lang$html$Html_Events$targetChecked = A2(
-	_elm_lang$core$Json_Decode$at,
-	_elm_lang$core$Native_List.fromArray(
-		['target', 'checked']),
-	_elm_lang$core$Json_Decode$bool);
-var _elm_lang$html$Html_Events$targetValue = A2(
-	_elm_lang$core$Json_Decode$at,
-	_elm_lang$core$Native_List.fromArray(
-		['target', 'value']),
-	_elm_lang$core$Json_Decode$string);
-var _elm_lang$html$Html_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
-var _elm_lang$html$Html_Events$onWithOptions = _elm_lang$virtual_dom$VirtualDom$onWithOptions;
-var _elm_lang$html$Html_Events$on = _elm_lang$virtual_dom$VirtualDom$on;
-var _elm_lang$html$Html_Events$onFocus = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'focus',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onBlur = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'blur',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onSubmitOptions = _elm_lang$core$Native_Utils.update(
-	_elm_lang$html$Html_Events$defaultOptions,
-	{preventDefault: true});
-var _elm_lang$html$Html_Events$onSubmit = function (msg) {
-	return A3(
-		_elm_lang$html$Html_Events$onWithOptions,
-		'submit',
-		_elm_lang$html$Html_Events$onSubmitOptions,
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onCheck = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'change',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetChecked));
-};
-var _elm_lang$html$Html_Events$onInput = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'input',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetValue));
-};
-var _elm_lang$html$Html_Events$onMouseOut = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseout',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseOver = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseover',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseLeave = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseleave',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseEnter = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseenter',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseUp = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseup',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseDown = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mousedown',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onDoubleClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'dblclick',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'click',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$Options = F2(
-	function (a, b) {
-		return {stopPropagation: a, preventDefault: b};
-	});
-var _etaque$elm_response$Response$res = F2(
-	function (model, cmd) {
-		return {ctor: '_Tuple2', _0: model, _1: cmd};
-	});
-var _etaque$elm_response$Response$taskRes = F4(
-	function (model, mapError, mapSuccess, task) {
-		return A2(
-			_etaque$elm_response$Response$res,
-			model,
-			A3(_elm_lang$core$Task$perform, mapError, mapSuccess, task));
-	});
-var _etaque$elm_response$Response$withTask = F4(
-	function (mapError, mapSuccess, task, model) {
-		return A4(_etaque$elm_response$Response$taskRes, model, mapError, mapSuccess, task);
-	});
-var _etaque$elm_response$Response$withCmd = F2(
-	function (cmd, model) {
-		return A2(_etaque$elm_response$Response$res, model, cmd);
-	});
-var _etaque$elm_response$Response$withNone = function (model) {
-	return A2(_etaque$elm_response$Response$res, model, _elm_lang$core$Platform_Cmd$none);
-};
-var _etaque$elm_response$Response$mapBoth = F3(
-	function (onModel, onCmd, _p0) {
-		var _p1 = _p0;
-		return A2(
-			_etaque$elm_response$Response$res,
-			onModel(_p1._0),
-			A2(_elm_lang$core$Platform_Cmd$map, onCmd, _p1._1));
-	});
-var _etaque$elm_response$Response$mapModel = function (onModel) {
-	return A2(_etaque$elm_response$Response$mapBoth, onModel, _elm_lang$core$Basics$identity);
-};
-var _etaque$elm_response$Response$mapCmd = function (onCmd) {
-	return A2(_etaque$elm_response$Response$mapBoth, _elm_lang$core$Basics$identity, onCmd);
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_Types$Model = F2(
-	function (a, b) {
-		return {kapows: a, showDialog: b};
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_Types$Finished = {ctor: 'Finished'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_Types$Kapow = {ctor: 'Kapow'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		if (_p0.ctor === 'Kapow') {
-			return _etaque$elm_response$Response$withNone(
-				_elm_lang$core$Native_Utils.update(
-					model,
-					{kapows: model.kapows + 2, showDialog: true}));
-		} else {
-			return _etaque$elm_response$Response$withNone(
-				_elm_lang$core$Native_Utils.update(
-					model,
-					{showDialog: false}));
-		}
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_State$initialCommands = _elm_lang$core$Platform_Cmd$none;
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_State$initialModel = {kapows: 1000, showDialog: false};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_Types$Model = function (a) {
-	return {punches: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_Types$Punch = {ctor: 'Punch'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		return _etaque$elm_response$Response$withNone(
-			_elm_lang$core$Native_Utils.update(
-				model,
-				{punches: model.punches + 1}));
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_State$initialCommands = _elm_lang$core$Platform_Cmd$none;
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_State$initialModel = {punches: 100};
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_Types$Model = function (a) {
-	return {swordSwipes: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_Types$Swipe = {ctor: 'Swipe'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$Model = F4(
-	function (a, b, c, d) {
-		return {batman: a, superman: b, wonderWoman: c, view: d};
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanView = {ctor: 'WonderWomanView'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanView = {ctor: 'SupermanView'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanView = {ctor: 'BatmanView'};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$SetView = function (a) {
-	return {ctor: 'SetView', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanMessage = function (a) {
-	return {ctor: 'WonderWomanMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanMessage = function (a) {
-	return {ctor: 'SupermanMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanMessage = function (a) {
-	return {ctor: 'BatmanMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		return _etaque$elm_response$Response$withNone(
-			_elm_lang$core$Native_Utils.update(
-				model,
-				{swordSwipes: model.swordSwipes + 1}));
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_State$initialCommands = _elm_lang$core$Platform_Cmd$none;
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_State$initialModel = {swordSwipes: 5999};
-var _krisajenkins$elm_dialog$Advanced_Heroes_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		switch (_p0.ctor) {
-			case 'SetView':
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{view: _p0._0}));
-			case 'BatmanMessage':
-				return A3(
-					_etaque$elm_response$Response$mapBoth,
-					function (x) {
-						return _elm_lang$core$Native_Utils.update(
-							model,
-							{batman: x});
-					},
-					_krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanMessage,
-					A2(_krisajenkins$elm_dialog$Advanced_Heroes_Batman_State$update, _p0._0, model.batman));
-			case 'SupermanMessage':
-				return A3(
-					_etaque$elm_response$Response$mapBoth,
-					function (x) {
-						return _elm_lang$core$Native_Utils.update(
-							model,
-							{superman: x});
-					},
-					_krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanMessage,
-					A2(_krisajenkins$elm_dialog$Advanced_Heroes_Superman_State$update, _p0._0, model.superman));
-			default:
-				return A3(
-					_etaque$elm_response$Response$mapBoth,
-					function (x) {
-						return _elm_lang$core$Native_Utils.update(
-							model,
-							{wonderWoman: x});
-					},
-					_krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanMessage,
-					A2(_krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_State$update, _p0._0, model.wonderWoman));
-		}
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_State$initialCommands = _elm_lang$core$Platform_Cmd$batch(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanMessage, _krisajenkins$elm_dialog$Advanced_Heroes_Batman_State$initialCommands),
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanMessage, _krisajenkins$elm_dialog$Advanced_Heroes_Superman_State$initialCommands),
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanMessage, _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_State$initialCommands)
-		]));
-var _krisajenkins$elm_dialog$Advanced_Heroes_State$initialModel = {view: _krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanView, batman: _krisajenkins$elm_dialog$Advanced_Heroes_Batman_State$initialModel, superman: _krisajenkins$elm_dialog$Advanced_Heroes_Superman_State$initialModel, wonderWoman: _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_State$initialModel};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Model = F3(
-	function (a, b, c) {
-		return {shots: a, health: b, state: c};
-	});
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Screaming = {ctor: 'Screaming'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Laughing = {ctor: 'Laughing'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$TakeDamage = {ctor: 'TakeDamage'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Close = {ctor: 'Close'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Shoot = {ctor: 'Shoot'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Model = F3(
-	function (a, b, c) {
-		return {warks: a, health: b, state: c};
-	});
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Hurt = {ctor: 'Hurt'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Warking = {ctor: 'Warking'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Quiet = {ctor: 'Quiet'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$TakeDamage = {ctor: 'TakeDamage'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Close = {ctor: 'Close'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Wark = {ctor: 'Wark'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$Model = F3(
-	function (a, b, c) {
-		return {joker: a, penguin: b, view: c};
-	});
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinView = {ctor: 'PenguinView'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$JokerView = {ctor: 'JokerView'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$SetView = function (a) {
-	return {ctor: 'SetView', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$TakeDamage = {ctor: 'TakeDamage'};
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinMessage = function (a) {
-	return {ctor: 'PenguinMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Villains_Types$JokerMessage = function (a) {
-	return {ctor: 'JokerMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Types$Model = F2(
-	function (a, b) {
-		return {heroes: a, villains: b};
-	});
-var _krisajenkins$elm_dialog$Advanced_Types$HeroAttack = {ctor: 'HeroAttack'};
-var _krisajenkins$elm_dialog$Advanced_Types$VillainsMessage = function (a) {
-	return {ctor: 'VillainsMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Types$HeroesMessage = function (a) {
-	return {ctor: 'HeroesMessage', _0: a};
-};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		switch (_p0.ctor) {
-			case 'Shoot':
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{shots: model.shots + 1}));
-			case 'TakeDamage':
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{health: model.health - 1, state: _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Screaming}));
-			default:
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{state: _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Laughing}));
-		}
-	});
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_State$initialCommands = _elm_lang$core$Platform_Cmd$none;
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_State$initialModel = {shots: 0, health: 50, state: _krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Laughing};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		switch (_p0.ctor) {
-			case 'Wark':
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{warks: model.warks + 3, state: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Warking}));
-			case 'TakeDamage':
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{health: model.health - 2, state: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Hurt}));
-			default:
-				return _etaque$elm_response$Response$withNone(
-					_elm_lang$core$Native_Utils.update(
-						model,
-						{state: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Quiet}));
-		}
-	});
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_State$initialCommands = _elm_lang$core$Platform_Cmd$none;
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_State$initialModel = {warks: 0, health: 100, state: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Quiet};
-var _krisajenkins$elm_dialog$Advanced_Villains_State$update = F2(
-	function (action, model) {
-		update:
-		while (true) {
-			var _p0 = action;
-			switch (_p0.ctor) {
-				case 'SetView':
-					return _etaque$elm_response$Response$withNone(
-						_elm_lang$core$Native_Utils.update(
-							model,
-							{view: _p0._0}));
-				case 'JokerMessage':
-					return A3(
-						_etaque$elm_response$Response$mapBoth,
-						function (x) {
-							return _elm_lang$core$Native_Utils.update(
-								model,
-								{joker: x});
-						},
-						_krisajenkins$elm_dialog$Advanced_Villains_Types$JokerMessage,
-						A2(_krisajenkins$elm_dialog$Advanced_Villains_Joker_State$update, _p0._0, model.joker));
-				case 'PenguinMessage':
-					return A3(
-						_etaque$elm_response$Response$mapBoth,
-						function (x) {
-							return _elm_lang$core$Native_Utils.update(
-								model,
-								{penguin: x});
-						},
-						_krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinMessage,
-						A2(_krisajenkins$elm_dialog$Advanced_Villains_Penguin_State$update, _p0._0, model.penguin));
-				default:
-					var _p1 = model.view;
-					if (_p1.ctor === 'JokerView') {
-						var _v2 = _krisajenkins$elm_dialog$Advanced_Villains_Types$JokerMessage(_krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$TakeDamage),
-							_v3 = model;
-						action = _v2;
-						model = _v3;
-						continue update;
-					} else {
-						var _v4 = _krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinMessage(_krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$TakeDamage),
-							_v5 = model;
-						action = _v4;
-						model = _v5;
-						continue update;
-					}
-			}
-		}
-	});
-var _krisajenkins$elm_dialog$Advanced_Villains_State$initialCommands = _elm_lang$core$Platform_Cmd$batch(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Villains_Types$JokerMessage, _krisajenkins$elm_dialog$Advanced_Villains_Joker_State$initialCommands),
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinMessage, _krisajenkins$elm_dialog$Advanced_Villains_Penguin_State$initialCommands)
-		]));
-var _krisajenkins$elm_dialog$Advanced_Villains_State$initialModel = {view: _krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinView, joker: _krisajenkins$elm_dialog$Advanced_Villains_Joker_State$initialModel, penguin: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_State$initialModel};
-var _krisajenkins$elm_dialog$Advanced_State$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		switch (_p0.ctor) {
-			case 'HeroesMessage':
-				return A3(
-					_etaque$elm_response$Response$mapBoth,
-					function (x) {
-						return _elm_lang$core$Native_Utils.update(
-							model,
-							{heroes: x});
-					},
-					_krisajenkins$elm_dialog$Advanced_Types$HeroesMessage,
-					A2(_krisajenkins$elm_dialog$Advanced_Heroes_State$update, _p0._0, model.heroes));
-			case 'VillainsMessage':
-				return A3(
-					_etaque$elm_response$Response$mapBoth,
-					function (x) {
-						return _elm_lang$core$Native_Utils.update(
-							model,
-							{villains: x});
-					},
-					_krisajenkins$elm_dialog$Advanced_Types$VillainsMessage,
-					A2(_krisajenkins$elm_dialog$Advanced_Villains_State$update, _p0._0, model.villains));
-			default:
-				return A3(
-					_etaque$elm_response$Response$mapBoth,
-					function (x) {
-						return _elm_lang$core$Native_Utils.update(
-							model,
-							{villains: x});
-					},
-					_krisajenkins$elm_dialog$Advanced_Types$VillainsMessage,
-					A2(_krisajenkins$elm_dialog$Advanced_Villains_State$update, _krisajenkins$elm_dialog$Advanced_Villains_Types$TakeDamage, model.villains));
-		}
-	});
-var _krisajenkins$elm_dialog$Advanced_State$initialCommands = _elm_lang$core$Platform_Cmd$batch(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Types$HeroesMessage, _krisajenkins$elm_dialog$Advanced_Heroes_State$initialCommands),
-			A2(_elm_lang$core$Platform_Cmd$map, _krisajenkins$elm_dialog$Advanced_Types$VillainsMessage, _krisajenkins$elm_dialog$Advanced_Villains_State$initialCommands)
-		]));
-var _krisajenkins$elm_dialog$Advanced_State$initialModel = {heroes: _krisajenkins$elm_dialog$Advanced_Heroes_State$initialModel, villains: _krisajenkins$elm_dialog$Advanced_Villains_State$initialModel};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$video = F2(
-	function (ratio, url) {
-		var ratioClass = function () {
-			var _p0 = ratio;
-			if (_p0.ctor === 'SixteenByNine') {
-				return 'embed-responsive-16by9';
-			} else {
-				return 'embed-responsive-4by3';
-			}
-		}();
-		return A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					A2(
-					_elm_lang$html$Html$h1,
-					_elm_lang$core$Native_List.fromArray(
-						[]),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html$text('About')
-						])),
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Attributes$class('embed-responsive')
-						]),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							A2(
-							_elm_lang$html$Html$iframe,
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html_Attributes$class('embed-responsive-item'),
-									_elm_lang$html$Html_Attributes$src(url)
-								]),
-							_elm_lang$core$Native_List.fromArray(
-								[]))
-						]))
-				]));
-	});
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty = A2(
-	_elm_lang$html$Html$span,
-	_elm_lang$core$Native_List.fromArray(
-		[]),
-	_elm_lang$core$Native_List.fromArray(
-		[]));
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$formGroup = _elm_lang$html$Html$div(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			_elm_lang$html$Html_Attributes$class('form-group')
-		]));
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$row = _elm_lang$html$Html$div(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			_elm_lang$html$Html_Attributes$class('row')
-		]));
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$twoColumns = F2(
-	function (left, right) {
-		return _krisajenkins$elm_exts$Exts_Html_Bootstrap$row(
-			_elm_lang$core$Native_List.fromArray(
-				[
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Attributes$class('col-xs-6')
-						]),
-					left),
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Attributes$class('col-xs-6')
-						]),
-					right)
-				]));
-	});
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$containerFluid = _elm_lang$html$Html$div(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			_elm_lang$html$Html_Attributes$class('container-fluid')
-		]));
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$container = _elm_lang$html$Html$div(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			_elm_lang$html$Html_Attributes$class('container')
-		]));
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$FourByThree = {ctor: 'FourByThree'};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$SixteenByNine = {ctor: 'SixteenByNine'};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$Left = {ctor: 'Left'};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$Bottom = {ctor: 'Bottom'};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$Right = {ctor: 'Right'};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$Top = {ctor: 'Top'};
-var _krisajenkins$elm_exts$Exts_Html_Bootstrap$popover = F5(
-	function (direction, isShown, styles, title, body) {
-		return A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$classList(
-					_elm_lang$core$Native_List.fromArray(
-						[
-							{ctor: '_Tuple2', _0: 'popover fade', _1: true},
-							{ctor: '_Tuple2', _0: 'in', _1: isShown},
-							{
-							ctor: '_Tuple2',
-							_0: 'top',
-							_1: _elm_lang$core$Native_Utils.eq(direction, _krisajenkins$elm_exts$Exts_Html_Bootstrap$Top)
-						},
-							{
-							ctor: '_Tuple2',
-							_0: 'right',
-							_1: _elm_lang$core$Native_Utils.eq(direction, _krisajenkins$elm_exts$Exts_Html_Bootstrap$Right)
-						},
-							{
-							ctor: '_Tuple2',
-							_0: 'bottom',
-							_1: _elm_lang$core$Native_Utils.eq(direction, _krisajenkins$elm_exts$Exts_Html_Bootstrap$Bottom)
-						},
-							{
-							ctor: '_Tuple2',
-							_0: 'left',
-							_1: _elm_lang$core$Native_Utils.eq(direction, _krisajenkins$elm_exts$Exts_Html_Bootstrap$Left)
-						}
-						])),
-					_elm_lang$html$Html_Attributes$style(
-					A2(
-						_elm_lang$core$Basics_ops['++'],
-						styles,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								{ctor: '_Tuple2', _0: 'display', _1: 'block'}
-							])))
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Attributes$class('arrow')
-						]),
-					_elm_lang$core$Native_List.fromArray(
-						[])),
-					function () {
-					var _p1 = title;
-					if (_p1.ctor === 'Just') {
-						return A2(
-							_elm_lang$html$Html$h3,
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html_Attributes$class('popover-title')
-								]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text(_p1._0)
-								]));
-					} else {
-						return _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty;
-					}
-				}(),
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Attributes$class('popover-content')
-						]),
-					body)
-				]));
-	});
-var _krisajenkins$elm_exts$Exts_Maybe$maybeDefault = F2(
-	function ($default, x) {
-		var _p0 = x;
-		if (_p0.ctor === 'Just') {
-			return _elm_lang$core$Maybe$Just(_p0._0);
-		} else {
-			return _elm_lang$core$Maybe$Just($default);
-		}
-	});
-var _krisajenkins$elm_exts$Exts_Maybe$join = F3(
-	function (f, left, right) {
-		var _p1 = {ctor: '_Tuple2', _0: left, _1: right};
-		if (((_p1.ctor === '_Tuple2') && (_p1._0.ctor === 'Just')) && (_p1._1.ctor === 'Just')) {
-			return _elm_lang$core$Maybe$Just(
-				A2(f, _p1._0._0, _p1._1._0));
-		} else {
-			return _elm_lang$core$Maybe$Nothing;
-		}
-	});
-var _krisajenkins$elm_exts$Exts_Maybe$catMaybes = function (xs) {
-	catMaybes:
-	while (true) {
-		var _p2 = xs;
-		if (_p2.ctor === '[]') {
-			return _elm_lang$core$Native_List.fromArray(
-				[]);
-		} else {
-			if (_p2._0.ctor === 'Nothing') {
-				var _v3 = _p2._1;
-				xs = _v3;
-				continue catMaybes;
-			} else {
-				return A2(
-					_elm_lang$core$List_ops['::'],
-					_p2._0._0,
-					_krisajenkins$elm_exts$Exts_Maybe$catMaybes(_p2._1));
-			}
-		}
-	}
-};
-var _krisajenkins$elm_exts$Exts_Maybe$mappend = F2(
-	function (a, b) {
-		var _p3 = {ctor: '_Tuple2', _0: a, _1: b};
-		if (_p3._0.ctor === 'Nothing') {
-			return _elm_lang$core$Maybe$Nothing;
-		} else {
-			if (_p3._1.ctor === 'Nothing') {
-				return _elm_lang$core$Maybe$Nothing;
-			} else {
-				return _elm_lang$core$Maybe$Just(
-					{ctor: '_Tuple2', _0: _p3._0._0, _1: _p3._1._0});
-			}
-		}
-	});
-var _krisajenkins$elm_exts$Exts_Maybe$maybe = F2(
-	function ($default, f) {
-		return function (_p4) {
-			return A2(
-				_elm_lang$core$Maybe$withDefault,
-				$default,
-				A2(_elm_lang$core$Maybe$map, f, _p4));
-		};
-	});
-var _krisajenkins$elm_exts$Exts_Maybe$isJust = function (x) {
-	var _p5 = x;
-	if (_p5.ctor === 'Just') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var _krisajenkins$elm_exts$Exts_Maybe$isNothing = function (_p6) {
-	return _elm_lang$core$Basics$not(
-		_krisajenkins$elm_exts$Exts_Maybe$isJust(_p6));
-};
-var _krisajenkins$elm_dialog$Dialog$map = F2(
-	function (f, config) {
-		return {
-			closeMessage: A2(_elm_lang$core$Maybe$map, f, config.closeMessage),
-			header: A2(
-				_elm_lang$core$Maybe$map,
-				_elm_lang$html$Html_App$map(f),
-				config.header),
-			body: A2(
-				_elm_lang$core$Maybe$map,
-				_elm_lang$html$Html_App$map(f),
-				config.body),
-			footer: A2(
-				_elm_lang$core$Maybe$map,
-				_elm_lang$html$Html_App$map(f),
-				config.footer)
-		};
-	});
-var _krisajenkins$elm_dialog$Dialog$mapMaybe = function (_p0) {
-	return _elm_lang$core$Maybe$map(
-		_krisajenkins$elm_dialog$Dialog$map(_p0));
-};
-var _krisajenkins$elm_dialog$Dialog$backdrop = function (config) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$classList(
-				_elm_lang$core$Native_List.fromArray(
-					[
-						{
-						ctor: '_Tuple2',
-						_0: 'modal-backdrop in',
-						_1: _krisajenkins$elm_exts$Exts_Maybe$isJust(config)
-					}
-					]))
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[]));
-};
-var _krisajenkins$elm_dialog$Dialog$wrapFooter = function (footer) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('modal-footer')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[footer]));
-};
-var _krisajenkins$elm_dialog$Dialog$wrapBody = function (body) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('modal-body')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[body]));
-};
-var _krisajenkins$elm_dialog$Dialog$closeButton = function (closeMessage) {
-	return A2(
-		_elm_lang$html$Html$button,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('close'),
-				_elm_lang$html$Html_Events$onClick(closeMessage)
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html$text('x')
-			]));
-};
-var _krisajenkins$elm_dialog$Dialog$wrapHeader = F2(
-	function (closeMessage, header) {
-		return (_elm_lang$core$Native_Utils.eq(closeMessage, _elm_lang$core$Maybe$Nothing) && _elm_lang$core$Native_Utils.eq(header, _elm_lang$core$Maybe$Nothing)) ? _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty : A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$class('modal-header')
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					A3(_krisajenkins$elm_exts$Exts_Maybe$maybe, _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty, _krisajenkins$elm_dialog$Dialog$closeButton, closeMessage),
-					A2(_elm_lang$core$Maybe$withDefault, _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty, header)
-				]));
-	});
-var _krisajenkins$elm_dialog$Dialog$view = function (maybeConfig) {
-	var displayed = _krisajenkins$elm_exts$Exts_Maybe$isJust(maybeConfig);
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$classList(
-						_elm_lang$core$Native_List.fromArray(
-							[
-								{ctor: '_Tuple2', _0: 'modal', _1: true},
-								{ctor: '_Tuple2', _0: 'in', _1: displayed}
-							])),
-						_elm_lang$html$Html_Attributes$style(
-						_elm_lang$core$Native_List.fromArray(
-							[
-								{
-								ctor: '_Tuple2',
-								_0: 'display',
-								_1: displayed ? 'block' : 'none'
-							}
-							]))
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
+				_elm_lang$core$Basics_ops['++'],
+				'\n\n',
+				function (_p1) {
+					return _elm_lang$core$String$concat(
 						A2(
-						_elm_lang$html$Html$div,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Attributes$class('modal-dialog')
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								A2(
-								_elm_lang$html$Html$div,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$class('modal-content')
-									]),
-								function () {
-									var _p1 = maybeConfig;
-									if (_p1.ctor === 'Nothing') {
-										return _elm_lang$core$Native_List.fromArray(
-											[_krisajenkins$elm_exts$Exts_Html_Bootstrap$empty]);
-									} else {
-										var _p2 = _p1._0;
-										return _elm_lang$core$Native_List.fromArray(
-											[
-												A2(_krisajenkins$elm_dialog$Dialog$wrapHeader, _p2.closeMessage, _p2.header),
-												A3(_krisajenkins$elm_exts$Exts_Maybe$maybe, _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty, _krisajenkins$elm_dialog$Dialog$wrapBody, _p2.body),
-												A3(_krisajenkins$elm_exts$Exts_Maybe$maybe, _krisajenkins$elm_exts$Exts_Html_Bootstrap$empty, _krisajenkins$elm_dialog$Dialog$wrapFooter, _p2.footer)
-											]);
-									}
-								}())
-							]))
-					])),
-				_krisajenkins$elm_dialog$Dialog$backdrop(maybeConfig)
-			]));
-};
-var _krisajenkins$elm_dialog$Dialog$Config = F4(
-	function (a, b, c, d) {
-		return {closeMessage: a, header: b, body: c, footer: d};
-	});
-var _krisajenkins$elm_dialog$Utils$bootstrap = A3(
-	_elm_lang$html$Html$node,
-	'link',
-	_elm_lang$core$Native_List.fromArray(
-		[
-			_elm_lang$html$Html_Attributes$href('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'),
-			_elm_lang$html$Html_Attributes$rel('stylesheet')
-		]),
-	_elm_lang$core$Native_List.fromArray(
-		[]));
-var _krisajenkins$elm_dialog$Utils$debuggingView = function (data) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('alert alert-info')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$code,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text(
-						_elm_lang$core$Basics$toString(data))
-					]))
-			]));
-};
-var _krisajenkins$elm_dialog$Utils$attackButton = F2(
-	function (attackMessage, label) {
-		return A2(
-			_elm_lang$html$Html$button,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$class('btn btn-success'),
-					_elm_lang$html$Html_Events$onClick(attackMessage)
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text(label)
-				]));
-	});
-var _krisajenkins$elm_dialog$Utils$actionButton = function (_p0) {
-	var _p1 = _p0;
-	return A2(
-		_elm_lang$html$Html$button,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('btn btn-info'),
-				_elm_lang$html$Html_Events$onClick(_p1._0)
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html$text(_p1._1)
-			]));
-};
-var _krisajenkins$elm_dialog$Utils$viewTab = F3(
-	function (viewMessage, currentView, _p2) {
-		var _p3 = _p2;
-		var _p4 = _p3._0;
-		return A2(
-			_elm_lang$html$Html$li,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$classList(
-					_elm_lang$core$Native_List.fromArray(
-						[
-							{
-							ctor: '_Tuple2',
-							_0: 'active',
-							_1: _elm_lang$core$Native_Utils.eq(currentView, _p4)
-						}
-						]))
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					A2(
-					_elm_lang$html$Html$a,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Events$onClick(
-							viewMessage(_p4))
-						]),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html$text(_p3._1)
-						]))
-				]));
-	});
-var _krisajenkins$elm_dialog$Utils$both = F2(
-	function (f, _p5) {
-		var _p6 = _p5;
-		return {
-			ctor: '_Tuple2',
-			_0: f(_p6._0),
-			_1: f(_p6._1)
-		};
-	});
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_View$dialog = function (model) {
-	return model.showDialog ? _elm_lang$core$Maybe$Just(
-		{
-			closeMessage: _elm_lang$core$Maybe$Just(_krisajenkins$elm_dialog$Advanced_Heroes_Batman_Types$Finished),
-			header: _elm_lang$core$Maybe$Just(
-				A2(
-					_elm_lang$html$Html$h1,
-					_elm_lang$core$Native_List.fromArray(
-						[]),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html$text('Kapow!')
-						]))),
-			body: _elm_lang$core$Maybe$Just(
-				_elm_lang$html$Html$text('Batman swipes at you!')),
-			footer: _elm_lang$core$Maybe$Just(
-				_krisajenkins$elm_dialog$Utils$actionButton(
-					{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Heroes_Batman_Types$Finished, _1: 'OK'}))
-		}) : _elm_lang$core$Maybe$Nothing;
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Batman_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h2,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Batman')
-					])),
-				_krisajenkins$elm_dialog$Utils$debuggingView(model),
-				A2(_krisajenkins$elm_dialog$Utils$attackButton, _krisajenkins$elm_dialog$Advanced_Heroes_Batman_Types$Kapow, 'Kapow!')
-			]));
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_View$dialog = function (model) {
-	return _elm_lang$core$Maybe$Nothing;
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_Superman_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h2,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Superman')
-					])),
-				_krisajenkins$elm_dialog$Utils$debuggingView(model)
-			]));
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_View$dialog = function (model) {
-	return _elm_lang$core$Maybe$Nothing;
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h2,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('WonderWoman')
-					])),
-				_krisajenkins$elm_dialog$Utils$debuggingView(model)
-			]));
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_View$dialog = function (model) {
-	var _p0 = model.view;
-	switch (_p0.ctor) {
-		case 'BatmanView':
-			return A2(
-				_krisajenkins$elm_dialog$Dialog$mapMaybe,
-				_krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanMessage,
-				_krisajenkins$elm_dialog$Advanced_Heroes_Batman_View$dialog(model.batman));
-		case 'SupermanView':
-			return A2(
-				_krisajenkins$elm_dialog$Dialog$mapMaybe,
-				_krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanMessage,
-				_krisajenkins$elm_dialog$Advanced_Heroes_Superman_View$dialog(model.superman));
-		default:
-			return A2(
-				_krisajenkins$elm_dialog$Dialog$mapMaybe,
-				_krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanMessage,
-				_krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_View$dialog(model.wonderWoman));
-	}
-};
-var _krisajenkins$elm_dialog$Advanced_Heroes_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h1,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Heroes')
-					])),
-				A2(
-				_elm_lang$html$Html$ul,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('nav nav-tabs')
-					]),
-				A2(
-					_elm_lang$core$List$map,
-					A2(_krisajenkins$elm_dialog$Utils$viewTab, _krisajenkins$elm_dialog$Advanced_Heroes_Types$SetView, model.view),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanView, _1: 'Batman'},
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanView, _1: 'Superman'},
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanView, _1: 'Wonder Woman'}
-						]))),
-				function () {
-				var _p1 = model.view;
-				switch (_p1.ctor) {
-					case 'BatmanView':
-						return A2(
-							_elm_lang$html$Html_App$map,
-							_krisajenkins$elm_dialog$Advanced_Heroes_Types$BatmanMessage,
-							_krisajenkins$elm_dialog$Advanced_Heroes_Batman_View$root(model.batman));
-					case 'SupermanView':
-						return A2(
-							_elm_lang$html$Html_App$map,
-							_krisajenkins$elm_dialog$Advanced_Heroes_Types$SupermanMessage,
-							_krisajenkins$elm_dialog$Advanced_Heroes_Superman_View$root(model.superman));
-					default:
-						return A2(
-							_elm_lang$html$Html_App$map,
-							_krisajenkins$elm_dialog$Advanced_Heroes_Types$WonderWomanMessage,
-							_krisajenkins$elm_dialog$Advanced_Heroes_WonderWoman_View$root(model.wonderWoman));
-				}
-			}()
-			]));
-};
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_View$dialog = function (model) {
-	var _p0 = model.state;
-	if (_p0.ctor === 'Laughing') {
-		return _elm_lang$core$Maybe$Nothing;
+							_elm_lang$core$List$intersperse,
+							'\n',
+							A2(_elm_lang$core$List$map, _elm_lang$core$Basics$fst, _p1)));
+				}(_p0._1)));
+		var _p2 = _elm_community$elm_test$ElmTest_Run$pass(_p0._0._1);
+		if (_p2 === true) {
+			return A2(_elm_lang$core$Debug$log, out, '');
+		} else {
+			return _elm_lang$core$Native_Utils.crashCase(
+				'ElmTest.Runner.Console',
+				{
+					start: {line: 28, column: 9},
+					end: {line: 33, column: 34}
+				},
+				_p2)(out);
+		}
 	} else {
-		return _elm_lang$core$Maybe$Just(
+		return _elm_lang$core$Native_Utils.crashCase(
+			'ElmTest.Runner.Console',
 			{
-				closeMessage: _elm_lang$core$Maybe$Just(_krisajenkins$elm_dialog$Advanced_Villains_Joker_Types$Close),
-				header: _elm_lang$core$Maybe$Just(
-					A2(
-						_elm_lang$html$Html$h1,
-						_elm_lang$core$Native_List.fromArray(
-							[]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Joker says, \"Argh!\"')
-							]))),
-				body: _elm_lang$core$Maybe$Just(
-					_elm_lang$html$Html$text('The Joker is no longer smiling.')),
-				footer: _elm_lang$core$Maybe$Nothing
-			});
+				start: {line: 22, column: 3},
+				end: {line: 36, column: 21}
+			},
+			_p0)('');
 	}
 };
-var _krisajenkins$elm_dialog$Advanced_Villains_Joker_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h2,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Joker')
-					])),
-				_krisajenkins$elm_dialog$Utils$debuggingView(model)
-			]));
+var _elm_community$elm_test$ElmTest_Runner_Console$runSuite = function (consoleTests) {
+	return _elm_lang$html$Html_App$beginnerProgram(
+		{
+			model: _elm_community$elm_test$ElmTest_Runner_Console$runDisplay(consoleTests),
+			view: function (x) {
+				return _elm_lang$html$Html$text('');
+			},
+			update: F2(
+				function (x, y) {
+					return y;
+				})
+		});
 };
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_View$dialog = function (model) {
-	var _p0 = model.state;
-	switch (_p0.ctor) {
-		case 'Quiet':
-			return _elm_lang$core$Maybe$Nothing;
-		case 'Hurt':
-			return _elm_lang$core$Maybe$Just(
-				{
-					closeMessage: _elm_lang$core$Maybe$Just(_krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Close),
-					header: _elm_lang$core$Maybe$Just(
+
+var _elm_community$elm_test$ElmTest_Runner_Html$runDisplay = function (tests) {
+	var _p0 = _elm_community$elm_test$ElmTest_Runner_String$run(tests);
+	if ((_p0.ctor === '::') && (_p0._0.ctor === '_Tuple2')) {
+		var out = A2(
+			_elm_lang$core$Basics_ops['++'],
+			_p0._0._0,
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				'\n\n',
+				function (_p1) {
+					return _elm_lang$core$String$concat(
 						A2(
-							_elm_lang$html$Html$h1,
-							_elm_lang$core$Native_List.fromArray(
-								[]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Penguin says, \"Ouch!\"')
-								]))),
-					body: _elm_lang$core$Maybe$Just(
-						_elm_lang$html$Html$text('The penguin tries to dodge, which goes badly because penguins lack grace on land.')),
-					footer: _elm_lang$core$Maybe$Just(
-						_krisajenkins$elm_dialog$Utils$actionButton(
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Close, _1: 'Take the pain'}))
-				});
-		default:
-			return _elm_lang$core$Maybe$Just(
-				{
-					closeMessage: _elm_lang$core$Maybe$Just(_krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Close),
-					header: _elm_lang$core$Maybe$Just(
-						A2(
-							_elm_lang$html$Html$h1,
-							_elm_lang$core$Native_List.fromArray(
-								[]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Penguin says, \"Wark!\"')
-								]))),
-					body: _elm_lang$core$Maybe$Just(
-						_elm_lang$html$Html$text('The Penguin laughs his weird laugh')),
-					footer: _elm_lang$core$Maybe$Just(
-						_krisajenkins$elm_dialog$Utils$actionButton(
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Close, _1: 'Calm down'}))
-				});
-	}
-};
-var _krisajenkins$elm_dialog$Advanced_Villains_Penguin_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h2,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Penguin')
-					])),
-				_krisajenkins$elm_dialog$Utils$debuggingView(model),
-				_krisajenkins$elm_dialog$Utils$actionButton(
-				{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Villains_Penguin_Types$Wark, _1: 'Wark!'})
-			]));
-};
-var _krisajenkins$elm_dialog$Advanced_Villains_View$dialog = function (model) {
-	var _p0 = model.view;
-	if (_p0.ctor === 'JokerView') {
-		return A2(
-			_krisajenkins$elm_dialog$Dialog$mapMaybe,
-			_krisajenkins$elm_dialog$Advanced_Villains_Types$JokerMessage,
-			_krisajenkins$elm_dialog$Advanced_Villains_Joker_View$dialog(model.joker));
+							_elm_lang$core$List$intersperse,
+							'\n',
+							A2(_elm_lang$core$List$map, _elm_lang$core$Basics$fst, _p1)));
+				}(_p0._1)));
+		return out;
 	} else {
-		return A2(
-			_krisajenkins$elm_dialog$Dialog$mapMaybe,
-			_krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinMessage,
-			_krisajenkins$elm_dialog$Advanced_Villains_Penguin_View$dialog(model.penguin));
+		return _elm_lang$core$Native_Utils.crashCase(
+			'ElmTest.Runner.Html',
+			{
+				start: {line: 23, column: 3},
+				end: {line: 31, column: 21}
+			},
+			_p0)('');
 	}
 };
-var _krisajenkins$elm_dialog$Advanced_Villains_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h1,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Villains')
-					])),
-				A2(
-				_elm_lang$html$Html$ul,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('nav nav-tabs')
-					]),
-				A2(
-					_elm_lang$core$List$map,
-					A2(_krisajenkins$elm_dialog$Utils$viewTab, _krisajenkins$elm_dialog$Advanced_Villains_Types$SetView, model.view),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Villains_Types$JokerView, _1: 'Joker'},
-							{ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinView, _1: 'Penguin'}
-						]))),
-				function () {
-				var _p1 = model.view;
-				if (_p1.ctor === 'JokerView') {
-					return A2(
-						_elm_lang$html$Html_App$map,
-						_krisajenkins$elm_dialog$Advanced_Villains_Types$JokerMessage,
-						_krisajenkins$elm_dialog$Advanced_Villains_Joker_View$root(model.joker));
-				} else {
-					return A2(
-						_elm_lang$html$Html_App$map,
-						_krisajenkins$elm_dialog$Advanced_Villains_Types$PenguinMessage,
-						_krisajenkins$elm_dialog$Advanced_Villains_Penguin_View$root(model.penguin));
-				}
-			}()
-			]));
-};
-var _krisajenkins$elm_dialog$Advanced_View$instructions = A2(
-	_elm_lang$html$Html$div,
-	_elm_lang$core$Native_List.fromArray(
-		[]),
-	_elm_lang$core$Native_List.fromArray(
-		[
-			A2(
-			_elm_lang$html$Html$h2,
-			_elm_lang$core$Native_List.fromArray(
-				[]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text('Instructions')
-				])),
-			A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$class('well')
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					A2(
-					_elm_lang$html$Html$ul,
+var _elm_community$elm_test$ElmTest_Runner_Html$runSuite = function (consoleTests) {
+	return _elm_lang$html$Html_App$beginnerProgram(
+		{
+			model: _elm_community$elm_test$ElmTest_Runner_Html$runDisplay(consoleTests),
+			view: function (x) {
+				return A2(
+					_elm_lang$html$Html$pre,
 					_elm_lang$core$Native_List.fromArray(
 						[]),
 					_elm_lang$core$Native_List.fromArray(
 						[
-							A2(
-							_elm_lang$html$Html$li,
-							_elm_lang$core$Native_List.fromArray(
-								[]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Each character in this demo is its own Elm component, with its own types, and its own update and view functions. None of them are aware of the others.')
-								])),
-							A2(
-							_elm_lang$html$Html$li,
-							_elm_lang$core$Native_List.fromArray(
-								[]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Click on any of the character tabs to switch views - this shows each sub-component acting independently.')
-								])),
-							A2(
-							_elm_lang$html$Html$li,
-							_elm_lang$core$Native_List.fromArray(
-								[]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Select Penguin and click his action button, \'Wark!\' This shows a sub-component triggering the dialog.')
-								])),
-							A2(
-							_elm_lang$html$Html$li,
-							_elm_lang$core$Native_List.fromArray(
-								[]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Select Batman and click his action button, \'Kapow!\' This shows a sub-component triggering another sub-component\'s dialog.')
-								]))
-						]))
-				]))
-		]));
-var _krisajenkins$elm_dialog$Advanced_View$root = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$style(
-				_elm_lang$core$Native_List.fromArray(
-					[
-						{ctor: '_Tuple2', _0: 'margin', _1: '15px'}
-					]))
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_krisajenkins$elm_dialog$Utils$bootstrap,
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('container-fluid')
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						A2(
-						_elm_lang$html$Html$h1,
-						_elm_lang$core$Native_List.fromArray(
-							[]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Advanced Demo')
-							])),
-						_krisajenkins$elm_dialog$Advanced_View$instructions,
-						A2(
-						_elm_lang$html$Html$div,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Attributes$class('row')
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								A2(
-								_elm_lang$html$Html$div,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$class('col-md-6')
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[
-										A2(
-										_elm_lang$html$Html_App$map,
-										_krisajenkins$elm_dialog$Advanced_Types$HeroesMessage,
-										_krisajenkins$elm_dialog$Advanced_Heroes_View$root(model.heroes))
-									])),
-								A2(
-								_elm_lang$html$Html$div,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$class('col-md-6')
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[
-										A2(
-										_elm_lang$html$Html_App$map,
-										_krisajenkins$elm_dialog$Advanced_Types$VillainsMessage,
-										_krisajenkins$elm_dialog$Advanced_Villains_View$root(model.villains))
-									]))
-							])),
-						_krisajenkins$elm_dialog$Dialog$view(
-						_elm_lang$core$Maybe$oneOf(
-							_elm_lang$core$Native_List.fromArray(
-								[
-									A2(
-									_krisajenkins$elm_dialog$Dialog$mapMaybe,
-									_krisajenkins$elm_dialog$Advanced_Types$HeroesMessage,
-									_krisajenkins$elm_dialog$Advanced_Heroes_View$dialog(model.heroes)),
-									A2(
-									_krisajenkins$elm_dialog$Dialog$mapMaybe,
-									_krisajenkins$elm_dialog$Advanced_Types$VillainsMessage,
-									_krisajenkins$elm_dialog$Advanced_Villains_View$dialog(model.villains))
-								])))
-					]))
-			]));
+							_elm_lang$html$Html$text(x)
+						]));
+			},
+			update: F2(
+				function (x, y) {
+					return x;
+				})
+		});
 };
-var _krisajenkins$elm_dialog$Advanced_App$main = {
-	main: _elm_lang$html$Html_App$program(
-		{
-			init: {ctor: '_Tuple2', _0: _krisajenkins$elm_dialog$Advanced_State$initialModel, _1: _krisajenkins$elm_dialog$Advanced_State$initialCommands},
-			view: _krisajenkins$elm_dialog$Advanced_View$root,
-			update: _krisajenkins$elm_dialog$Advanced_State$update,
-			subscriptions: _elm_lang$core$Basics$always(_elm_lang$core$Platform_Sub$none)
-		})
+
+var _elm_community$elm_test$ElmTest$runSuiteHtml = _elm_community$elm_test$ElmTest_Runner_Html$runSuite;
+var _elm_community$elm_test$ElmTest$runSuite = _elm_community$elm_test$ElmTest_Runner_Console$runSuite;
+var _elm_community$elm_test$ElmTest$stringRunner = _elm_community$elm_test$ElmTest_Runner_String$runDisplay;
+var _elm_community$elm_test$ElmTest$consoleRunner = _elm_community$elm_test$ElmTest_Runner_Console$runDisplay;
+var _elm_community$elm_test$ElmTest$fail = _elm_community$elm_test$ElmTest_Assertion$AlwaysFail;
+var _elm_community$elm_test$ElmTest$pass = _elm_community$elm_test$ElmTest_Assertion$AlwaysPass;
+var _elm_community$elm_test$ElmTest$assertionList = _elm_community$elm_test$ElmTest_Assertion$assertionList;
+var _elm_community$elm_test$ElmTest$lazyAssert = _elm_community$elm_test$ElmTest_Assertion$assertT;
+var _elm_community$elm_test$ElmTest$assertNotEqual = _elm_community$elm_test$ElmTest_Assertion$assertNotEqual;
+var _elm_community$elm_test$ElmTest$assertEqual = _elm_community$elm_test$ElmTest_Assertion$assertEqual;
+var _elm_community$elm_test$ElmTest$assert = _elm_community$elm_test$ElmTest_Assertion$assert;
+var _elm_community$elm_test$ElmTest$suite = _elm_community$elm_test$ElmTest_Test$suite;
+var _elm_community$elm_test$ElmTest$equals = _elm_community$elm_test$ElmTest_Test$equals;
+var _elm_community$elm_test$ElmTest$defaultTest = _elm_community$elm_test$ElmTest_Test$defaultTest;
+var _elm_community$elm_test$ElmTest$test = _elm_community$elm_test$ElmTest_Test$test;
+
+var _krisajenkins$elm_dialog$StateTest$tests = A2(
+	_elm_community$elm_test$ElmTest$suite,
+	'State',
+	_elm_lang$core$Native_List.fromArray(
+		[]));
+
+var _krisajenkins$elm_dialog$Main$tests = A2(
+	_elm_community$elm_test$ElmTest$suite,
+	'All',
+	_elm_lang$core$Native_List.fromArray(
+		[_krisajenkins$elm_dialog$StateTest$tests]));
+var _krisajenkins$elm_dialog$Main$main = {
+	main: _elm_community$elm_test$ElmTest$runSuite(_krisajenkins$elm_dialog$Main$tests)
 };
+
 var Elm = {};
-Elm['Advanced'] = Elm['Advanced'] || {};
-Elm['Advanced']['App'] = Elm['Advanced']['App'] || {};
-_elm_lang$core$Native_Platform.addPublicModule(Elm['Advanced']['App'], 'Advanced.App', typeof _krisajenkins$elm_dialog$Advanced_App$main === 'undefined' ? null : _krisajenkins$elm_dialog$Advanced_App$main);
+Elm['Main'] = Elm['Main'] || {};
+_elm_lang$core$Native_Platform.addPublicModule(Elm['Main'], 'Main', typeof _krisajenkins$elm_dialog$Main$main === 'undefined' ? null : _krisajenkins$elm_dialog$Main$main);
 
 if (typeof define === "function" && define['amd'])
 {
@@ -8751,4 +7359,4 @@ for (var publicModule in Elm)
 }
 
 }).call(this);
-</script></head><body><script type="text/javascript">Elm.Advanced.App.fullscreen()</script></body></html>
+
