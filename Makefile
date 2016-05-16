@@ -1,4 +1,4 @@
-all: dist/Simple.html dist/Advanced.html build/.tested
+all: dist/Simple.html dist/Advanced.html dist/tests.js
 
 dist/%.html: $(shell find src examples -type f -name '*.elm' -o -name '*.js') dist
 	elm-make examples/$*/App.elm --yes --warn --output=$@
@@ -9,11 +9,9 @@ dist:
 build:
 	@mkdir $@
 
-build/.tested: build/tests.js build
-	node $<
-
-build/tests.js: build/raw-test.js build
-	sh elm-stuff/packages/laszlopandy/elm-console/1.1.1/elm-io.sh $< $@
-
-build/raw-test.js: $(shell find src examples test -type f -name '*.elm' -o -name '*.js') build
+dist/tests.js: FORCE $(shell find src test -type f -name '*.elm' -o -name '*.js')
+	elm-make --yes --warn
 	elm-make test/Main.elm --yes --warn --output=$@
+	node $@
+
+FORCE:

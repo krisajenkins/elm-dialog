@@ -1,4 +1,4 @@
-module Advanced.Villains.Types (..) where
+module Advanced.Villains.Types exposing (..)
 
 import Advanced.Villains.Joker.Types as Joker
 import Advanced.Villains.Penguin.Types as Penguin
@@ -16,8 +16,8 @@ type View
   | PenguinView
 
 
-type Action
-  = JokerAction Joker.Action
-  | PenguinAction Penguin.Action
+type Message
+  = JokerMessage Joker.Message
+  | PenguinMessage Penguin.Message
   | TakeDamage
   | SetView View

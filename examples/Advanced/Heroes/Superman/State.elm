@@ -1,7 +1,7 @@
-module Advanced.Heroes.Superman.State (..) where
+module Advanced.Heroes.Superman.State exposing (..)
 
-import Response exposing (..)
 import Advanced.Heroes.Superman.Types exposing (..)
+import Response exposing (..)
 
 
 initialModel : Model
@@ -9,7 +9,12 @@ initialModel =
   { punches = 100 }
 
 
-update : Action -> Model -> Response Model Action
+initialCommands : Cmd Message
+initialCommands =
+  Cmd.none
+
+
+update : Message -> Model -> Response Model Message
 update action model =
   case action of
     Punch ->

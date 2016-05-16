@@ -1,30 +1,28 @@
-module Advanced.Heroes.Batman.View (root, dialog) where
+module Advanced.Heroes.Batman.View exposing (root, dialog)
 
-import Dialog
 import Advanced.Heroes.Batman.Types exposing (..)
+import Dialog
 import Html exposing (..)
-import Signal exposing (..)
 import Utils exposing (..)
 
 
-root : Address Action -> Message -> Model -> Html
-root address attackMessage model =
-  div
-    []
+root : Model -> Html Message
+root model =
+  div []
     [ h2 [] [ text "Batman" ]
     , debuggingView model
-    , attackButton attackMessage "Kapow!"
+    , attackButton Kapow "Kapow!"
     ]
 
 
-dialog : Address Action -> Model -> Maybe Dialog.Config
-dialog address model =
+dialog : Model -> Maybe (Dialog.Config Message)
+dialog model =
   if model.showDialog then
     Just
-      { closeMessage = Just (message address Finished)
+      { closeMessage = Just Finished
       , header = Just (h1 [] [ text "Kapow!" ])
       , body = Just (text "Batman swipes at you!")
-      , footer = Just (actionButton address ( Finished, "OK" ))
+      , footer = Just (actionButton ( Finished, "OK" ))
       }
   else
     Nothing

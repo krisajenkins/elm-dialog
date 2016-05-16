@@ -1,30 +1,28 @@
-module Advanced.Villains.Joker.View (root, dialog) where
+module Advanced.Villains.Joker.View exposing (root, dialog)
 
-import Utils exposing (..)
-import Dialog
-import Signal exposing (..)
-import Html exposing (..)
 import Advanced.Villains.Joker.Types exposing (..)
+import Dialog
+import Html exposing (..)
+import Utils exposing (..)
 
 
-root : Address Action -> Model -> Html
-root address model =
-  div
-    []
+root : Model -> Html Message
+root model =
+  div []
     [ h2 [] [ text "Joker" ]
     , debuggingView model
     ]
 
 
-dialog : Address Action -> Model -> Maybe Dialog.Config
-dialog address model =
+dialog : Model -> Maybe (Dialog.Config Message)
+dialog model =
   case model.state of
     Laughing ->
       Nothing
 
     Screaming ->
       Just
-        { closeMessage = Just (message address Close)
+        { closeMessage = Just Close
         , header = Just (h1 [] [ text "Joker says, \"Argh!\"" ])
         , body = Just (text "The Joker is no longer smiling.")
         , footer = Nothing

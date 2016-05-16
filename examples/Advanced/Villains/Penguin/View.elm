@@ -1,40 +1,38 @@
-module Advanced.Villains.Penguin.View (root, dialog) where
+module Advanced.Villains.Penguin.View exposing (root, dialog)
 
-import Utils exposing (..)
-import Dialog
-import Signal exposing (..)
-import Html exposing (..)
 import Advanced.Villains.Penguin.Types exposing (..)
+import Dialog
+import Html exposing (..)
+import Utils exposing (..)
 
 
-root : Address Action -> Model -> Html
-root address model =
-  div
-    []
+root : Model -> Html Message
+root model =
+  div []
     [ h2 [] [ text "Penguin" ]
     , debuggingView model
-    , actionButton address ( Wark, "Wark!" )
+    , actionButton ( Wark, "Wark!" )
     ]
 
 
-dialog : Address Action -> Model -> Maybe Dialog.Config
-dialog address model =
+dialog : Model -> Maybe (Dialog.Config Message)
+dialog model =
   case model.state of
     Quiet ->
       Nothing
 
     Hurt ->
       Just
-        { closeMessage = Just (message address Close)
+        { closeMessage = Just Close
         , header = Just (h1 [] [ text "Penguin says, \"Ouch!\"" ])
         , body = Just (text "The penguin tries to dodge, which goes badly because penguins lack grace on land.")
-        , footer = Just (actionButton address ( Close, "Take the pain" ))
+        , footer = Just (actionButton ( Close, "Take the pain" ))
         }
 
     Warking ->
       Just
-        { closeMessage = Just (message address Close)
+        { closeMessage = Just Close
         , header = Just (h1 [] [ text "Penguin says, \"Wark!\"" ])
         , body = Just (text "The Penguin laughs his weird laugh")
-        , footer = Just (actionButton address ( Close, "Calm down" ))
+        , footer = Just (actionButton ( Close, "Calm down" ))
         }

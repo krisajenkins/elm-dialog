@@ -1,4 +1,4 @@
-module Advanced.Villains.Penguin.Types (..) where
+module Advanced.Villains.Penguin.Types exposing (..)
 
 
 type PenguinState
@@ -14,7 +14,7 @@ type alias Model =
   }
 
 
-type Action
+type Message
   = Wark
   | Close
   | TakeDamage

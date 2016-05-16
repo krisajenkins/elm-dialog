@@ -1,4 +1,4 @@
-module Advanced.Heroes.Types (..) where
+module Advanced.Heroes.Types exposing (..)
 
 import Advanced.Heroes.Batman.Types as Batman
 import Advanced.Heroes.Superman.Types as Superman
@@ -19,8 +19,8 @@ type View
   | WonderWomanView
 
 
-type Action
-  = BatmanAction Batman.Action
-  | SupermanAction Superman.Action
-  | WonderWomanAction WonderWoman.Action
+type Message
+  = BatmanMessage Batman.Message
+  | SupermanMessage Superman.Message
+  | WonderWomanMessage WonderWoman.Message
   | SetView View

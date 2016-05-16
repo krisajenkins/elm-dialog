@@ -1,11 +1,10 @@
-module Advanced.State (..) where
+module Advanced.State exposing (..)
 
-import Response exposing (..)
-import Advanced.Types exposing (..)
-import Effects exposing (..)
 import Advanced.Heroes.State as Heroes
-import Advanced.Villains.Types as VillainsTypes
+import Advanced.Types exposing (..)
 import Advanced.Villains.State as Villains
+import Advanced.Villains.Types as VillainsTypes
+import Response exposing (..)
 
 
 initialModel : Model
@@ -15,22 +14,25 @@ initialModel =
   }
 
 
-initialEffects : Effects Action
-initialEffects =
-  none
+initialCommands : Cmd Message
+initialCommands =
+  Cmd.batch
+    [ Cmd.map HeroesMessage Heroes.initialCommands
+    , Cmd.map VillainsMessage Villains.initialCommands
+    ]
 
 
-update : Action -> Model -> Response Model Action
+update : Message -> Model -> Response Model Message
 update action model =
   case action of
-    HeroesAction subaction ->
+    HeroesMessage subaction ->
       Heroes.update subaction model.heroes
-        |> mapBoth (\x -> { model | heroes = x }) HeroesAction
+        |> mapBoth (\x -> { model | heroes = x }) HeroesMessage
 
-    VillainsAction subaction ->
+    VillainsMessage subaction ->
       Villains.update subaction model.villains
-        |> mapBoth (\x -> { model | villains = x }) VillainsAction
+        |> mapBoth (\x -> { model | villains = x }) VillainsMessage
 
     HeroAttack ->
       Villains.update VillainsTypes.TakeDamage model.villains
-        |> mapBoth (\x -> { model | villains = x }) VillainsAction
+        |> mapBoth (\x -> { model | villains = x }) VillainsMessage

@@ -1,4 +1,4 @@
-module Advanced.Villains.Joker.Types (..) where
+module Advanced.Villains.Joker.Types exposing (..)
 
 
 type JokerState
@@ -13,7 +13,7 @@ type alias Model =
   }
 
 
-type Action
+type Message
   = Shoot
   | Close
   | TakeDamage

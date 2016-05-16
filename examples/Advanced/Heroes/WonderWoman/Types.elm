@@ -1,4 +1,4 @@
-module Advanced.Heroes.WonderWoman.Types (..) where
+module Advanced.Heroes.WonderWoman.Types exposing (..)
 
 
 type alias Model =
@@ -6,5 +6,5 @@ type alias Model =
   }
 
 
-type Action
+type Message
   = Swipe

@@ -1,25 +1,22 @@
-module Advanced.Heroes.View (root, dialog) where
+module Advanced.Heroes.View exposing (root, dialog)
 
-import Dialog
-import Signal exposing (..)
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Advanced.Heroes.Types exposing (..)
 import Advanced.Heroes.Batman.View as Batman
 import Advanced.Heroes.Superman.View as Superman
+import Advanced.Heroes.Types exposing (..)
 import Advanced.Heroes.WonderWoman.View as WonderWoman
-import Utils exposing (..)
+import Dialog
+import Html exposing (..)
+import Html.App
+import Html.Attributes exposing (..)
+import Utils exposing (viewTab)
 
 
-root : Address Action -> Message -> Model -> Html
-root address attackMessage model =
-  div
-    []
+root : Model -> Html Message
+root model =
+  div []
     [ h1 [] [ text "Heroes" ]
-    , ul
-        [ class "nav nav-tabs" ]
-        (List.map
-          (viewTab address SetView model.view)
+    , ul [ class "nav nav-tabs" ]
+        (List.map (viewTab SetView model.view)
           [ ( BatmanView, "Batman" )
           , ( SupermanView, "Superman" )
           , ( WonderWomanView, "Wonder Woman" )
@@ -27,27 +24,30 @@ root address attackMessage model =
         )
     , case model.view of
         BatmanView ->
-          Batman.root
-            (forwardTo address BatmanAction)
-            attackMessage
-            model.batman
+          Batman.root model.batman
+            |> Html.App.map BatmanMessage
 
         SupermanView ->
-          Superman.root (forwardTo address SupermanAction) model.superman
+          Superman.root model.superman
+            |> Html.App.map SupermanMessage
 
         WonderWomanView ->
-          WonderWoman.root (forwardTo address WonderWomanAction) model.wonderWoman
+          WonderWoman.root model.wonderWoman
+            |> Html.App.map WonderWomanMessage
     ]
 
 
-dialog : Address Action -> Model -> Maybe Dialog.Config
-dialog address model =
+dialog : Model -> Maybe (Dialog.Config Message)
+dialog model =
   case model.view of
     BatmanView ->
-      Batman.dialog (forwardTo address BatmanAction) model.batman
+      Batman.dialog model.batman
+        |> Dialog.mapMaybe BatmanMessage
 
     SupermanView ->
-      Superman.dialog (forwardTo address SupermanAction) model.superman
+      Superman.dialog model.superman
+        |> Dialog.mapMaybe SupermanMessage
 
     WonderWomanView ->
-      WonderWoman.dialog (forwardTo address WonderWomanAction) model.wonderWoman
+      WonderWoman.dialog model.wonderWoman
+        |> Dialog.mapMaybe WonderWomanMessage

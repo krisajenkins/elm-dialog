@@ -1,4 +1,4 @@
-module Advanced.Heroes.Batman.State (..) where
+module Advanced.Heroes.Batman.State exposing (..)
 
 import Response exposing (..)
 import Advanced.Heroes.Batman.Types exposing (..)
@@ -11,7 +11,12 @@ initialModel =
   }
 
 
-update : Action -> Model -> Response Model Action
+initialCommands : Cmd Message
+initialCommands =
+  Cmd.none
+
+
+update : Message -> Model -> Response Model Message
 update action model =
   case action of
     Kapow ->

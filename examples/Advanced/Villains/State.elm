@@ -1,4 +1,4 @@
-module Advanced.Villains.State (..) where
+module Advanced.Villains.State exposing (..)
 
 import Response exposing (..)
 import Advanced.Villains.Types exposing (..)
@@ -10,31 +10,39 @@ import Advanced.Villains.Penguin.State as Penguin
 
 initialModel : Model
 initialModel =
-  { joker = Joker.initialModel
+  { view = PenguinView
+  , joker = Joker.initialModel
   , penguin = Penguin.initialModel
-  , view = PenguinView
   }
 
 
-update : Action -> Model -> Response Model Action
+initialCommands : Cmd Message
+initialCommands =
+  Cmd.batch
+    [ Cmd.map JokerMessage Joker.initialCommands
+    , Cmd.map PenguinMessage Penguin.initialCommands
+    ]
+
+
+update : Message -> Model -> Response Model Message
 update action model =
   case action of
     SetView view ->
       { model | view = view }
         |> withNone
 
-    JokerAction subaction ->
+    JokerMessage subaction ->
       Joker.update subaction model.joker
-        |> mapBoth (\x -> { model | joker = x }) JokerAction
+        |> mapBoth (\x -> { model | joker = x }) JokerMessage
 
-    PenguinAction subaction ->
+    PenguinMessage subaction ->
       Penguin.update subaction model.penguin
-        |> mapBoth (\x -> { model | penguin = x }) PenguinAction
+        |> mapBoth (\x -> { model | penguin = x }) PenguinMessage
 
     TakeDamage ->
       case model.view of
         JokerView ->
-          update (JokerAction JokerTypes.TakeDamage) model
+          update (JokerMessage JokerTypes.TakeDamage) model
 
         PenguinView ->
-          update (PenguinAction PenguinTypes.TakeDamage) model
+          update (PenguinMessage PenguinTypes.TakeDamage) model

@@ -1,21 +1,19 @@
-module Advanced.Heroes.Superman.View (root, dialog) where
+module Advanced.Heroes.Superman.View exposing (root, dialog)
 
-import Dialog
 import Advanced.Heroes.Superman.Types exposing (..)
+import Dialog
 import Html exposing (..)
-import Signal exposing (..)
 import Utils exposing (..)
 
 
-root : Address Action -> Model -> Html
-root address model =
-  div
-    []
+root : Model -> Html Message
+root model =
+  div []
     [ h2 [] [ text "Superman" ]
     , debuggingView model
     ]
 
 
-dialog : Address Action -> Model -> Maybe Dialog.Config
-dialog address model =
+dialog : Model -> Maybe (Dialog.Config Message)
+dialog model =
   Nothing

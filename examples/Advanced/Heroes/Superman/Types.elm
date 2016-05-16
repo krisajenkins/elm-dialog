@@ -1,4 +1,4 @@
-module Advanced.Heroes.Superman.Types (..) where
+module Advanced.Heroes.Superman.Types exposing (..)
 
 
 type alias Model =
@@ -6,5 +6,5 @@ type alias Model =
   }
 
 
-type Action
+type Message
   = Punch

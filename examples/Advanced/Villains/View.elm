@@ -1,42 +1,43 @@
-module Advanced.Villains.View (root, dialog) where
+module Advanced.Villains.View exposing (root, dialog)
 
-import Dialog
-import Signal exposing (..)
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Advanced.Villains.Types exposing (..)
 import Advanced.Villains.Joker.View as Joker
 import Advanced.Villains.Penguin.View as Penguin
+import Advanced.Villains.Types exposing (..)
+import Dialog
+import Html exposing (..)
+import Html.App
+import Html.Attributes exposing (..)
 import Utils exposing (..)
 
 
-root : Address Action -> Model -> Html
-root address model =
-  div
-    []
+root : Model -> Html Message
+root model =
+  div []
     [ h1 [] [ text "Villains" ]
-    , ul
-        [ class "nav nav-tabs" ]
-        (List.map
-          (viewTab address SetView model.view)
+    , ul [ class "nav nav-tabs" ]
+        (List.map (viewTab SetView model.view)
           [ ( JokerView, "Joker" )
           , ( PenguinView, "Penguin" )
           ]
         )
     , case model.view of
         JokerView ->
-          Joker.root (forwardTo address JokerAction) model.joker
+          Joker.root model.joker
+            |> Html.App.map JokerMessage
 
         PenguinView ->
-          Penguin.root (forwardTo address PenguinAction) model.penguin
+          Penguin.root model.penguin
+            |> Html.App.map PenguinMessage
     ]
 
 
-dialog : Address Action -> Model -> Maybe Dialog.Config
-dialog address model =
+dialog : Model -> Maybe (Dialog.Config Message)
+dialog model =
   case model.view of
     JokerView ->
-      Joker.dialog (forwardTo address JokerAction) model.joker
+      Joker.dialog model.joker
+        |> Dialog.mapMaybe JokerMessage
 
     PenguinView ->
-      Penguin.dialog (forwardTo address PenguinAction) model.penguin
+      Penguin.dialog model.penguin
+        |> Dialog.mapMaybe PenguinMessage

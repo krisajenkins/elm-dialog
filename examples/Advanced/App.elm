@@ -1,29 +1,18 @@
-module Advanced.App (main) where
+module Advanced.App exposing (main)
 
-import Effects exposing (Never)
-import Html exposing (Html)
-import StartApp exposing (..)
 import Advanced.State exposing (..)
-import Task exposing (Task)
-import Advanced.Types exposing (..)
 import Advanced.View
+import Html.App
 
 
-app : App Model
-app =
-  StartApp.start
-    { init = ( initialModel, initialEffects )
+main : Program Never
+main =
+  Html.App.program
+    { init =
+        ( Advanced.State.initialModel
+        , Advanced.State.initialCommands
+        )
     , view = Advanced.View.root
     , update = Advanced.State.update
-    , inputs = []
+    , subscriptions = always Sub.none
     }
-
-
-main : Signal Html
-main =
-  app.html
-
-
-port tasks : Signal (Task Never ())
-port tasks =
-  app.tasks

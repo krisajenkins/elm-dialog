@@ -1,12 +1,12 @@
-module Advanced.Types (..) where
+module Advanced.Types exposing (..)
 
 import Advanced.Heroes.Types as Heroes
 import Advanced.Villains.Types as Villains
 
 
-type Action
-  = HeroesAction Heroes.Action
-  | VillainsAction Villains.Action
+type Message
+  = HeroesMessage Heroes.Message
+  | VillainsMessage Villains.Message
   | HeroAttack
 
 

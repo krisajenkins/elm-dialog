@@ -1,4 +1,4 @@
-module Advanced.Heroes.Batman.Types (..) where
+module Advanced.Heroes.Batman.Types exposing (..)
 
 
 type alias Model =
@@ -7,6 +7,6 @@ type alias Model =
   }
 
 
-type Action
+type Message
   = Kapow
   | Finished

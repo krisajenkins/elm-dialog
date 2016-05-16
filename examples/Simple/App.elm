@@ -1,4 +1,4 @@
-module Simple.App (main) where
+module Simple.App exposing (main)
 
 {-| Fan favourite, it's the "click a button and increment a counter" demo!
 
@@ -8,13 +8,10 @@ dialog goes away.
 -}
 
 import Dialog
-import Effects exposing (..)
 import Html exposing (..)
+import Html.App
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Signal exposing (..)
-import StartApp exposing (..)
-import Task exposing (Task)
 import Utils exposing (..)
 
 
@@ -23,7 +20,7 @@ import Utils exposing (..)
 ------------------------------------------------------------
 
 
-type Action
+type Message
   = Increment
   | Acknowledge
 
@@ -40,16 +37,16 @@ type alias Model =
 ------------------------------------------------------------
 
 
-initialState : ( Model, Effects Action )
+initialState : ( Model, Cmd Message )
 initialState =
   ( { counter = 0
     , showDialog = False
     }
-  , none
+  , Cmd.none
   )
 
 
-update : Action -> Model -> ( Model, Effects Action )
+update : Message -> Model -> ( Model, Cmd Message )
 update action model =
   case action of
     Increment ->
@@ -57,12 +54,12 @@ update action model =
           | counter = model.counter + 1
           , showDialog = True
         }
-      , none
+      , Cmd.none
       )
 
     Acknowledge ->
       ( { model | showDialog = False }
-      , none
+      , Cmd.none
       )
 
 
@@ -78,20 +75,19 @@ update action model =
 contains the information we need to decide whether to show the dialog
 or not.
 -}
-view : Address Action -> Model -> Html
-view address model =
-  div
-    [ style [ ( "margin", "45px" ) ] ]
+view : Model -> Html Message
+view model =
+  div [ style [ ( "margin", "45px" ) ] ]
     [ bootstrap
     , h2 [] [ text (toString model.counter) ]
     , button
         [ class "btn btn-info"
-        , onClick address Increment
+        , onClick Increment
         ]
         [ text "Increment" ]
     , Dialog.view
         (if model.showDialog then
-          Just (dialogConfig address model)
+          Just (dialogConfig model)
          else
           Nothing
         )
@@ -100,16 +96,16 @@ view address model =
 
 {-| A `Dialog.Config` is just a few piece of optional `Html`, plus "what do we do onClose?"
 -}
-dialogConfig : Address Action -> Model -> Dialog.Config
-dialogConfig address model =
-  { closeMessage = Just (Signal.message address Acknowledge)
+dialogConfig : Model -> Dialog.Config Message
+dialogConfig model =
+  { closeMessage = Just Acknowledge
   , header = Just (h3 [] [ text "1 Up!" ])
   , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
   , footer =
       Just
         (button
           [ class "btn btn-success"
-          , onClick address Acknowledge
+          , onClick Acknowledge
           ]
           [ text "OK" ]
         )
@@ -122,21 +118,11 @@ dialogConfig address model =
 ------------------------------------------------------------
 
 
-app : App Model
-app =
-  StartApp.start
+main : Program Never
+main =
+  Html.App.program
     { init = initialState
     , view = view
     , update = update
-    , inputs = []
+    , subscriptions = always Sub.none
     }
-
-
-main : Signal Html
-main =
-  app.html
-
-
-port tasks : Signal (Task Never ())
-port tasks =
-  app.tasks

@@ -1,7 +1,7 @@
-module Advanced.Villains.Penguin.State (..) where
+module Advanced.Villains.Penguin.State exposing (..)
 
-import Response exposing (..)
 import Advanced.Villains.Penguin.Types exposing (..)
+import Response exposing (..)
 
 
 initialModel : Model
@@ -12,7 +12,12 @@ initialModel =
   }
 
 
-update : Action -> Model -> Response Model Action
+initialCommands : Cmd Message
+initialCommands =
+  Cmd.none
+
+
+update : Message -> Model -> Response Model Message
 update action model =
   case action of
     Wark ->
