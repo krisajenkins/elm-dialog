@@ -1,11 +1,11 @@
 module Advanced.Villains.State exposing (..)
 
-import Response exposing (..)
-import Advanced.Villains.Types exposing (..)
-import Advanced.Villains.Joker.Types as JokerTypes
-import Advanced.Villains.Penguin.Types as PenguinTypes
 import Advanced.Villains.Joker.State as Joker
+import Advanced.Villains.Joker.Types as Joker
 import Advanced.Villains.Penguin.State as Penguin
+import Advanced.Villains.Penguin.Types as Penguin
+import Advanced.Villains.Types exposing (..)
+import Response exposing (..)
 
 
 initialModel : Model
@@ -42,7 +42,7 @@ update action model =
         TakeDamage ->
             case model.view of
                 JokerView ->
-                    update (JokerMessage JokerTypes.TakeDamage) model
+                    update (JokerMessage Joker.TakeDamage) model
 
                 PenguinView ->
-                    update (PenguinMessage PenguinTypes.TakeDamage) model
+                    update (PenguinMessage Penguin.TakeDamage) model

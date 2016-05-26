@@ -3,7 +3,7 @@ module Advanced.State exposing (..)
 import Advanced.Heroes.State as Heroes
 import Advanced.Types exposing (..)
 import Advanced.Villains.State as Villains
-import Advanced.Villains.Types as VillainsTypes
+import Advanced.Villains.Types as Villains
 import Response exposing (..)
 
 
@@ -34,5 +34,5 @@ update action model =
                 |> mapBoth (\x -> { model | villains = x }) VillainsMessage
 
         HeroAttack ->
-            Villains.update VillainsTypes.TakeDamage model.villains
+            Villains.update Villains.TakeDamage model.villains
                 |> mapBoth (\x -> { model | villains = x }) VillainsMessage
