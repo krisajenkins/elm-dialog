@@ -2,9 +2,9 @@ module Advanced.Heroes.Superman.Types exposing (..)
 
 
 type alias Model =
-  { punches : Int
-  }
+    { punches : Int
+    }
 
 
 type Message
-  = Punch
+    = Punch

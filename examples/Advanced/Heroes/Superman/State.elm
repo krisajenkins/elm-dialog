@@ -6,17 +6,17 @@ import Response exposing (..)
 
 initialModel : Model
 initialModel =
-  { punches = 100 }
+    { punches = 100 }
 
 
 initialCommands : Cmd Message
 initialCommands =
-  Cmd.none
+    Cmd.none
 
 
 update : Message -> Model -> Response Model Message
 update action model =
-  case action of
-    Punch ->
-      { model | punches = model.punches + 1 }
-        |> withNone
+    case action of
+        Punch ->
+            { model | punches = model.punches + 1 }
+                |> withNone

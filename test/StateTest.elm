@@ -5,5 +5,5 @@ import ElmTest exposing (..)
 
 tests : Test
 tests =
-  ElmTest.suite "State"
-    []
+    ElmTest.suite "State"
+        []

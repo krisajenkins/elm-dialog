@@ -6,17 +6,17 @@ import Response exposing (..)
 
 initialModel : Model
 initialModel =
-  { swordSwipes = 5999 }
+    { swordSwipes = 5999 }
 
 
 initialCommands : Cmd Message
 initialCommands =
-  Cmd.none
+    Cmd.none
 
 
 update : Message -> Model -> Response Model Message
 update action model =
-  case action of
-    Swipe ->
-      { model | swordSwipes = model.swordSwipes + 1 }
-        |> withNone
+    case action of
+        Swipe ->
+            { model | swordSwipes = model.swordSwipes + 1 }
+                |> withNone

@@ -21,14 +21,14 @@ import Utils exposing (..)
 
 
 type Message
-  = Increment
-  | Acknowledge
+    = Increment
+    | Acknowledge
 
 
 type alias Model =
-  { counter : Int
-  , showDialog : Bool
-  }
+    { counter : Int
+    , showDialog : Bool
+    }
 
 
 
@@ -39,28 +39,28 @@ type alias Model =
 
 initialState : ( Model, Cmd Message )
 initialState =
-  ( { counter = 0
-    , showDialog = False
-    }
-  , Cmd.none
-  )
+    ( { counter = 0
+      , showDialog = False
+      }
+    , Cmd.none
+    )
 
 
 update : Message -> Model -> ( Model, Cmd Message )
 update action model =
-  case action of
-    Increment ->
-      ( { model
-          | counter = model.counter + 1
-          , showDialog = True
-        }
-      , Cmd.none
-      )
+    case action of
+        Increment ->
+            ( { model
+                | counter = model.counter + 1
+                , showDialog = True
+              }
+            , Cmd.none
+            )
 
-    Acknowledge ->
-      ( { model | showDialog = False }
-      , Cmd.none
-      )
+        Acknowledge ->
+            ( { model | showDialog = False }
+            , Cmd.none
+            )
 
 
 
@@ -77,39 +77,39 @@ or not.
 -}
 view : Model -> Html Message
 view model =
-  div [ style [ ( "margin", "45px" ) ] ]
-    [ bootstrap
-    , h2 [] [ text (toString model.counter) ]
-    , button
-        [ class "btn btn-info"
-        , onClick Increment
+    div [ style [ ( "margin", "45px" ) ] ]
+        [ bootstrap
+        , h2 [] [ text (toString model.counter) ]
+        , button
+            [ class "btn btn-info"
+            , onClick Increment
+            ]
+            [ text "Increment" ]
+        , Dialog.view
+            (if model.showDialog then
+                Just (dialogConfig model)
+             else
+                Nothing
+            )
         ]
-        [ text "Increment" ]
-    , Dialog.view
-        (if model.showDialog then
-          Just (dialogConfig model)
-         else
-          Nothing
-        )
-    ]
 
 
 {-| A `Dialog.Config` is just a few piece of optional `Html`, plus "what do we do onClose?"
 -}
 dialogConfig : Model -> Dialog.Config Message
 dialogConfig model =
-  { closeMessage = Just Acknowledge
-  , header = Just (h3 [] [ text "1 Up!" ])
-  , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
-  , footer =
-      Just
-        (button
-          [ class "btn btn-success"
-          , onClick Acknowledge
-          ]
-          [ text "OK" ]
-        )
-  }
+    { closeMessage = Just Acknowledge
+    , header = Just (h3 [] [ text "1 Up!" ])
+    , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
+    , footer =
+        Just
+            (button
+                [ class "btn btn-success"
+                , onClick Acknowledge
+                ]
+                [ text "OK" ]
+            )
+    }
 
 
 
@@ -120,9 +120,9 @@ dialogConfig model =
 
 main : Program Never
 main =
-  Html.App.program
-    { init = initialState
-    , view = view
-    , update = update
-    , subscriptions = always Sub.none
-    }
+    Html.App.program
+        { init = initialState
+        , view = view
+        , update = update
+        , subscriptions = always Sub.none
+        }

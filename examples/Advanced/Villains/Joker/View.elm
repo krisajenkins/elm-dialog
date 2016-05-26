@@ -8,22 +8,22 @@ import Utils exposing (..)
 
 root : Model -> Html Message
 root model =
-  div []
-    [ h2 [] [ text "Joker" ]
-    , debuggingView model
-    ]
+    div []
+        [ h2 [] [ text "Joker" ]
+        , debuggingView model
+        ]
 
 
 dialog : Model -> Maybe (Dialog.Config Message)
 dialog model =
-  case model.state of
-    Laughing ->
-      Nothing
+    case model.state of
+        Laughing ->
+            Nothing
 
-    Screaming ->
-      Just
-        { closeMessage = Just Close
-        , header = Just (h1 [] [ text "Joker says, \"Argh!\"" ])
-        , body = Just (text "The Joker is no longer smiling.")
-        , footer = Nothing
-        }
+        Screaming ->
+            Just
+                { closeMessage = Just Close
+                , header = Just (h1 [] [ text "Joker says, \"Argh!\"" ])
+                , body = Just (text "The Joker is no longer smiling.")
+                , footer = Nothing
+                }

@@ -8,12 +8,12 @@ import Utils exposing (..)
 
 root : Model -> Html Message
 root model =
-  div []
-    [ h2 [] [ text "WonderWoman" ]
-    , debuggingView model
-    ]
+    div []
+        [ h2 [] [ text "WonderWoman" ]
+        , debuggingView model
+        ]
 
 
 dialog : Model -> Maybe (Dialog.Config Message)
 dialog model =
-  Nothing
+    Nothing

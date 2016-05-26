@@ -2,9 +2,9 @@ module Advanced.Heroes.WonderWoman.Types exposing (..)
 
 
 type alias Model =
-  { swordSwipes : Int
-  }
+    { swordSwipes : Int
+    }
 
 
 type Message
-  = Swipe
+    = Swipe

@@ -5,19 +5,19 @@ import Advanced.Villains.Penguin.Types as Penguin
 
 
 type alias Model =
-  { joker : Joker.Model
-  , penguin : Penguin.Model
-  , view : View
-  }
+    { joker : Joker.Model
+    , penguin : Penguin.Model
+    , view : View
+    }
 
 
 type View
-  = JokerView
-  | PenguinView
+    = JokerView
+    | PenguinView
 
 
 type Message
-  = JokerMessage Joker.Message
-  | PenguinMessage Penguin.Message
-  | TakeDamage
-  | SetView View
+    = JokerMessage Joker.Message
+    | PenguinMessage Penguin.Message
+    | TakeDamage
+    | SetView View

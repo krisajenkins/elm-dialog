@@ -13,41 +13,41 @@ import Utils exposing (viewTab)
 
 root : Model -> Html Message
 root model =
-  div []
-    [ h1 [] [ text "Heroes" ]
-    , ul [ class "nav nav-tabs" ]
-        (List.map (viewTab SetView model.view)
-          [ ( BatmanView, "Batman" )
-          , ( SupermanView, "Superman" )
-          , ( WonderWomanView, "Wonder Woman" )
-          ]
-        )
-    , case model.view of
-        BatmanView ->
-          Batman.root model.batman
-            |> Html.App.map BatmanMessage
+    div []
+        [ h1 [] [ text "Heroes" ]
+        , ul [ class "nav nav-tabs" ]
+            (List.map (viewTab SetView model.view)
+                [ ( BatmanView, "Batman" )
+                , ( SupermanView, "Superman" )
+                , ( WonderWomanView, "Wonder Woman" )
+                ]
+            )
+        , case model.view of
+            BatmanView ->
+                Batman.root model.batman
+                    |> Html.App.map BatmanMessage
 
-        SupermanView ->
-          Superman.root model.superman
-            |> Html.App.map SupermanMessage
+            SupermanView ->
+                Superman.root model.superman
+                    |> Html.App.map SupermanMessage
 
-        WonderWomanView ->
-          WonderWoman.root model.wonderWoman
-            |> Html.App.map WonderWomanMessage
-    ]
+            WonderWomanView ->
+                WonderWoman.root model.wonderWoman
+                    |> Html.App.map WonderWomanMessage
+        ]
 
 
 dialog : Model -> Maybe (Dialog.Config Message)
 dialog model =
-  case model.view of
-    BatmanView ->
-      Batman.dialog model.batman
-        |> Dialog.mapMaybe BatmanMessage
+    case model.view of
+        BatmanView ->
+            Batman.dialog model.batman
+                |> Dialog.mapMaybe BatmanMessage
 
-    SupermanView ->
-      Superman.dialog model.superman
-        |> Dialog.mapMaybe SupermanMessage
+        SupermanView ->
+            Superman.dialog model.superman
+                |> Dialog.mapMaybe SupermanMessage
 
-    WonderWomanView ->
-      WonderWoman.dialog model.wonderWoman
-        |> Dialog.mapMaybe WonderWomanMessage
+        WonderWomanView ->
+            WonderWoman.dialog model.wonderWoman
+                |> Dialog.mapMaybe WonderWomanMessage
