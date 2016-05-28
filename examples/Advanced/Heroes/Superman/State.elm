@@ -1,7 +1,6 @@
 module Advanced.Heroes.Superman.State exposing (..)
 
 import Advanced.Heroes.Superman.Types exposing (..)
-import Response exposing (..)
 
 
 initialModel : Model
@@ -18,5 +17,6 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         Punch ->
-            { model | punches = model.punches + 1 }
-                |> withNone
+            ( { model | punches = model.punches + 1 }
+            , Cmd.none
+            )

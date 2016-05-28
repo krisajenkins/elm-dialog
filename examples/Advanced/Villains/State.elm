@@ -28,8 +28,9 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         SetView view ->
-            { model | view = view }
-                |> withNone
+            ( { model | view = view }
+            , Cmd.none
+            )
 
         JokerMsg subaction ->
             Joker.update subaction model.joker

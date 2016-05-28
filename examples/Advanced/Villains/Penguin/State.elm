@@ -1,7 +1,6 @@
 module Advanced.Villains.Penguin.State exposing (..)
 
 import Advanced.Villains.Penguin.Types exposing (..)
-import Response exposing (..)
 
 
 initialModel : Model
@@ -21,19 +20,22 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         Wark ->
-            { model
+            ( { model
                 | warks = model.warks + 3
                 , state = Warking
-            }
-                |> withNone
+              }
+            , Cmd.none
+            )
 
         TakeDamage ->
-            { model
+            ( { model
                 | health = model.health - 2
                 , state = Hurt
-            }
-                |> withNone
+              }
+            , Cmd.none
+            )
 
         Close ->
-            { model | state = Quiet }
-                |> withNone
+            ( { model | state = Quiet }
+            , Cmd.none
+            )

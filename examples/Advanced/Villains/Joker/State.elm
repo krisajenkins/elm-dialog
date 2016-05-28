@@ -1,7 +1,6 @@
 module Advanced.Villains.Joker.State exposing (..)
 
 import Advanced.Villains.Joker.Types exposing (..)
-import Response exposing (..)
 
 
 initialModel : Model
@@ -21,16 +20,19 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         Shoot ->
-            { model | shots = model.shots + 1 }
-                |> withNone
+            ( { model | shots = model.shots + 1 }
+            , Cmd.none
+            )
 
         TakeDamage ->
-            { model
+            ( { model
                 | health = model.health - 1
                 , state = Screaming
-            }
-                |> withNone
+              }
+            , Cmd.none
+            )
 
         Close ->
-            { model | state = Laughing }
-                |> withNone
+            ( { model | state = Laughing }
+            , Cmd.none
+            )

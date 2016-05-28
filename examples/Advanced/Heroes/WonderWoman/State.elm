@@ -1,7 +1,6 @@
 module Advanced.Heroes.WonderWoman.State exposing (..)
 
 import Advanced.Heroes.WonderWoman.Types exposing (..)
-import Response exposing (..)
 
 
 initialModel : Model
@@ -18,5 +17,6 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         Swipe ->
-            { model | swordSwipes = model.swordSwipes + 1 }
-                |> withNone
+            ( { model | swordSwipes = model.swordSwipes + 1 }
+            , Cmd.none
+            )
