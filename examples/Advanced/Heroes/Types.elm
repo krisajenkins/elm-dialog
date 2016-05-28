@@ -19,8 +19,8 @@ type View
     | WonderWomanView
 
 
-type Message
-    = BatmanMessage Batman.Message
-    | SupermanMessage Superman.Message
-    | WonderWomanMessage WonderWoman.Message
+type Msg
+    = BatmanMsg Batman.Msg
+    | SupermanMsg Superman.Msg
+    | WonderWomanMsg WonderWoman.Msg
     | SetView View

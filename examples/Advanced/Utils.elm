@@ -20,10 +20,10 @@ actionButton ( action, label ) =
 
 
 attackButton : msg -> String -> Html msg
-attackButton attackMessage label =
+attackButton attackMsg label =
     button
         [ class "btn btn-success"
-        , onClick attackMessage
+        , onClick attackMsg
         ]
         [ text label ]
 

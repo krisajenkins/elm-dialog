@@ -9,12 +9,12 @@ initialModel =
     { punches = 100 }
 
 
-initialCommands : Cmd Message
+initialCommands : Cmd Msg
 initialCommands =
     Cmd.none
 
 
-update : Message -> Model -> Response Model Message
+update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         Punch ->

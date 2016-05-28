@@ -16,30 +16,30 @@ initialModel =
     }
 
 
-initialCommands : Cmd Message
+initialCommands : Cmd Msg
 initialCommands =
     Cmd.batch
-        [ Cmd.map BatmanMessage Batman.initialCommands
-        , Cmd.map SupermanMessage Superman.initialCommands
-        , Cmd.map WonderWomanMessage WonderWoman.initialCommands
+        [ Cmd.map BatmanMsg Batman.initialCommands
+        , Cmd.map SupermanMsg Superman.initialCommands
+        , Cmd.map WonderWomanMsg WonderWoman.initialCommands
         ]
 
 
-update : Message -> Model -> Response Model Message
+update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         SetView view ->
             { model | view = view }
                 |> withNone
 
-        BatmanMessage subaction ->
+        BatmanMsg subaction ->
             Batman.update subaction model.batman
-                |> mapBoth (\x -> { model | batman = x }) BatmanMessage
+                |> mapBoth (\x -> { model | batman = x }) BatmanMsg
 
-        SupermanMessage subaction ->
+        SupermanMsg subaction ->
             Superman.update subaction model.superman
-                |> mapBoth (\x -> { model | superman = x }) SupermanMessage
+                |> mapBoth (\x -> { model | superman = x }) SupermanMsg
 
-        WonderWomanMessage subaction ->
+        WonderWomanMsg subaction ->
             WonderWoman.update subaction model.wonderWoman
-                |> mapBoth (\x -> { model | wonderWoman = x }) WonderWomanMessage
+                |> mapBoth (\x -> { model | wonderWoman = x }) WonderWomanMsg

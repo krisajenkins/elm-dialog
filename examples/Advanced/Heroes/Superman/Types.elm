@@ -6,5 +6,5 @@ type alias Model =
     }
 
 
-type Message
+type Msg
     = Punch

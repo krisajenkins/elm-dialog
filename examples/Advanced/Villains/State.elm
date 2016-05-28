@@ -16,33 +16,33 @@ initialModel =
     }
 
 
-initialCommands : Cmd Message
+initialCommands : Cmd Msg
 initialCommands =
     Cmd.batch
-        [ Cmd.map JokerMessage Joker.initialCommands
-        , Cmd.map PenguinMessage Penguin.initialCommands
+        [ Cmd.map JokerMsg Joker.initialCommands
+        , Cmd.map PenguinMsg Penguin.initialCommands
         ]
 
 
-update : Message -> Model -> Response Model Message
+update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         SetView view ->
             { model | view = view }
                 |> withNone
 
-        JokerMessage subaction ->
+        JokerMsg subaction ->
             Joker.update subaction model.joker
-                |> mapBoth (\x -> { model | joker = x }) JokerMessage
+                |> mapBoth (\x -> { model | joker = x }) JokerMsg
 
-        PenguinMessage subaction ->
+        PenguinMsg subaction ->
             Penguin.update subaction model.penguin
-                |> mapBoth (\x -> { model | penguin = x }) PenguinMessage
+                |> mapBoth (\x -> { model | penguin = x }) PenguinMsg
 
         TakeDamage ->
             case model.view of
                 JokerView ->
-                    update (JokerMessage Joker.TakeDamage) model
+                    update (JokerMsg Joker.TakeDamage) model
 
                 PenguinView ->
-                    update (PenguinMessage Penguin.TakeDamage) model
+                    update (PenguinMsg Penguin.TakeDamage) model

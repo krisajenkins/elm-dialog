@@ -6,7 +6,7 @@ import Html exposing (..)
 import Utils exposing (..)
 
 
-root : Model -> Html Message
+root : Model -> Html Msg
 root model =
     div []
         [ h2 [] [ text "Penguin" ]
@@ -15,7 +15,7 @@ root model =
         ]
 
 
-dialog : Model -> Maybe (Dialog.Config Message)
+dialog : Model -> Maybe (Dialog.Config Msg)
 dialog model =
     case model.state of
         Quiet ->

@@ -14,7 +14,7 @@ type alias Model =
     }
 
 
-type Message
+type Msg
     = Wark
     | Close
     | TakeDamage

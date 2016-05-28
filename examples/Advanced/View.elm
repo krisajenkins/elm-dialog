@@ -10,7 +10,7 @@ import Html.Attributes exposing (..)
 import Utils exposing (..)
 
 
-root : Model -> Html Message
+root : Model -> Html Msg
 root model =
     div [ style [ ( "margin", "15px" ) ] ]
         [ bootstrap
@@ -20,17 +20,17 @@ root model =
             , div [ class "row" ]
                 [ div [ class "col-md-6" ]
                     [ Heroes.root model.heroes
-                        |> Html.App.map HeroesMessage
+                        |> Html.App.map HeroesMsg
                     ]
                 , div [ class "col-md-6" ]
                     [ Villains.root model.villains
-                        |> Html.App.map VillainsMessage
+                        |> Html.App.map VillainsMsg
                     ]
                 ]
               -- What if both the heroes and villans want to show a dialog? How do we ensure we only show one at a time? Like this:
             , Maybe.oneOf
-                [ Dialog.mapMaybe HeroesMessage (Heroes.dialog model.heroes)
-                , Dialog.mapMaybe VillainsMessage (Villains.dialog model.villains)
+                [ Dialog.mapMaybe HeroesMsg (Heroes.dialog model.heroes)
+                , Dialog.mapMaybe VillainsMsg (Villains.dialog model.villains)
                 ]
                 |> Dialog.view
             ]

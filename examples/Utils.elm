@@ -11,9 +11,9 @@ both f ( x, y ) =
 
 
 viewTab : (view -> msg) -> view -> ( view, String ) -> Html msg
-viewTab viewMessage currentView ( view, title ) =
+viewTab viewMsg currentView ( view, title ) =
     li [ classList [ ( "active", currentView == view ) ] ]
-        [ a [ onClick (viewMessage view) ]
+        [ a [ onClick (viewMsg view) ]
             [ text title ]
         ]
 
@@ -28,10 +28,10 @@ actionButton ( action, label ) =
 
 
 attackButton : msg -> String -> Html msg
-attackButton attackMessage label =
+attackButton attackMsg label =
     button
         [ class "btn btn-success"
-        , onClick attackMessage
+        , onClick attackMsg
         ]
         [ text label ]
 

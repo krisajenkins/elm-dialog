@@ -14,25 +14,25 @@ initialModel =
     }
 
 
-initialCommands : Cmd Message
+initialCommands : Cmd Msg
 initialCommands =
     Cmd.batch
-        [ Cmd.map HeroesMessage Heroes.initialCommands
-        , Cmd.map VillainsMessage Villains.initialCommands
+        [ Cmd.map HeroesMsg Heroes.initialCommands
+        , Cmd.map VillainsMsg Villains.initialCommands
         ]
 
 
-update : Message -> Model -> Response Model Message
+update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
-        HeroesMessage subaction ->
+        HeroesMsg subaction ->
             Heroes.update subaction model.heroes
-                |> mapBoth (\x -> { model | heroes = x }) HeroesMessage
+                |> mapBoth (\x -> { model | heroes = x }) HeroesMsg
 
-        VillainsMessage subaction ->
+        VillainsMsg subaction ->
             Villains.update subaction model.villains
-                |> mapBoth (\x -> { model | villains = x }) VillainsMessage
+                |> mapBoth (\x -> { model | villains = x }) VillainsMsg
 
         HeroAttack ->
             Villains.update Villains.TakeDamage model.villains
-                |> mapBoth (\x -> { model | villains = x }) VillainsMessage
+                |> mapBoth (\x -> { model | villains = x }) VillainsMsg

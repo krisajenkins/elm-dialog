@@ -16,8 +16,8 @@ type View
     | PenguinView
 
 
-type Message
-    = JokerMessage Joker.Message
-    | PenguinMessage Penguin.Message
+type Msg
+    = JokerMsg Joker.Msg
+    | PenguinMsg Penguin.Msg
     | TakeDamage
     | SetView View

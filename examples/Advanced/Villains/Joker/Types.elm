@@ -13,7 +13,7 @@ type alias Model =
     }
 
 
-type Message
+type Msg
     = Shoot
     | Close
     | TakeDamage

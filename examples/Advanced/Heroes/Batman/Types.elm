@@ -7,6 +7,6 @@ type alias Model =
     }
 
 
-type Message
+type Msg
     = Kapow
     | Finished

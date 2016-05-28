@@ -11,7 +11,7 @@ import Html.Attributes exposing (..)
 import Utils exposing (viewTab)
 
 
-root : Model -> Html Message
+root : Model -> Html Msg
 root model =
     div []
         [ h1 [] [ text "Heroes" ]
@@ -25,29 +25,29 @@ root model =
         , case model.view of
             BatmanView ->
                 Batman.root model.batman
-                    |> Html.App.map BatmanMessage
+                    |> Html.App.map BatmanMsg
 
             SupermanView ->
                 Superman.root model.superman
-                    |> Html.App.map SupermanMessage
+                    |> Html.App.map SupermanMsg
 
             WonderWomanView ->
                 WonderWoman.root model.wonderWoman
-                    |> Html.App.map WonderWomanMessage
+                    |> Html.App.map WonderWomanMsg
         ]
 
 
-dialog : Model -> Maybe (Dialog.Config Message)
+dialog : Model -> Maybe (Dialog.Config Msg)
 dialog model =
     case model.view of
         BatmanView ->
             Batman.dialog model.batman
-                |> Dialog.mapMaybe BatmanMessage
+                |> Dialog.mapMaybe BatmanMsg
 
         SupermanView ->
             Superman.dialog model.superman
-                |> Dialog.mapMaybe SupermanMessage
+                |> Dialog.mapMaybe SupermanMsg
 
         WonderWomanView ->
             WonderWoman.dialog model.wonderWoman
-                |> Dialog.mapMaybe WonderWomanMessage
+                |> Dialog.mapMaybe WonderWomanMsg

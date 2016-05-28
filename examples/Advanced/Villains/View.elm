@@ -10,7 +10,7 @@ import Html.Attributes exposing (..)
 import Utils exposing (..)
 
 
-root : Model -> Html Message
+root : Model -> Html Msg
 root model =
     div []
         [ h1 [] [ text "Villains" ]
@@ -23,21 +23,21 @@ root model =
         , case model.view of
             JokerView ->
                 Joker.root model.joker
-                    |> Html.App.map JokerMessage
+                    |> Html.App.map JokerMsg
 
             PenguinView ->
                 Penguin.root model.penguin
-                    |> Html.App.map PenguinMessage
+                    |> Html.App.map PenguinMsg
         ]
 
 
-dialog : Model -> Maybe (Dialog.Config Message)
+dialog : Model -> Maybe (Dialog.Config Msg)
 dialog model =
     case model.view of
         JokerView ->
             Joker.dialog model.joker
-                |> Dialog.mapMaybe JokerMessage
+                |> Dialog.mapMaybe JokerMsg
 
         PenguinView ->
             Penguin.dialog model.penguin
-                |> Dialog.mapMaybe PenguinMessage
+                |> Dialog.mapMaybe PenguinMsg

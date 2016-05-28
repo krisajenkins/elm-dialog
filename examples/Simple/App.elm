@@ -20,7 +20,7 @@ import Utils exposing (..)
 ------------------------------------------------------------
 
 
-type Message
+type Msg
     = Increment
     | Acknowledge
 
@@ -37,7 +37,7 @@ type alias Model =
 ------------------------------------------------------------
 
 
-initialState : ( Model, Cmd Message )
+initialState : ( Model, Cmd Msg )
 initialState =
     ( { counter = 0
       , showDialog = False
@@ -46,7 +46,7 @@ initialState =
     )
 
 
-update : Message -> Model -> ( Model, Cmd Message )
+update : Msg -> Model -> ( Model, Cmd Msg )
 update action model =
     case action of
         Increment ->
@@ -75,7 +75,7 @@ update action model =
 contains the information we need to decide whether to show the dialog
 or not.
 -}
-view : Model -> Html Message
+view : Model -> Html Msg
 view model =
     div [ style [ ( "margin", "45px" ) ] ]
         [ bootstrap
@@ -96,7 +96,7 @@ view model =
 
 {-| A `Dialog.Config` is just a few piece of optional `Html`, plus "what do we do onClose?"
 -}
-dialogConfig : Model -> Dialog.Config Message
+dialogConfig : Model -> Dialog.Config Msg
 dialogConfig model =
     { closeMessage = Just Acknowledge
     , header = Just (h3 [] [ text "1 Up!" ])

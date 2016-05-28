@@ -4,9 +4,9 @@ import Advanced.Heroes.Types as Heroes
 import Advanced.Villains.Types as Villains
 
 
-type Message
-    = HeroesMessage Heroes.Message
-    | VillainsMessage Villains.Message
+type Msg
+    = HeroesMsg Heroes.Msg
+    | VillainsMsg Villains.Msg
     | HeroAttack
 
 
