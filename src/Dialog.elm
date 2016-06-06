@@ -11,6 +11,7 @@ import Html exposing (..)
 import Html.App
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Maybe exposing (andThen)
 
 
 {-| Renders a modal dialog whenever you supply a `Config msg`.
@@ -61,11 +62,11 @@ view maybeConfig =
     in
         div []
             [ div
-                [ classList
+                ([ classList
                     [ ( "modal", True )
                     , ( "in", displayed )
                     ]
-                , style
+                 , style
                     [ ( "display"
                       , if displayed then
                             "block"
@@ -73,7 +74,14 @@ view maybeConfig =
                             "none"
                       )
                     ]
-                ]
+                 ]
+                    ++ case maybeConfig `andThen` .closeMessage of
+                        Just closeMessage ->
+                            [ onClick closeMessage ]
+
+                        _ ->
+                            []
+                )
                 [ div [ class "modal-dialog" ]
                     [ div [ class "modal-content" ]
                         (case maybeConfig of
