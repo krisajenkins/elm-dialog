@@ -1,6 +1,6 @@
 module Advanced.Heroes.Batman.State exposing (..)
 
-import Response exposing (..)
+import Advanced.Battle exposing (Attack(..))
 import Advanced.Heroes.Batman.Types exposing (..)
 
 
@@ -16,16 +16,22 @@ initialCommands =
     Cmd.none
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> ( ( Model, Cmd Msg ), Maybe Attack )
 update action model =
     case action of
         Kapow ->
-            { model
-                | kapows = model.kapows + 2
-                , showDialog = True
-            }
-                |> withNone
+            ( ( { model
+                    | kapows = model.kapows + 2
+                    , showDialog = True
+                }
+              , Cmd.none
+              )
+            , Just Punch
+            )
 
         Finished ->
-            { model | showDialog = False }
-                |> withNone
+            ( ( { model | showDialog = False }
+              , Cmd.none
+              )
+            , Nothing
+            )

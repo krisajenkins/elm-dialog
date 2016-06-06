@@ -7,7 +7,6 @@ import Advanced.Villains.Types as Villains
 type Msg
     = HeroesMsg Heroes.Msg
     | VillainsMsg Villains.Msg
-    | HeroAttack
 
 
 type alias Model =

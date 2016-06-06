@@ -1,5 +1,6 @@
 module Advanced.Heroes.State exposing (..)
 
+import Advanced.Battle exposing (Attack(..))
 import Advanced.Heroes.Batman.State as Batman
 import Advanced.Heroes.Superman.State as Superman
 import Advanced.Heroes.Types exposing (..)
@@ -25,21 +26,37 @@ initialCommands =
         ]
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> ( ( Model, Cmd Msg ), Maybe Attack )
 update action model =
     case action of
         SetView view ->
-            { model | view = view }
-                |> withNone
+            ( ( { model | view = view }
+              , Cmd.none
+              )
+            , Nothing
+            )
 
         BatmanMsg subaction ->
-            Batman.update subaction model.batman
-                |> mapBoth (\x -> { model | batman = x }) BatmanMsg
+            let
+                ( substate, attack ) =
+                    Batman.update subaction model.batman
+            in
+                ( substate
+                    |> mapModel (\x -> { model | batman = x })
+                    |> mapCmd BatmanMsg
+                , attack
+                )
 
         SupermanMsg subaction ->
-            Superman.update subaction model.superman
-                |> mapBoth (\x -> { model | superman = x }) SupermanMsg
+            ( Superman.update subaction model.superman
+                |> mapModel (\x -> { model | superman = x })
+                |> mapCmd SupermanMsg
+            , Nothing
+            )
 
         WonderWomanMsg subaction ->
-            WonderWoman.update subaction model.wonderWoman
-                |> mapBoth (\x -> { model | wonderWoman = x }) WonderWomanMsg
+            ( WonderWoman.update subaction model.wonderWoman
+                |> mapModel (\x -> { model | wonderWoman = x })
+                |> mapCmd WonderWomanMsg
+            , Nothing
+            )

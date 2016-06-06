@@ -34,11 +34,13 @@ update action model =
 
         JokerMsg subaction ->
             Joker.update subaction model.joker
-                |> mapBoth (\x -> { model | joker = x }) JokerMsg
+                |> mapModel (\x -> { model | joker = x })
+                |> mapCmd JokerMsg
 
         PenguinMsg subaction ->
             Penguin.update subaction model.penguin
-                |> mapBoth (\x -> { model | penguin = x }) PenguinMsg
+                |> mapModel (\x -> { model | penguin = x })
+                |> mapCmd PenguinMsg
 
         TakeDamage ->
             case model.view of
