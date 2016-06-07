@@ -23,6 +23,7 @@ dialog model =
         Screaming ->
             Just
                 { closeMessage = Just Close
+                , containerClass = Just "joker-modal-container"
                 , header = Just (h1 [] [ text "Joker says, \"Argh!\"" ])
                 , body = Just (text "The Joker is no longer smiling.")
                 , footer = Nothing

@@ -1,4 +1,4 @@
-# Elm Dialog - A Modal Widget for Elm
+# Elm Dialog - A Modal Dialog Widget for Elm
 
 Elm modal dialog boxes that fits in neatly with the Elm architecture.
 
@@ -43,7 +43,8 @@ make
 ## Credits
 
 Thanks to [Emilien Taque](https://github.com/etaque) for ideas & support.
-
+Thanks to [Mike Onslow](https://github.com/mikeonslow) for the `containerClass`
+feature.
 ## License
 
 Copyright © 2016 Kris Jenkins
