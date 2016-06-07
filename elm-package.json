@@ -1,5 +1,5 @@
 {
-    "version": "3.0.1",
+    "version": "3.0.2",
     "summary": "A dialog/modal widget for Elm.",
     "repository": "https://github.com/krisajenkins/elm-dialog.git",
     "license": "MIT",
