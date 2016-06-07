@@ -75,12 +75,6 @@ view maybeConfig =
                       )
                     ]
                  ]
-                    ++ case maybeConfig `andThen` .closeMessage of
-                        Just closeMessage ->
-                            [ onClick closeMessage ]
-
-                        _ ->
-                            []
                 )
                 [ div [ class "modal-dialog" ]
                     [ div [ class "modal-content" ]
