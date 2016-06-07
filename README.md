@@ -1,4 +1,4 @@
-# Elm Dialog - A Modal Widget for Elm
+# Elm Dialog - A Modal Dialog Widget for Elm
 
 Elm modal dialog boxes that fits in neatly with the Elm architecture.
 
