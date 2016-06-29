@@ -12,7 +12,6 @@ import Html exposing (..)
 import Html.App
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Utils exposing (..)
 
 
 ------------------------------------------------------------
@@ -78,14 +77,18 @@ or not.
 view : Model -> Html Msg
 view model =
     div [ style [ ( "margin", "45px" ) ] ]
-        [ bootstrap
+        [ node "link"
+            [ rel "stylesheet"
+            , href "https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css"
+            ]
+            []
         , h2 [] [ text (toString model.counter) ]
         , button
-            [ class "btn btn-info"
+            [ class "button"
             , onClick Increment
             ]
             [ text "Increment" ]
-        , Dialog.view
+        , Dialog.foundationView
             (if model.showDialog then
                 Just (dialogConfig model)
              else
@@ -104,7 +107,7 @@ dialogConfig model =
     , footer =
         Just
             (button
-                [ class "btn btn-success"
+                [ class "button success"
                 , onClick Acknowledge
                 ]
                 [ text "OK" ]

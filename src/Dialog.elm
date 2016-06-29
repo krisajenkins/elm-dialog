@@ -1,17 +1,21 @@
-module Dialog exposing (Config, view, map, mapMaybe)
+module Dialog exposing (Config, view, map, mapMaybe, bootstrapView, foundationView)
 
 {-| Elm Modal Dialogs.
 
-@docs Config, view, map, mapMaybe
+@docs Config
+@docs view
+@docs map
+@docs mapMaybe
+@docs bootstrapView
+@docs foundationView
 -}
 
-import Exts.Html.Bootstrap exposing (..)
-import Exts.Maybe exposing (maybe, isJust)
+import Bootstrap
+import Foundation
 import Html exposing (..)
 import Html.App
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
 import Maybe exposing (andThen)
+import Types
 
 
 {-| Renders a modal dialog whenever you supply a `Config msg`.
@@ -55,78 +59,8 @@ large and small.
 
 -}
 view : Maybe (Config msg) -> Html msg
-view maybeConfig =
-    let
-        displayed =
-            isJust maybeConfig
-    in
-        div []
-            [ div
-                ([ classList
-                    [ ( "modal", True )
-                    , ( "in", displayed )
-                    ]
-                 , style
-                    [ ( "display"
-                      , if displayed then
-                            "block"
-                        else
-                            "none"
-                      )
-                    ]
-                 ]
-                )
-                [ div [ class "modal-dialog" ]
-                    [ div [ class "modal-content" ]
-                        (case maybeConfig of
-                            Nothing ->
-                                [ empty ]
-
-                            Just config ->
-                                [ wrapHeader config.closeMessage config.header
-                                , maybe empty wrapBody config.body
-                                , maybe empty wrapFooter config.footer
-                                ]
-                        )
-                    ]
-                ]
-            , backdrop maybeConfig
-            ]
-
-
-wrapHeader : Maybe msg -> Maybe (Html msg) -> Html msg
-wrapHeader closeMessage header =
-    if closeMessage == Nothing && header == Nothing then
-        empty
-    else
-        div [ class "modal-header" ]
-            [ maybe empty closeButton closeMessage
-            , Maybe.withDefault empty header
-            ]
-
-
-closeButton : msg -> Html msg
-closeButton closeMessage =
-    button [ class "close", onClick closeMessage ]
-        [ text "x" ]
-
-
-wrapBody : Html msg -> Html msg
-wrapBody body =
-    div [ class "modal-body" ]
-        [ body ]
-
-
-wrapFooter : Html msg -> Html msg
-wrapFooter footer =
-    div [ class "modal-footer" ]
-        [ footer ]
-
-
-backdrop : Maybe (Config msg) -> Html msg
-backdrop config =
-    div [ classList [ ( "modal-backdrop in", isJust config ) ] ]
-        []
+view =
+    bootstrapView
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
@@ -139,11 +73,7 @@ The `closeMessage` is an optional `Signal.Message` we will send when the user
 clicks the 'X' in the top right. If you don't want that X displayed, use `Nothing`.
 -}
 type alias Config msg =
-    { closeMessage : Maybe msg
-    , header : Maybe (Html msg)
-    , body : Maybe (Html msg)
-    , footer : Maybe (Html msg)
-    }
+    Types.Config msg
 
 
 {-|
@@ -165,3 +95,27 @@ map f config =
 mapMaybe : (a -> b) -> Maybe (Config a) -> Maybe (Config b)
 mapMaybe =
     Maybe.map << map
+
+
+{-| The modal dialog configured for Bootstrap rendering.
+
+Note that including the Bootstrap CSS in the page remains your responsibility.
+-}
+bootstrapView : Maybe (Config msg) -> Html msg
+bootstrapView =
+    Bootstrap.view
+
+
+
+------------------------------------------------------------
+-- Foundation
+------------------------------------------------------------
+
+
+{-| The modal dialog configured for Foundation rendering.
+
+Note that including the Foundation CSS in the page remains your responsibility.
+-}
+foundationView : Maybe (Config msg) -> Html msg
+foundationView =
+    Foundation.view
