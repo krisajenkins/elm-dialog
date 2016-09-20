@@ -32,6 +32,13 @@ $ elm package install krisajenkins/elm-dialog
 
 [See the Elm package for full usage docs](http://package.elm-lang.org/packages/krisajenkins/elm-dialog/latest/Dialog).
 
+## Migration
+
+### v3 to v4
+
+v4 version added a `containerClass` field to the `Config` record. You can set
+this to `containerClass = Nothing` until you need it.
+
 ## Building
 
 ```
