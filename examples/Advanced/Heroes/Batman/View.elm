@@ -20,6 +20,7 @@ dialog model =
     if model.showDialog then
         Just
             { closeMessage = Just Finished
+            , containerClass = Just "your-container-class"
             , header = Just (h1 [] [ text "Kapow!" ])
             , body = Just (text "Batman swipes at you!")
             , footer = Just (actionButton ( Finished, "OK" ))

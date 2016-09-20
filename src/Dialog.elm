@@ -35,6 +35,7 @@ right at the top of the DOM tree, like so:
         , Dialog.view
             (if model.shouldShowDialog then
               Just { closeMessage = Just AcknowledgeDialog
+                   , containerClass = Just "your-container-class"
                    , header = Just (text "Alert!"
                    , body = Just (p [] [text "Let me tell you something important..."])
                    , footer = Nothing
@@ -60,7 +61,14 @@ view maybeConfig =
         displayed =
             isJust maybeConfig
     in
-        div []
+        div
+            (case maybeConfig `Maybe.andThen` .containerClass of
+                Nothing ->
+                    []
+
+                Just containerClass ->
+                    [ class containerClass ]
+            )
             [ div
                 ([ classList
                     [ ( "modal", True )
@@ -140,6 +148,7 @@ clicks the 'X' in the top right. If you don't want that X displayed, use `Nothin
 -}
 type alias Config msg =
     { closeMessage : Maybe msg
+    , containerClass : Maybe String
     , header : Maybe (Html msg)
     , body : Maybe (Html msg)
     , footer : Maybe (Html msg)
@@ -154,6 +163,7 @@ subtree.
 map : (a -> b) -> Config a -> Config b
 map f config =
     { closeMessage = Maybe.map f config.closeMessage
+    , containerClass = config.containerClass
     , header = Maybe.map (Html.App.map f) config.header
     , body = Maybe.map (Html.App.map f) config.body
     , footer = Maybe.map (Html.App.map f) config.footer

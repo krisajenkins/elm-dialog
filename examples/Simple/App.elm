@@ -99,6 +99,7 @@ view model =
 dialogConfig : Model -> Dialog.Config Msg
 dialogConfig model =
     { closeMessage = Just Acknowledge
+    , containerClass = Just "your-container-class"
     , header = Just (h3 [] [ text "1 Up!" ])
     , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
     , footer =
