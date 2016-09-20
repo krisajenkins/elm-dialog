@@ -35,6 +35,7 @@ right at the top of the DOM tree, like so:
         , Dialog.view
             (if model.shouldShowDialog then
               Just { closeMessage = Just AcknowledgeDialog
+                   , containerClass = "your-container-class"
                    , header = Just (text "Alert!"
                    , body = Just (p [] [text "Let me tell you something important..."])
                    , footer = Nothing
