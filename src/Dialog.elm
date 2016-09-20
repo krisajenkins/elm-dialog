@@ -61,13 +61,13 @@ view maybeConfig =
             isJust maybeConfig
     in
         div [ class
-              (case maybeConfig of
-                 Nothing ->
-                     ""
-
-                 Just config ->
-                     config.containerClass
-               )
+                  (case maybeConfig of
+                     Nothing ->
+                         ""
+    
+                     Just config ->
+                         config.containerClass
+                   )
             ]
             [ div
                 ([ classList
