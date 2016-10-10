@@ -1,4 +1,4 @@
-all: dist/Simple.html dist/Advanced.html dist/tests.js
+all: dist/Simple.html dist/Advanced.html tests.js
 
 dist/%.html: $(shell find src examples -type f -name '*.elm' -o -name '*.js') dist
 	elm-make examples/$*/App.elm --yes --warn --output=$@
