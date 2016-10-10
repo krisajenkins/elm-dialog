@@ -1,4 +1,4 @@
 /.shake
 /build
 /dist
-/elm-stuff
+elm-stuff/
