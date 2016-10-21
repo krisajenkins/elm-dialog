@@ -88,6 +88,8 @@ view maybeConfig =
                         else
                             "none"
                       )
+                    , ( "overflow-x", "hidden" )
+                    , ( "overflow-y", "auto" )
                     ]
                  ]
                 )
