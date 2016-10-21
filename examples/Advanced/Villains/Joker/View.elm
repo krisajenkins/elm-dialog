@@ -24,6 +24,7 @@ dialog model =
             Just
                 { closeMessage = Just Close
                 , containerClass = Just "joker-modal-container"
+                , dialogSize = Nothing
                 , header = Just (h1 [] [ text "Joker says, \"Argh!\"" ])
                 , body = Just (text "The Joker is no longer smiling.")
                 , footer = Nothing

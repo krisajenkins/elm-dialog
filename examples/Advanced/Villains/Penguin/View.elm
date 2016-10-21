@@ -25,6 +25,7 @@ dialog model =
             Just
                 { closeMessage = Just Close
                 , containerClass = Just "penguin-modal-container"
+                , dialogSize = Nothing
                 , header = Just (h1 [] [ text "Penguin says, \"Ouch!\"" ])
                 , body = Just (text "The penguin tries to dodge, which goes badly because penguins lack grace on land.")
                 , footer = Just (actionButton ( Close, "Take the pain" ))
@@ -34,6 +35,7 @@ dialog model =
             Just
                 { closeMessage = Just Close
                 , containerClass = Just "penguin-modal-container"
+                , dialogSize = Nothing
                 , header = Just (h1 [] [ text "Penguin says, \"Wark!\"" ])
                 , body = Just (text "The Penguin laughs his weird laugh")
                 , footer = Just (actionButton ( Close, "Calm down" ))
