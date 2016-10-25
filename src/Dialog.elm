@@ -1,8 +1,8 @@
-module Dialog exposing (Config, DialogSize(Normal, Small, Large), view, map, mapMaybe)
+module Dialog exposing (Config, DialogSize(Normal, Small, Large), simpleConfig, view, map, mapMaybe)
 
 {-| Elm Modal Dialogs.
 
-@docs Config, DialogSize, view, map, mapMaybe
+@docs Config, DialogSize, simpleConfig, view, map, mapMaybe
 -}
 
 import Exts.Html.Bootstrap exposing (..)
