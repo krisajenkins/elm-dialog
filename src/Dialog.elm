@@ -7,8 +7,8 @@ module Dialog exposing (Config, view, map, mapMaybe)
 
 import Exts.Html.Bootstrap exposing (..)
 import Exts.Maybe exposing (maybe, isJust)
+import Html
 import Html exposing (..)
-import Html.App
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Maybe exposing (andThen)
@@ -62,7 +62,10 @@ view maybeConfig =
             isJust maybeConfig
     in
         div
-            (case maybeConfig `Maybe.andThen` .containerClass of
+            (case
+                maybeConfig
+                    |> Maybe.andThen .containerClass
+             of
                 Nothing ->
                     []
 
@@ -164,9 +167,9 @@ map : (a -> b) -> Config a -> Config b
 map f config =
     { closeMessage = Maybe.map f config.closeMessage
     , containerClass = config.containerClass
-    , header = Maybe.map (Html.App.map f) config.header
-    , body = Maybe.map (Html.App.map f) config.body
-    , footer = Maybe.map (Html.App.map f) config.footer
+    , header = Maybe.map (Html.map f) config.header
+    , body = Maybe.map (Html.map f) config.body
+    , footer = Maybe.map (Html.map f) config.footer
     }
 
 
