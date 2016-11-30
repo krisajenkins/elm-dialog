@@ -5,7 +5,6 @@ import Advanced.Villains.Penguin.View as Penguin
 import Advanced.Villains.Types exposing (..)
 import Dialog
 import Html exposing (..)
-import Html.App
 import Html.Attributes exposing (..)
 import Utils exposing (..)
 
@@ -23,11 +22,11 @@ root model =
         , case model.view of
             JokerView ->
                 Joker.root model.joker
-                    |> Html.App.map JokerMsg
+                    |> Html.map JokerMsg
 
             PenguinView ->
                 Penguin.root model.penguin
-                    |> Html.App.map PenguinMsg
+                    |> Html.map PenguinMsg
         ]
 
 

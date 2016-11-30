@@ -8,8 +8,8 @@ dialog goes away.
 -}
 
 import Dialog
+import Html
 import Html exposing (..)
-import Html.App
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Utils exposing (..)
@@ -120,9 +120,9 @@ dialogConfig model =
 ------------------------------------------------------------
 
 
-main : Program Never
+main : Program Never Model Msg
 main =
-    Html.App.program
+    Html.program
         { init = initialState
         , view = view
         , update = update

@@ -6,7 +6,6 @@ import Advanced.Heroes.Types exposing (..)
 import Advanced.Heroes.WonderWoman.View as WonderWoman
 import Dialog
 import Html exposing (..)
-import Html.App
 import Html.Attributes exposing (..)
 import Utils exposing (viewTab)
 
@@ -25,15 +24,15 @@ root model =
         , case model.view of
             BatmanView ->
                 Batman.root model.batman
-                    |> Html.App.map BatmanMsg
+                    |> Html.map BatmanMsg
 
             SupermanView ->
                 Superman.root model.superman
-                    |> Html.App.map SupermanMsg
+                    |> Html.map SupermanMsg
 
             WonderWomanView ->
                 WonderWoman.root model.wonderWoman
-                    |> Html.App.map WonderWomanMsg
+                    |> Html.map WonderWomanMsg
         ]
 
 
