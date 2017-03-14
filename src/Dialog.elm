@@ -1,8 +1,8 @@
-module Dialog exposing (Config, view, map, mapMaybe)
+module Dialog exposing (Config, DialogSize(Normal, Small, Large), simpleConfig, view, map, mapMaybe)
 
 {-| Elm Modal Dialogs.
 
-@docs Config, view, map, mapMaybe
+@docs Config, DialogSize, simpleConfig, view, map, mapMaybe
 -}
 
 import Exts.Html.Bootstrap exposing (..)
@@ -36,6 +36,7 @@ right at the top of the DOM tree, like so:
             (if model.shouldShowDialog then
               Just { closeMessage = Just AcknowledgeDialog
                    , containerClass = Just "your-container-class"
+                   , dialogSize = Dialog.Normal
                    , header = Just (text "Alert!"
                    , body = Just (p [] [text "Let me tell you something important..."])
                    , footer = Nothing
@@ -60,6 +61,14 @@ view maybeConfig =
     let
         displayed =
             isJust maybeConfig
+
+        dialogSize =
+            case maybeConfig of
+                Nothing ->
+                    Normal
+
+                Just config ->
+                    config.dialogSize
     in
         div
             (case
@@ -84,10 +93,18 @@ view maybeConfig =
                         else
                             "none"
                       )
+                    , ( "overflow-x", "hidden" )
+                    , ( "overflow-y", "auto" )
                     ]
                  ]
                 )
-                [ div [ class "modal-dialog" ]
+                [ div
+                    [ classList
+                        [ ( "modal-dialog", True )
+                        , ( "modal-lg", dialogSize == Large )
+                        , ( "modal-sm", dialogSize == Small )
+                        ]
+                    ]
                     [ div [ class "modal-content" ]
                         (case maybeConfig of
                             Nothing ->
@@ -146,16 +163,47 @@ be as simple or as complex as any other view function.
 
 Use only the ones you want and set the others to `Nothing`.
 
+Set the `dialogSize` to one of the values offered, usually you want `Normal`.
+
 The `closeMessage` is an optional `Signal.Message` we will send when the user
 clicks the 'X' in the top right. If you don't want that X displayed, use `Nothing`.
 -}
 type alias Config msg =
     { closeMessage : Maybe msg
     , containerClass : Maybe String
+    , dialogSize : DialogSize
     , header : Maybe (Html msg)
     , body : Maybe (Html msg)
     , footer : Maybe (Html msg)
     }
+
+
+{-| This function generates a simple configuration for a dialog.
+
+The `body` is a `(Html msg)` block. This `(Html msg)` blocks can
+be as simple or as complex as any other view function.
+
+The `closeMessage` is a `Signal.Message` we will send when the user
+clicks the 'X' in the top right.
+-}
+simpleConfig : Html msg -> msg -> Config msg
+simpleConfig body closeMessage =
+    { closeMessage = Just closeMessage
+    , containerClass = Nothing
+    , dialogSize = Normal
+    , header = Nothing
+    , body = Just body
+    , footer = Nothing
+    }
+
+
+{-| The size in wich the dialog should be shown, this can be either
+`Normal`, `Small` or `Large`.
+-}
+type DialogSize
+    = Normal
+    | Small
+    | Large
 
 
 {-|
@@ -167,6 +215,7 @@ map : (a -> b) -> Config a -> Config b
 map f config =
     { closeMessage = Maybe.map f config.closeMessage
     , containerClass = config.containerClass
+    , dialogSize = config.dialogSize
     , header = Maybe.map (Html.map f) config.header
     , body = Maybe.map (Html.map f) config.body
     , footer = Maybe.map (Html.map f) config.footer

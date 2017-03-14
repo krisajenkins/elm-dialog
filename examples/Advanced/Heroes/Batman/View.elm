@@ -21,6 +21,7 @@ dialog model =
         Just
             { closeMessage = Just Finished
             , containerClass = Just "batman-modal-container"
+            , dialogSize = Dialog.Normal
             , header = Just (h1 [] [ text "Kapow!" ])
             , body = Just (text "Batman swipes at you!")
             , footer = Just (actionButton ( Finished, "OK" ))
