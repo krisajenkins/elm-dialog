@@ -87,7 +87,7 @@ view maybeConfig =
                     ]
                  ]
                 )
-                [ div [ class "modal-dialog" ]
+                [ div [ class "modal-dialog", style [ ( "z-index", "1050" ) ] ]
                     [ div [ class "modal-content" ]
                         (case maybeConfig of
                             Nothing ->
@@ -100,8 +100,8 @@ view maybeConfig =
                                 ]
                         )
                     ]
+                , backdrop maybeConfig
                 ]
-            , backdrop maybeConfig
             ]
 
 
@@ -136,8 +136,27 @@ wrapFooter footer =
 
 backdrop : Maybe (Config msg) -> Html msg
 backdrop config =
-    div [ classList [ ( "modal-backdrop in", isJust config ) ] ]
-        []
+    let
+        maybeOnClick =
+            case config of
+                Nothing ->
+                    []
+
+                Just conf ->
+                    case conf.closeMessage of
+                        Nothing ->
+                            []
+
+                        Just closeMessage ->
+                            [ onClick closeMessage ]
+    in
+        div
+            ([ classList [ ( "modal-backdrop in", isJust config ) ]
+             , style [ ( "z-index", "1049" ), ( "width", "100%" ), ( "height", "100%" ) ]
+             ]
+                ++ maybeOnClick
+            )
+            []
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
