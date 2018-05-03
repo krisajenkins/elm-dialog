@@ -47,7 +47,7 @@ debuggingView data =
 bootstrap : Html msg
 bootstrap =
     node "link"
-        [ href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        [ href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         , rel "stylesheet"
         ]
         []
