@@ -75,7 +75,7 @@ view maybeConfig =
             [ div
                 ([ classList
                     [ ( "modal", True )
-                    , ( "in", displayed )
+                    , ( "show", displayed )
                     ]
                  , style
                     [ ( "display"
@@ -136,7 +136,7 @@ wrapFooter footer =
 
 backdrop : Maybe (Config msg) -> Html msg
 backdrop config =
-    div [ classList [ ( "modal-backdrop in", isJust config ) ] ]
+    div [ classList [ ( "modal-backdrop show", isJust config ) ] ]
         []
 
 
