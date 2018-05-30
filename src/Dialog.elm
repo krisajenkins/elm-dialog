@@ -1,13 +1,11 @@
-module Dialog exposing (Config, view, map, mapMaybe)
+module Dialog exposing (Config, map, mapMaybe, view)
 
 {-| Elm Modal Dialogs.
 
 @docs Config, view, map, mapMaybe
+
 -}
 
-import Exts.Html.Bootstrap exposing (..)
-import Exts.Maybe exposing (maybe, isJust)
-import Html
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
@@ -16,7 +14,7 @@ import Maybe exposing (andThen)
 
 {-| Renders a modal dialog whenever you supply a `Config msg`.
 
-To use this, include this view in your *top-level* view function,
+To use this, include this view in your _top-level_ view function,
 right at the top of the DOM tree, like so:
 
     type Message
@@ -45,7 +43,6 @@ right at the top of the DOM tree, like so:
             )
         ]
 
-
 It's then up to you to replace `model.shouldShowDialog` with whatever
 logic should cause the dialog to be displayed, and to handle an
 `AcknowledgeDialog` message with whatever logic should occur when the user
@@ -61,54 +58,53 @@ view maybeConfig =
         displayed =
             isJust maybeConfig
     in
-        div
-            (case
-                maybeConfig
-                    |> Maybe.andThen .containerClass
-             of
-                Nothing ->
-                    []
+    div
+        (case
+            maybeConfig
+                |> Maybe.andThen .containerClass
+         of
+            Nothing ->
+                []
 
-                Just containerClass ->
-                    [ class containerClass ]
-            )
-            [ div
-                ([ classList
-                    [ ( "modal", True )
-                    , ( "in", displayed )
-                    ]
-                 , style
-                    [ ( "display"
-                      , if displayed then
-                            "block"
-                        else
-                            "none"
-                      )
-                    ]
-                 ]
-                )
-                [ div [ class "modal-dialog" ]
-                    [ div [ class "modal-content" ]
-                        (case maybeConfig of
-                            Nothing ->
-                                [ empty ]
-
-                            Just config ->
-                                [ wrapHeader config.closeMessage config.header
-                                , maybe empty wrapBody config.body
-                                , maybe empty wrapFooter config.footer
-                                ]
-                        )
-                    ]
+            Just containerClass ->
+                [ class containerClass ]
+        )
+        [ div
+            [ classList
+                [ ( "modal", True )
+                , ( "in", displayed )
                 ]
-            , backdrop maybeConfig
+            , style "display"
+                (if displayed then
+                    "block"
+
+                 else
+                    "none"
+                )
             ]
+            [ div [ class "modal-dialog" ]
+                [ div [ class "modal-content" ]
+                    (case maybeConfig of
+                        Nothing ->
+                            [ empty ]
+
+                        Just config ->
+                            [ wrapHeader config.closeMessage config.header
+                            , maybe empty wrapBody config.body
+                            , maybe empty wrapFooter config.footer
+                            ]
+                    )
+                ]
+            ]
+        , backdrop maybeConfig
+        ]
 
 
 wrapHeader : Maybe msg -> Maybe (Html msg) -> Html msg
 wrapHeader closeMessage header =
     if closeMessage == Nothing && header == Nothing then
         empty
+
     else
         div [ class "modal-header" ]
             [ maybe empty closeButton closeMessage
@@ -148,6 +144,7 @@ Use only the ones you want and set the others to `Nothing`.
 
 The `closeMessage` is an optional `Signal.Message` we will send when the user
 clicks the 'X' in the top right. If you don't want that X displayed, use `Nothing`.
+
 -}
 type alias Config msg =
     { closeMessage : Maybe msg
@@ -158,8 +155,7 @@ type alias Config msg =
     }
 
 
-{-|
-This function is useful when nesting components with the Elm
+{-| This function is useful when nesting components with the Elm
 Architecture. It lets you transform the messages produced by a
 subtree.
 -}
@@ -178,3 +174,25 @@ map f config =
 mapMaybe : (a -> b) -> Maybe (Config a) -> Maybe (Config b)
 mapMaybe =
     Maybe.map << map
+
+
+maybe : b -> (a -> b) -> Maybe a -> b
+maybe default f =
+    Maybe.withDefault default << Maybe.map f
+
+
+isJust : Maybe a -> Bool
+isJust x =
+    case x of
+        Just _ ->
+            True
+
+        _ ->
+            False
+
+
+{-| The minimum markup - an empty span.
+-}
+empty : Html msg
+empty =
+    span [] []

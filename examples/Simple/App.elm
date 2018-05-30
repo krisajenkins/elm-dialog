@@ -5,14 +5,15 @@ module Simple.App exposing (main)
 When the user clicks a button, the counter will increment and a dialog
 will pop up alerting them about the new value. When they click Ok, the
 dialog goes away.
+
 -}
 
+import Browser
 import Dialog
-import Html
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Utils exposing (..)
+import Utils exposing (bootstrap)
 
 
 ------------------------------------------------------------
@@ -37,30 +38,24 @@ type alias Model =
 ------------------------------------------------------------
 
 
-initialState : ( Model, Cmd Msg )
+initialState : Model
 initialState =
-    ( { counter = 0
-      , showDialog = False
-      }
-    , Cmd.none
-    )
+    { counter = 0
+    , showDialog = False
+    }
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> Model
 update action model =
     case action of
         Increment ->
-            ( { model
-                | counter = model.counter + 1
-                , showDialog = True
-              }
-            , Cmd.none
-            )
+            { model
+              | counter = model.counter + 1
+              , showDialog = True
+            }
 
         Acknowledge ->
-            ( { model | showDialog = False }
-            , Cmd.none
-            )
+            { model | showDialog = False }
 
 
 
@@ -77,9 +72,9 @@ or not.
 -}
 view : Model -> Html Msg
 view model =
-    div [ style [ ( "margin", "45px" ) ] ]
+    div [ style "margin" "45px" ]
         [ bootstrap
-        , h2 [] [ text (toString model.counter) ]
+        , h2 [] [ text (String.fromInt model.counter) ]
         , button
             [ class "btn btn-info"
             , onClick Increment
@@ -88,6 +83,7 @@ view model =
         , Dialog.view
             (if model.showDialog then
                 Just (dialogConfig model)
+
              else
                 Nothing
             )
@@ -101,7 +97,7 @@ dialogConfig model =
     { closeMessage = Just Acknowledge
     , containerClass = Nothing
     , header = Just (h3 [] [ text "1 Up!" ])
-    , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
+    , body = Just (text ("The counter ticks up to " ++ String.fromInt model.counter ++ "."))
     , footer =
         Just
             (button
@@ -119,11 +115,10 @@ dialogConfig model =
 ------------------------------------------------------------
 
 
-main : Program Never Model Msg
+main : Program () Model Msg
 main =
-    Html.program
+    Browser.sandbox
         { init = initialState
         , view = view
         , update = update
-        , subscriptions = always Sub.none
         }

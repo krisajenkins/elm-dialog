@@ -40,7 +40,7 @@ debuggingView : a -> Html msg
 debuggingView data =
     div [ class "alert alert-info" ]
         [ code []
-            [ text (toString data) ]
+            [ text (Debug.toString data) ]
         ]
 
 
