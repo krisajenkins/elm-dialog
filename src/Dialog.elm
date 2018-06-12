@@ -7,11 +7,11 @@ module Dialog exposing (Config, map, mapMaybe, view)
 -}
 
 import Exts.Html.Bootstrap exposing (empty)
-import Exts.Maybe exposing (isJust, maybe)
 import Html exposing (Html, button, div, text)
 import Html.Attributes exposing (class, classList, style)
 import Html.Events exposing (onClick)
 import Maybe
+import Maybe.Extra exposing (isJust, unwrap)
 
 
 {-| Renders a modal dialog whenever you supply a `Config msg`.
@@ -93,8 +93,8 @@ view maybeConfig =
 
                         Just config ->
                             [ wrapHeader config.closeMessage config.header
-                            , maybe empty wrapBody config.body
-                            , maybe empty wrapFooter config.footer
+                            , unwrap empty wrapBody config.body
+                            , unwrap empty wrapFooter config.footer
                             ]
                     )
                 ]
@@ -109,7 +109,7 @@ wrapHeader closeMessage header =
         empty
     else
         div [ class "modal-header" ]
-            [ maybe empty closeButton closeMessage
+            [ unwrap empty closeButton closeMessage
             , Maybe.withDefault empty header
             ]
 
