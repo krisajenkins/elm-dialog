@@ -1,6 +1,11 @@
-module Advanced.Villains.Penguin.State exposing (..)
+module Advanced.Villains.Penguin.State exposing (initialCommands, initialModel, update)
 
-import Advanced.Villains.Penguin.Types exposing (..)
+import Advanced.Villains.Penguin.Types
+    exposing
+        ( Model
+        , Msg(Close, TakeDamage, Wark)
+        , PenguinState(Hurt, Quiet, Warking)
+        )
 
 
 initialModel : Model

@@ -1,9 +1,9 @@
-module Advanced.Villains.Joker.View exposing (root, dialog)
+module Advanced.Villains.Joker.View exposing (dialog, root)
 
-import Advanced.Villains.Joker.Types exposing (..)
+import Advanced.Villains.Joker.Types exposing (JokerState(Laughing, Screaming), Model, Msg(Close))
 import Dialog
-import Html exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, div, h1, h2, text)
+import Utils exposing (debuggingView)
 
 
 root : Model -> Html Msg

@@ -1,12 +1,17 @@
-module Advanced.Villains.View exposing (root, dialog)
+module Advanced.Villains.View exposing (dialog, root)
 
 import Advanced.Villains.Joker.View as Joker
 import Advanced.Villains.Penguin.View as Penguin
-import Advanced.Villains.Types exposing (..)
+import Advanced.Villains.Types
+    exposing
+        ( Model
+        , Msg(JokerMsg, PenguinMsg, SetView)
+        , View(JokerView, PenguinView)
+        )
 import Dialog
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, div, h1, text, ul)
+import Html.Attributes exposing (class)
+import Utils exposing (viewTab)
 
 
 root : Model -> Html Msg

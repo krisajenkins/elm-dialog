@@ -1,7 +1,7 @@
-module Advanced.Heroes.Batman.State exposing (..)
+module Advanced.Heroes.Batman.State exposing (initialCommands, initialModel, update)
 
-import Advanced.Battle exposing (Attack(..))
-import Advanced.Heroes.Batman.Types exposing (..)
+import Advanced.Battle exposing (Attack(Punch))
+import Advanced.Heroes.Batman.Types exposing (Model, Msg(Finished, Kapow))
 
 
 initialModel : Model

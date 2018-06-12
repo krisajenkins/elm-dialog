@@ -1,7 +1,7 @@
 module StateTest exposing (tests)
 
 import Advanced.Heroes.Batman.Types exposing (..)
-import Advanced.Heroes.Types as Heroes exposing (View(BatmanView), Msg(BatmanMsg))
+import Advanced.Heroes.Types as Heroes exposing (Msg(BatmanMsg), View(BatmanView))
 import Advanced.State exposing (initialModel, update)
 import Advanced.Types exposing (..)
 import Advanced.Villains.Types as Villains exposing (View(PenguinView))

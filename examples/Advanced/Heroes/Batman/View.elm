@@ -1,9 +1,9 @@
-module Advanced.Heroes.Batman.View exposing (root, dialog)
+module Advanced.Heroes.Batman.View exposing (dialog, root)
 
-import Advanced.Heroes.Batman.Types exposing (..)
+import Advanced.Heroes.Batman.Types exposing (Model, Msg(Finished, Kapow))
 import Dialog
-import Html exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, div, h1, h2, text)
+import Utils exposing (actionButton, attackButton, debuggingView)
 
 
 root : Model -> Html Msg

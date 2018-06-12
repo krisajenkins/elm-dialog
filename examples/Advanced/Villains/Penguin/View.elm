@@ -1,9 +1,14 @@
-module Advanced.Villains.Penguin.View exposing (root, dialog)
+module Advanced.Villains.Penguin.View exposing (dialog, root)
 
-import Advanced.Villains.Penguin.Types exposing (..)
+import Advanced.Villains.Penguin.Types
+    exposing
+        ( Model
+        , Msg(Close, Wark)
+        , PenguinState(Hurt, Quiet, Warking)
+        )
 import Dialog
-import Html exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, div, h1, h2, text)
+import Utils exposing (actionButton, debuggingView)
 
 
 root : Model -> Html Msg

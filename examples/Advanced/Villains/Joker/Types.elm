@@ -1,4 +1,4 @@
-module Advanced.Villains.Joker.Types exposing (..)
+module Advanced.Villains.Joker.Types exposing (JokerState(..), Model, Msg(..))
 
 
 type JokerState

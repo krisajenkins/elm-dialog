@@ -1,11 +1,16 @@
-module Advanced.Villains.State exposing (..)
+module Advanced.Villains.State exposing (initialCommands, initialModel, update)
 
 import Advanced.Villains.Joker.State as Joker
 import Advanced.Villains.Joker.Types as Joker
 import Advanced.Villains.Penguin.State as Penguin
 import Advanced.Villains.Penguin.Types as Penguin
-import Advanced.Villains.Types exposing (..)
-import Response exposing (..)
+import Advanced.Villains.Types
+    exposing
+        ( Model
+        , Msg(JokerMsg, PenguinMsg, SetView, TakeDamage)
+        , View(JokerView, PenguinView)
+        )
+import Response exposing (mapCmd, mapModel)
 
 
 initialModel : Model

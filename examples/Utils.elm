@@ -1,8 +1,16 @@
-module Utils exposing (..)
+module Utils
+    exposing
+        ( actionButton
+        , attackButton
+        , bootstrap
+        , both
+        , debuggingView
+        , viewTab
+        )
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html exposing (Html, a, button, code, div, li, node, text)
+import Html.Attributes exposing (class, classList, href, rel)
+import Html.Events exposing (onClick)
 
 
 both : (a -> b) -> ( a, a ) -> ( b, b )

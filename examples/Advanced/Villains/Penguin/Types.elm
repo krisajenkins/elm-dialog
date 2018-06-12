@@ -1,4 +1,9 @@
-module Advanced.Villains.Penguin.Types exposing (..)
+module Advanced.Villains.Penguin.Types
+    exposing
+        ( Model
+        , Msg(..)
+        , PenguinState(..)
+        )
 
 
 type PenguinState

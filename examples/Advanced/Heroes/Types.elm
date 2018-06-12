@@ -1,4 +1,4 @@
-module Advanced.Heroes.Types exposing (..)
+module Advanced.Heroes.Types exposing (Model, Msg(..), View(..))
 
 import Advanced.Heroes.Batman.Types as Batman
 import Advanced.Heroes.Superman.Types as Superman

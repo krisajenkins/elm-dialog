@@ -1,6 +1,6 @@
-module Advanced.Heroes.Superman.State exposing (..)
+module Advanced.Heroes.Superman.State exposing (initialCommands, initialModel, update)
 
-import Advanced.Heroes.Superman.Types exposing (..)
+import Advanced.Heroes.Superman.Types exposing (Model, Msg(Punch))
 
 
 initialModel : Model

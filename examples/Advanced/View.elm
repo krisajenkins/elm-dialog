@@ -1,13 +1,13 @@
 module Advanced.View exposing (root)
 
 import Advanced.Heroes.View as Heroes
-import Advanced.Types exposing (..)
+import Advanced.Types exposing (Model, Msg(HeroesMsg, VillainsMsg))
 import Advanced.Villains.View as Villains
 import Dialog
-import Exts.Maybe exposing (oneOf)
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, div, h1, h2, li, text, ul)
+import Html.Attributes exposing (class, style)
+import Maybe.Extra exposing (or)
+import Utils exposing (bootstrap)
 
 
 root : Model -> Html Msg
@@ -27,13 +27,13 @@ root model =
                         |> Html.map VillainsMsg
                     ]
                 ]
-              -- What if both the heroes and villans want to show a
-              -- dialog? How do we ensure we only show one at a time?
-              -- Like this:
-            , oneOf
-                [ Dialog.mapMaybe HeroesMsg (Heroes.dialog model.heroes)
-                , Dialog.mapMaybe VillainsMsg (Villains.dialog model.villains)
-                ]
+
+            -- What if both the heroes and villans want to show a
+            -- dialog? How do we ensure we only show one at a time?
+            -- Like this:
+            , or
+                (Dialog.mapMaybe HeroesMsg (Heroes.dialog model.heroes))
+                (Dialog.mapMaybe VillainsMsg (Villains.dialog model.villains))
                 |> Dialog.view
             ]
         ]

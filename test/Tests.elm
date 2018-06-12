@@ -1,11 +1,10 @@
 module Tests exposing (..)
-import Test exposing (..)
+
 import StateTest
+import Test exposing (..)
 
 
 tests : Test
 tests =
     describe "All"
         [ StateTest.tests ]
-
-

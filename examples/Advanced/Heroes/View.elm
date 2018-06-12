@@ -1,12 +1,17 @@
-module Advanced.Heroes.View exposing (root, dialog)
+module Advanced.Heroes.View exposing (dialog, root)
 
 import Advanced.Heroes.Batman.View as Batman
 import Advanced.Heroes.Superman.View as Superman
-import Advanced.Heroes.Types exposing (..)
+import Advanced.Heroes.Types
+    exposing
+        ( Model
+        , Msg(BatmanMsg, SetView, SupermanMsg, WonderWomanMsg)
+        , View(BatmanView, SupermanView, WonderWomanView)
+        )
 import Advanced.Heroes.WonderWoman.View as WonderWoman
 import Dialog
-import Html exposing (..)
-import Html.Attributes exposing (..)
+import Html exposing (Html, div, h1, text, ul)
+import Html.Attributes exposing (class)
 import Utils exposing (viewTab)
 
 

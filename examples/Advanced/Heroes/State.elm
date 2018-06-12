@@ -1,11 +1,16 @@
-module Advanced.Heroes.State exposing (..)
+module Advanced.Heroes.State exposing (initialCommands, initialModel, update)
 
-import Advanced.Battle exposing (Attack(..))
+import Advanced.Battle exposing (Attack)
 import Advanced.Heroes.Batman.State as Batman
 import Advanced.Heroes.Superman.State as Superman
-import Advanced.Heroes.Types exposing (..)
+import Advanced.Heroes.Types
+    exposing
+        ( Model
+        , Msg(BatmanMsg, SetView, SupermanMsg, WonderWomanMsg)
+        , View(BatmanView)
+        )
 import Advanced.Heroes.WonderWoman.State as WonderWoman
-import Response exposing (..)
+import Response exposing (mapCmd, mapModel)
 
 
 initialModel : Model
@@ -41,11 +46,11 @@ update action model =
                 ( substate, attack ) =
                     Batman.update subaction model.batman
             in
-                ( substate
-                    |> mapModel (\x -> { model | batman = x })
-                    |> mapCmd BatmanMsg
-                , attack
-                )
+            ( substate
+                |> mapModel (\x -> { model | batman = x })
+                |> mapCmd BatmanMsg
+            , attack
+            )
 
         SupermanMsg subaction ->
             ( Superman.update subaction model.superman
