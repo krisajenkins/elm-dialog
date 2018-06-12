@@ -136,8 +136,16 @@ wrapFooter footer =
 
 backdrop : Maybe (Config msg) -> Html msg
 backdrop config =
-    div [ classList [ ( "modal-backdrop in", isJust config ) ] ]
+    div ([ classList [ ( "modal-backdrop in", isJust config ) ] ] ++ backdropCloser config)
         []
+
+
+backdropCloser : Maybe (Config msg) -> List (Html.Attribute msg)
+backdropCloser maybeConfig =
+    maybeConfig
+        |> Maybe.andThen .closeMessage
+        |> Maybe.map (List.singleton << onClick)
+        |> Maybe.withDefault []
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
