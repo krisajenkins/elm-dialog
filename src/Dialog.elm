@@ -6,8 +6,7 @@ module Dialog exposing (Config, map, mapMaybe, view)
 
 -}
 
-import Exts.Html.Bootstrap exposing (empty)
-import Html exposing (Html, button, div, text)
+import Html exposing (Html, button, div, span, text)
 import Html.Attributes exposing (class, classList, style)
 import Html.Events exposing (onClick)
 import Maybe
@@ -136,6 +135,11 @@ backdrop : Maybe (Config msg) -> Html msg
 backdrop config =
     div [ classList [ ( "modal-backdrop in", isJust config ) ] ]
         []
+
+
+empty : Html msg
+empty =
+    span [] []
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
