@@ -1,4 +1,4 @@
-module Advanced.Heroes.WonderWoman.View exposing (root, dialog)
+module Advanced.Heroes.WonderWoman.View exposing (dialog, root)
 
 import Advanced.Heroes.WonderWoman.Types exposing (..)
 import Dialog

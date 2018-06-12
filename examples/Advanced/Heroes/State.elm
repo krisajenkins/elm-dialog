@@ -41,11 +41,11 @@ update action model =
                 ( substate, attack ) =
                     Batman.update subaction model.batman
             in
-                ( substate
-                    |> mapModel (\x -> { model | batman = x })
-                    |> mapCmd BatmanMsg
-                , attack
-                )
+            ( substate
+                |> mapModel (\x -> { model | batman = x })
+                |> mapCmd BatmanMsg
+            , attack
+            )
 
         SupermanMsg subaction ->
             ( Superman.update subaction model.superman

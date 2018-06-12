@@ -1,4 +1,4 @@
-module Advanced.Villains.Penguin.View exposing (root, dialog)
+module Advanced.Villains.Penguin.View exposing (dialog, root)
 
 import Advanced.Villains.Penguin.Types exposing (..)
 import Dialog
