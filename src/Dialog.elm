@@ -86,6 +86,7 @@ view maybeConfig =
                       )
                     ]
                  ]
+                    ++ (overlayCloser maybeConfig)
                 )
                 [ div [ class "modal-dialog" ]
                     [ div [ class "modal-content" ]
@@ -103,6 +104,14 @@ view maybeConfig =
                 ]
             , backdrop maybeConfig
             ]
+
+
+overlayCloser : Maybe (Config msg) -> List (Html.Attribute msg)
+overlayCloser maybeConfig =
+    maybeConfig
+        |> Maybe.andThen .closeMessage
+        |> Maybe.andThen (\closeMessage -> Just [ onClick closeMessage ])
+        |> Maybe.withDefault []
 
 
 wrapHeader : Maybe msg -> Maybe (Html msg) -> Html msg
