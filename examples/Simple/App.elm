@@ -9,10 +9,10 @@ dialog goes away.
 -}
 
 import Dialog
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, button, div, h2, h3, text)
+import Html.Attributes exposing (class, style)
+import Html.Events exposing (onClick)
+import Utils exposing (bootstrap)
 
 
 ------------------------------------------------------------

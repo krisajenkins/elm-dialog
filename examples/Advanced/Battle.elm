@@ -1,4 +1,4 @@
-module Advanced.Battle exposing (..)
+module Advanced.Battle exposing (Attack(..))
 
 
 type Attack

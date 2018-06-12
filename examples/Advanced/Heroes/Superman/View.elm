@@ -1,9 +1,9 @@
 module Advanced.Heroes.Superman.View exposing (dialog, root)
 
-import Advanced.Heroes.Superman.Types exposing (..)
+import Advanced.Heroes.Superman.Types exposing (Model, Msg)
 import Dialog
-import Html exposing (..)
-import Utils exposing (..)
+import Html exposing (Html, div, h2, text)
+import Utils exposing (debuggingView)
 
 
 root : Model -> Html Msg
@@ -15,5 +15,5 @@ root model =
 
 
 dialog : Model -> Maybe (Dialog.Config Msg)
-dialog model =
+dialog _ =
     Nothing

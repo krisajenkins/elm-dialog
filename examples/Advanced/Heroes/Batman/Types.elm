@@ -1,4 +1,4 @@
-module Advanced.Heroes.Batman.Types exposing (..)
+module Advanced.Heroes.Batman.Types exposing (Model, Msg(..))
 
 
 type alias Model =

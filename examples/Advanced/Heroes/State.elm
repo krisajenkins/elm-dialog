@@ -1,11 +1,16 @@
-module Advanced.Heroes.State exposing (..)
+module Advanced.Heroes.State exposing (initialCommands, initialModel, update)
 
-import Advanced.Battle exposing (Attack(..))
+import Advanced.Battle exposing (Attack)
 import Advanced.Heroes.Batman.State as Batman
 import Advanced.Heroes.Superman.State as Superman
-import Advanced.Heroes.Types exposing (..)
+import Advanced.Heroes.Types
+    exposing
+        ( Model
+        , Msg(BatmanMsg, SetView, SupermanMsg, WonderWomanMsg)
+        , View(BatmanView)
+        )
 import Advanced.Heroes.WonderWoman.State as WonderWoman
-import Response exposing (..)
+import Response exposing (mapCmd, mapModel)
 
 
 initialModel : Model

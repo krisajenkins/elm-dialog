@@ -1,8 +1,8 @@
-module Advanced.Utils exposing (..)
+module Advanced.Utils exposing (actionButton, attackButton, bootstrap, both, debuggingView)
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html exposing (Html, button, code, div, node, text)
+import Html.Attributes exposing (class, href, rel)
+import Html.Events exposing (onClick)
 
 
 both : (a -> b) -> ( a, a ) -> ( b, b )
@@ -28,7 +28,7 @@ attackButton attackMsg label =
         [ text label ]
 
 
-debuggingView : a -> Html
+debuggingView : a -> Html msg
 debuggingView data =
     div [ class "alert alert-info" ]
         [ code []
@@ -36,7 +36,7 @@ debuggingView data =
         ]
 
 
-bootstrap : Html
+bootstrap : Html msg
 bootstrap =
     node "link"
         [ href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"

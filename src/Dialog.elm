@@ -6,12 +6,12 @@ module Dialog exposing (Config, map, mapMaybe, view)
 
 -}
 
-import Exts.Html.Bootstrap exposing (..)
+import Exts.Html.Bootstrap exposing (empty)
 import Exts.Maybe exposing (isJust, maybe)
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
-import Maybe exposing (andThen)
+import Html exposing (Html, button, div, text)
+import Html.Attributes exposing (class, classList, style)
+import Html.Events exposing (onClick)
+import Maybe
 
 
 {-| Renders a modal dialog whenever you supply a `Config msg`.

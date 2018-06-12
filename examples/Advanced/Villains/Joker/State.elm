@@ -1,6 +1,11 @@
-module Advanced.Villains.Joker.State exposing (..)
+module Advanced.Villains.Joker.State exposing (initialCommands, initialModel, update)
 
-import Advanced.Villains.Joker.Types exposing (..)
+import Advanced.Villains.Joker.Types
+    exposing
+        ( JokerState(Laughing, Screaming)
+        , Model
+        , Msg(Close, Shoot, TakeDamage)
+        )
 
 
 initialModel : Model
