@@ -86,7 +86,6 @@ view maybeConfig =
                       )
                     ]
                  ]
-                    ++ (overlayCloser maybeConfig)
                 )
                 [ div [ class "modal-dialog" ]
                     [ div [ class "modal-content" ]
@@ -104,14 +103,6 @@ view maybeConfig =
                 ]
             , backdrop maybeConfig
             ]
-
-
-overlayCloser : Maybe (Config msg) -> List (Html.Attribute msg)
-overlayCloser maybeConfig =
-    maybeConfig
-        |> Maybe.andThen .closeMessage
-        |> Maybe.andThen (\closeMessage -> Just [ onClick closeMessage ])
-        |> Maybe.withDefault []
 
 
 wrapHeader : Maybe msg -> Maybe (Html msg) -> Html msg
@@ -145,8 +136,16 @@ wrapFooter footer =
 
 backdrop : Maybe (Config msg) -> Html msg
 backdrop config =
-    div [ classList [ ( "modal-backdrop in", isJust config ) ] ]
+    div ([ classList [ ( "modal-backdrop in", isJust config ) ] ] ++ backdropCloser config)
         []
+
+
+backdropCloser : Maybe (Config msg) -> List (Html.Attribute msg)
+backdropCloser maybeConfig =
+    maybeConfig
+        |> Maybe.andThen .closeMessage
+        |> Maybe.map (List.singleton << onClick)
+        |> Maybe.withDefault []
 
 
 {-| The configuration for the dialog you display. The `header`, `body`
