@@ -118,7 +118,7 @@ wrapHeader closeMessage header =
 
 closeButton : msg -> Html msg
 closeButton closeMessage =
-    button [ class "close", onClick closeMessage ]
+    button [ type_ "button", class "close", onClick closeMessage ]
         [ text "x" ]
 
 
