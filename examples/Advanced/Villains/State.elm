@@ -5,7 +5,7 @@ import Advanced.Villains.Joker.Types as Joker
 import Advanced.Villains.Penguin.State as Penguin
 import Advanced.Villains.Penguin.Types as Penguin
 import Advanced.Villains.Types exposing (..)
-import Response exposing (..)
+import Return2 exposing (..)
 
 
 initialModel : Model

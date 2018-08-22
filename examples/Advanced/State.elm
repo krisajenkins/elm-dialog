@@ -5,7 +5,7 @@ import Advanced.Heroes.State as Heroes
 import Advanced.Types exposing (..)
 import Advanced.Villains.State as Villains
 import Advanced.Villains.Types as Villains
-import Response exposing (..)
+import Return2 exposing (..)
 
 
 initialModel : Model

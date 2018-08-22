@@ -1,10 +1,10 @@
 module StateTest exposing (tests)
 
 import Advanced.Heroes.Batman.Types exposing (..)
-import Advanced.Heroes.Types as Heroes exposing (View(BatmanView), Msg(BatmanMsg))
+import Advanced.Heroes.Types as Heroes exposing (Msg(..), View(..))
 import Advanced.State exposing (initialModel, update)
 import Advanced.Types exposing (..)
-import Advanced.Villains.Types as Villains exposing (View(PenguinView))
+import Advanced.Villains.Types as Villains exposing (View(..))
 import Expect exposing (..)
 import Test exposing (..)
 import Tuple exposing (first)
@@ -15,7 +15,7 @@ tests =
     describe "State"
         [ test "Attacks get transmitted."
             (always
-                (greaterThan initialModel.villains.penguin.health
+                (lessThan initialModel.villains.penguin.health
                     (List.foldl (\action model -> update action model |> first)
                         initialModel
                         [ HeroesMsg (Heroes.SetView BatmanView)

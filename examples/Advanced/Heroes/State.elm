@@ -5,7 +5,7 @@ import Advanced.Heroes.Batman.State as Batman
 import Advanced.Heroes.Superman.State as Superman
 import Advanced.Heroes.Types exposing (..)
 import Advanced.Heroes.WonderWoman.State as WonderWoman
-import Response exposing (..)
+import Return2 exposing (..)
 
 
 initialModel : Model

@@ -1,6 +1,9 @@
-language: haskell
+language: node_js
+node_js:
+  - "10"
 install:
-  - npm install -g elm
-  - elm-package install -y
+  - npm install -g yarn
+  - yarn
 script:
-  - make
+  - yarn run elm make
+  - yarn run elm-test

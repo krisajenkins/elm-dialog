@@ -1,5 +1,2 @@
-/.shake
-/build
-/dist
-elm-stuff/
-/test/tests.js
+/elm-stuff/
+/node_modules/
