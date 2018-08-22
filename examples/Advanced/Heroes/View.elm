@@ -1,4 +1,4 @@
-module Advanced.Heroes.View exposing (root, dialog)
+module Advanced.Heroes.View exposing (dialog, root)
 
 import Advanced.Heroes.Batman.View as Batman
 import Advanced.Heroes.Superman.View as Superman

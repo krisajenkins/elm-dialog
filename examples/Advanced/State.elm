@@ -1,4 +1,4 @@
-module Advanced.State exposing (..)
+module Advanced.State exposing (initialCommands, initialModel, update)
 
 import Advanced.Battle exposing (Attack(..))
 import Advanced.Heroes.State as Heroes
@@ -36,21 +36,21 @@ update action model =
                         |> mapModel (\x -> { model | heroes = x })
                         |> mapCmd HeroesMsg
             in
-                case maybeAttack of
-                    Nothing ->
-                        ( newModel, newCmd )
+            case maybeAttack of
+                Nothing ->
+                    ( newModel, newCmd )
 
-                    Just Punch ->
-                        let
-                            ( modelWithAttack, cmdWithAttack ) =
-                                update (VillainsMsg Villains.TakeDamage) newModel
-                        in
-                            ( modelWithAttack
-                            , Cmd.batch
-                                [ newCmd
-                                , cmdWithAttack
-                                ]
-                            )
+                Just Punch ->
+                    let
+                        ( modelWithAttack, cmdWithAttack ) =
+                            update (VillainsMsg Villains.TakeDamage) newModel
+                    in
+                    ( modelWithAttack
+                    , Cmd.batch
+                        [ newCmd
+                        , cmdWithAttack
+                        ]
+                    )
 
         VillainsMsg subaction ->
             Villains.update subaction model.villains

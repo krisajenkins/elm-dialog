@@ -1,4 +1,4 @@
-module Advanced.Villains.Joker.View exposing (root, dialog)
+module Advanced.Villains.Joker.View exposing (dialog, root)
 
 import Advanced.Villains.Joker.Types exposing (..)
 import Dialog

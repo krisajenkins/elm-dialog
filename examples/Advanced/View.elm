@@ -27,9 +27,10 @@ root model =
                         |> Html.map VillainsMsg
                     ]
                 ]
-              -- What if both the heroes and villans want to show a
-              -- dialog? How do we ensure we only show one at a time?
-              -- Like this:
+
+            -- What if both the heroes and villans want to show a
+            -- dialog? How do we ensure we only show one at a time?
+            -- Like this:
             , oneOf
                 [ Dialog.mapMaybe HeroesMsg (Heroes.dialog model.heroes)
                 , Dialog.mapMaybe VillainsMsg (Villains.dialog model.villains)

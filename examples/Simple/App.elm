@@ -5,14 +5,15 @@ module Simple.App exposing (main)
 When the user clicks a button, the counter will increment and a dialog
 will pop up alerting them about the new value. When they click Ok, the
 dialog goes away.
+
 -}
 
 import Dialog
-import Html
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Utils exposing (..)
+
 
 
 ------------------------------------------------------------
@@ -88,6 +89,7 @@ view model =
         , Dialog.view
             (if model.showDialog then
                 Just (dialogConfig model)
+
              else
                 Nothing
             )
@@ -101,7 +103,7 @@ dialogConfig model =
     { closeMessage = Just Acknowledge
     , containerClass = Nothing
     , header = Just (h3 [] [ text "1 Up!" ])
-    , body = Just (text ("The counter ticks up to " ++ (toString model.counter) ++ "."))
+    , body = Just (text ("The counter ticks up to " ++ toString model.counter ++ "."))
     , footer =
         Just
             (button

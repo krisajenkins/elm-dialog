@@ -1,4 +1,4 @@
-module Advanced.Heroes.Batman.View exposing (root, dialog)
+module Advanced.Heroes.Batman.View exposing (dialog, root)
 
 import Advanced.Heroes.Batman.Types exposing (..)
 import Dialog
@@ -25,5 +25,6 @@ dialog model =
             , body = Just (text "Batman swipes at you!")
             , footer = Just (actionButton ( Finished, "OK" ))
             }
+
     else
         Nothing

@@ -1,4 +1,4 @@
-module Advanced.Heroes.WonderWoman.State exposing (..)
+module Advanced.Heroes.WonderWoman.State exposing (initialCommands, initialModel, update)
 
 import Advanced.Heroes.WonderWoman.Types exposing (..)
 

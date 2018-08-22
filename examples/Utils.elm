@@ -1,4 +1,4 @@
-module Utils exposing (..)
+module Utils exposing (actionButton, attackButton, bootstrap, both, debuggingView, viewTab)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

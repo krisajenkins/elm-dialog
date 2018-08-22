@@ -1,4 +1,4 @@
-module Advanced.Heroes.WonderWoman.Types exposing (..)
+module Advanced.Heroes.WonderWoman.Types exposing (Model, Msg(..))
 
 
 type alias Model =

@@ -1,4 +1,4 @@
-module Advanced.Types exposing (..)
+module Advanced.Types exposing (Model, Msg(..))
 
 import Advanced.Heroes.Types as Heroes
 import Advanced.Villains.Types as Villains

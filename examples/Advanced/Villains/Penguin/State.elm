@@ -1,4 +1,4 @@
-module Advanced.Villains.Penguin.State exposing (..)
+module Advanced.Villains.Penguin.State exposing (initialCommands, initialModel, update)
 
 import Advanced.Villains.Penguin.Types exposing (..)
 

@@ -1,4 +1,4 @@
-module Advanced.Heroes.Superman.View exposing (root, dialog)
+module Advanced.Heroes.Superman.View exposing (dialog, root)
 
 import Advanced.Heroes.Superman.Types exposing (..)
 import Dialog

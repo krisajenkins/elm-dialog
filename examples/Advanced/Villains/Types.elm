@@ -1,4 +1,4 @@
-module Advanced.Villains.Types exposing (..)
+module Advanced.Villains.Types exposing (Model, Msg(..), View(..))
 
 import Advanced.Villains.Joker.Types as Joker
 import Advanced.Villains.Penguin.Types as Penguin

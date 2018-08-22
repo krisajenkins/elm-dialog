@@ -1,4 +1,4 @@
-module Advanced.Villains.State exposing (..)
+module Advanced.Villains.State exposing (initialCommands, initialModel, update)
 
 import Advanced.Villains.Joker.State as Joker
 import Advanced.Villains.Joker.Types as Joker
