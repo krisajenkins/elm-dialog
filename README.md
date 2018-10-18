@@ -13,7 +13,7 @@ Elm modal dialog boxes that fits in neatly with the Elm architecture.
 ## Examples
 
 
-![Screenshot](screenshot.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/krisajenkins/elm-dialog/master/screenshot.png)
 
 See the `examples/` directory for two fully-worked examples:
 
